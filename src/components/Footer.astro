@@ -1,0 +1,103 @@
+---
+import { SITE, FOOTER_SERVICES, FOOTER_COMPANY, FOOTER_PAGES } from '../data/site';
+import SocialIcon from './SocialIcon.astro';
+import SocialSvgs from './social/SocialSvgs.astro';
+
+const socialLinks = [
+	{ href: SITE.whatsapp, label: 'WhatsApp', network: 'whatsapp' as const },
+	{ href: SITE.linkedin, label: 'LinkedIn', network: 'linkedin' as const },
+	{ href: SITE.instagram, label: 'Instagram', network: 'instagram' as const },
+];
+---
+
+<footer class="border-t border-outline-variant/30 bg-surface-container-low">
+	<div class="container-site py-lg">
+		<div class="grid grid-cols-1 gap-lg sm:grid-cols-2 lg:grid-cols-4">
+			<div class="flex flex-col gap-sm">
+				<a href="/" class="font-display text-xl font-bold tracking-tight text-on-surface">
+					{SITE.name}
+				</a>
+				<p class="text-sm text-on-surface-variant">{SITE.tagline}</p>
+				<div class="flex flex-wrap gap-xs">
+					{
+						socialLinks.map(({ href, label, network }) => (
+							<SocialIcon href={href} label={label}>
+								<SocialSvgs network={network} />
+							</SocialIcon>
+						))
+					}
+				</div>
+			</div>
+
+			<div>
+				<h3 class="label-caps mb-sm text-on-surface">Pages</h3>
+				<ul class="mb-md flex flex-col gap-xs">
+					{
+						FOOTER_PAGES.map(({ href, label }) => (
+							<li>
+								<a
+									href={href}
+									class="inline-flex min-h-11 items-center text-sm text-on-surface-variant transition-colors duration-200 hover:text-on-surface"
+								>
+									{label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+				<h3 class="label-caps mb-sm text-on-surface">Services</h3>
+				<ul class="flex flex-col gap-xs">
+					{
+						FOOTER_SERVICES.map(({ href, label }) => (
+							<li>
+								<a
+									href={href}
+									class="inline-flex min-h-11 items-center text-sm text-on-surface-variant transition-colors duration-200 hover:text-on-surface"
+								>
+									{label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="label-caps mb-sm text-on-surface">Société</h3>
+				<ul class="flex flex-col gap-xs">
+					{
+						FOOTER_COMPANY.map(({ href, label }) => (
+							<li>
+								<a
+									href={href}
+									class="inline-flex min-h-11 items-center text-sm text-on-surface-variant transition-colors duration-200 hover:text-on-surface"
+								>
+									{label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="label-caps mb-sm text-on-surface">Social</h3>
+				<ul class="flex flex-col gap-xs">
+					{
+						socialLinks.map(({ href, label, network }) => (
+							<li>
+								<SocialIcon href={href} label={label} variant="with-label">
+									<SocialSvgs network={network} />
+								</SocialIcon>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+
+		<p class="mt-md border-t border-outline-variant/30 pt-sm text-sm text-on-surface-variant">
+			{SITE.copyright}
+		</p>
+	</div>
+</footer>

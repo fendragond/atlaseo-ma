@@ -1,0 +1,47 @@
+---
+import MilledButton from './MilledButton.astro';
+import OutlineButton from './OutlineButton.astro';
+
+interface Props {
+	title: string;
+	subtitle: string;
+	primaryCta: { text: string; href: string };
+	secondaryCta?: { text: string; href: string };
+	rounded?: boolean;
+	class?: string;
+}
+
+const {
+	title,
+	subtitle,
+	primaryCta,
+	secondaryCta,
+	rounded = false,
+	class: className = '',
+} = Astro.props;
+---
+
+<section
+	data-animate
+	class:list={[
+		'bg-primary-container py-xl text-on-primary',
+		rounded && 'rounded-2xl',
+		className,
+	]}
+>
+	<div class="container-site flex flex-col items-center gap-md text-center">
+		<h2 class="font-display text-headline-lg-mobile font-semibold md:text-headline-lg">{title}</h2>
+		<p class="max-w-2xl text-body-lg text-on-primary/80">{subtitle}</p>
+		<div class="flex w-full flex-col items-stretch gap-md sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
+			<MilledButton href={primaryCta.href} text={primaryCta.text} class="w-full sm:w-auto" />
+			{secondaryCta && (
+				<OutlineButton
+					href={secondaryCta.href}
+					text={secondaryCta.text}
+					variant="light"
+					class="w-full sm:w-auto"
+				/>
+			)}
+		</div>
+	</div>
+</section>

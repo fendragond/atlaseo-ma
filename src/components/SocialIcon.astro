@@ -1,0 +1,19 @@
+---
+interface Props {
+	href: string;
+	label: string;
+	variant?: 'icon-only' | 'with-label';
+}
+
+const { href, label, variant = 'icon-only' } = Astro.props;
+
+const linkClass =
+	variant === 'icon-only'
+		? 'inline-flex min-h-11 min-w-11 items-center justify-center rounded text-on-surface-variant transition-colors duration-200 hover:text-secondary'
+		: 'inline-flex min-h-11 items-center gap-2 text-sm text-on-surface-variant transition-colors duration-200 hover:text-on-surface';
+---
+
+<a href={href} target="_blank" rel="noopener noreferrer" class={linkClass} aria-label={label}>
+	<slot />
+	{variant === 'with-label' && <span>{label}</span>}
+</a>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="500" viewBox="0 0 700 500" role="img" aria-label="R�sultats Google Maps  pack local">
+  <rect width="700" height="500" rx="16" fill="#f2f4f6"/>
+  <rect x="24" y="24" width="652" height="60" rx="8" fill="#fff"/>
+  <rect x="24" y="100" width="652" height="90" rx="8" fill="#6bfe9c25" stroke="#006d37" stroke-width="2"/>
+  <circle cx="70" cy="145" r="24" fill="#006d37"/>
+  <rect x="110" y="125" width="200" height="14" rx="4" fill="#191c1e"/>
+  <rect x="110" y="150" width="140" height="10" rx="4" fill="#74777d"/>
+  <text x="600" y="150" fill="#006d37" font-family="system-ui" font-size="14" font-weight="600">4.9 </text>
+  <rect x="24" y="210" width="652" height="70" rx="8" fill="#fff"/>
+  <rect x="24" y="300" width="652" height="70" rx="8" fill="#fff"/>
+  <rect x="24" y="390" width="652" height="70" rx="8" fill="#fff"/>
+</svg>

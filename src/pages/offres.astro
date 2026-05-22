@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import PackCard from '../components/PackCard.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import { PACKS } from '../data/packs';
+---
+
+<BaseLayout
+	title="Nos Offres — Création de Site Web & SEO | ATLASEO"
+	description="Trois packs adaptés à votre budget : Starter, Visibilité, et Croissance. Site web performant + SEO local inclus. Comparez et choisissez."
+>
+	<!-- 2.1 Hero -->
+	<section data-animate class="py-xl">
+		<div class="container-site flex max-w-3xl flex-col gap-md">
+			<span class="label-caps text-secondary">Nos Offres</span>
+			<h1 class="text-display-hero font-display text-on-surface">
+				Investissez dans votre{' '}
+				<span class="hero-gradient-text">Croissance</span>
+			</h1>
+			<p class="text-body-lg text-on-surface-variant">
+				Des solutions pensées pour les PME et professionnels au Maroc. Pas de frais cachés, pas de
+				surprises — juste des résultats.
+			</p>
+		</div>
+	</section>
+
+	<!-- 2.2 Pricing Cards -->
+	<section data-animate class="pb-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<div class="grid grid-cols-1 gap-md md:grid-cols-3" data-animate-stagger>
+				{PACKS.map((pack) => (
+					<PackCard
+						pack={pack}
+						variant="detailed"
+						headingLevel="h2"
+						showDeliveryFootnote
+						showSupportFootnote
+					/>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.3 Comparison Table -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				title="Comparatif des fonctionnalités"
+				subtitle="Comparez nos trois packs en un coup d'œil pour choisir la formule adaptée à vos objectifs."
+			/>
+			<ComparisonTable />
+			<p class="text-sm text-on-surface-variant">
+				* En jours ouvrés et dans les horaires normaux (lun–ven, 9h–18h) — s'applique au support
+				prioritaire du Pack Croissance.
+			</p>
+		</div>
+	</section>
+
+	<!-- 2.4 Benchmark -->
+	<section data-animate class="py-xl">
+		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
+			<div class="flex flex-col gap-md">
+				<SectionHeader
+					title="Benchmark Marché Maroc 2026"
+					align="left"
+					subtitle="Le paysage digital marocain évolue rapidement. Voici comment ATLASEO se positionne face aux agences traditionnelles."
+				/>
+				<p class="text-body-md text-on-surface-variant">
+					En 2026, le coût moyen d'un site vitrine chez une agence web au Maroc varie considérablement,
+					avec des délais de livraison souvent supérieurs à 4 semaines et une infrastructure héritée
+					peu performante. ATLASEO propose une alternative transparente : infrastructure Cloudflare de
+					classe mondiale, livraison en 14 jours*, et un accompagnement SEO local intégré dès le premier
+					pack Visibilité.
+				</p>
+				<p class="text-sm text-on-surface-variant">
+					* Le délai commence à la réception de tous les éléments nécessaires.
+				</p>
+				<p class="text-body-md text-on-surface-variant">
+					Notre approche élimine les intermédiaires techniques coûteux. Vous savez exactement ce que
+					vous obtenez, sans surprise en fin de projet. Pour aller plus loin sur notre expertise{' '}
+					<a href="/creation-site-web" class="text-secondary underline-offset-2 hover:underline">
+						création de site web professionnel au Maroc
+					</a>
+					, consultez notre page dédiée.
+				</p>
+			</div>
+			<div class="overflow-hidden rounded-2xl border border-outline-variant/30">
+				<img
+					src="/images/benchmark-maroc.webp"
+					alt="comparaison performance agences web Maroc 2026"
+					width="800"
+					height="400"
+					class="w-full rounded-2xl"
+					loading="lazy"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.5 CTA Banner -->
+	<CtaBanner
+		title="Prêt à dominer votre marché local ?"
+		subtitle="Obtenez votre devis gratuit et découvrez comment nous pouvons booster votre visibilité."
+		primaryCta={{ text: 'Obtenir mon devis', href: '/contact' }}
+		secondaryCta={{ text: 'Nous contacter', href: '/contact' }}
+	/>
+</BaseLayout>

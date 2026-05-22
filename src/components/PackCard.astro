@@ -1,0 +1,87 @@
+---
+import MilledButton from './MilledButton.astro';
+import OutlineButton from './OutlineButton.astro';
+import type { Pack } from '../data/packs';
+import { isIncludedPackFeature } from '../data/packs';
+
+interface Props {
+	pack: Pack;
+	variant?: 'preview' | 'detailed';
+	headingLevel?: 'h2' | 'h3';
+	showDeliveryFootnote?: boolean;
+	showSupportFootnote?: boolean;
+}
+
+const { pack, variant = 'preview', headingLevel = 'h3', showDeliveryFootnote = false, showSupportFootnote = false } =
+	Astro.props;
+const features = variant === 'preview' ? pack.previewFeatures : pack.features;
+const cta = variant === 'preview' ? pack.previewCta : pack.cta;
+const hasDeliveryMention = features.some((f) => f.includes('14 jours'));
+const hasSupportMention = features.some((f) => f.toLowerCase().includes('support prioritaire'));
+const HeadingTag = headingLevel;
+---
+
+<article
+	data-animate
+	data-tilt
+	class:list={[
+		'card-default card-icon-interactive pack-card relative flex h-auto min-h-0 flex-col gap-md p-lg',
+		pack.featured &&
+			'pack-card--featured z-10 border-2 border-primary max-md:scale-100 md:scale-105',
+	]}
+>
+	{pack.featured && (
+		<span class="label-caps relative mb-2 block w-fit rounded bg-secondary px-3 py-1 text-on-secondary max-md:mx-0 md:absolute md:-top-3 md:left-1/2 md:mb-0 md:-translate-x-1/2">
+			Recommandé
+		</span>
+	)}
+	<HeadingTag class="font-display text-headline-md font-semibold text-on-surface">{pack.name}</HeadingTag>
+	<ul class="flex flex-col gap-sm">
+		{
+			features.map((feature) => (
+				<li
+					class:list={[
+						'flex items-start gap-2 text-body-md text-on-surface-variant',
+						isIncludedPackFeature(feature) &&
+							'-mx-2 rounded-r border-l-2 border-secondary bg-secondary/5 px-2 py-1.5 font-semibold text-on-surface',
+					]}
+				>
+					<span class="icon-scale-wrap mt-0.5">
+						<span
+							class:list={[
+								'material-symbols-outlined text-lg transition-transform duration-300',
+								isIncludedPackFeature(feature) ? 'text-secondary' : 'text-secondary/80',
+							]}
+						>
+							check_circle
+						</span>
+					</span>
+					{feature}
+				</li>
+			))
+		}
+	</ul>
+	{
+		(showDeliveryFootnote || hasDeliveryMention) && hasDeliveryMention && (
+			<p class="text-sm text-on-surface-variant">
+				* Le délai commence à la réception de tous les éléments nécessaires.
+			</p>
+		)
+	}
+	{
+		(showSupportFootnote || hasSupportMention) && hasSupportMention && (
+			<p class="text-sm text-on-surface-variant">
+				* En jours ouvrés et dans les horaires normaux (lun–ven, 9h–18h).
+			</p>
+		)
+	}
+	<div class="mt-auto pt-md">
+		{
+			cta.variant === 'milled' ? (
+				<MilledButton href={cta.href} text={cta.text} class="w-full justify-center" />
+			) : (
+				<OutlineButton href={cta.href} text={cta.text} class="w-full justify-center" />
+			)
+		}
+	</div>
+</article>

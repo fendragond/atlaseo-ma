@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MilledButton from '../components/MilledButton.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import BentoCard from '../components/BentoCard.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+
+const epicenterCards = [
+	{
+		icon: 'visibility',
+		titleCount: 80,
+		titleSuffix: ' de Visibilité',
+		copy: '4 consommateurs sur 5 utilisent Google pour trouver un professionnel près de chez eux. Sans fiche optimisée, vous êtes invisible.',
+	},
+	{
+		icon: 'reviews',
+		title: 'Preuve Sociale',
+		copy: 'Les avis Google sont le premier critère de confiance. Une note au-dessus de 4.5 augmente les conversions de 25%.',
+	},
+	{
+		icon: 'trending_up',
+		title: 'ROI Accéléré',
+		copy: 'Le SEO local génère des leads qualifiés à un coût 3x inférieur à la publicité payante. Résultats durables, pas éphémères.',
+	},
+] as const;
+
+const methodology = [
+	{
+		num: '01',
+		title: 'Ciblage de Mots-clés Géo',
+		desc: 'Analyse des requêtes locales dans votre secteur. Identification des opportunités de positionnement à Casablanca, Rabat, Marrakech et au-delà.',
+	},
+	{
+		num: '02',
+		title: 'Optimisation du Profil',
+		desc: 'Configuration complète de votre Google Business Profile : catégories, horaires, photos, services, attributs — chaque détail compte.',
+	},
+	{
+		num: '03',
+		title: 'Citations Locales & NAP',
+		desc: 'Cohérence parfaite de votre Nom, Adresse et Téléphone sur tous les annuaires et plateformes pertinents au Maroc.',
+	},
+	{
+		num: '04',
+		title: "Stratégie d'Avis Clients",
+		desc: 'Mise en place d\'un processus pour collecter des avis authentiques et y répondre professionnellement.',
+	},
+];
+
+const infraChecks = [
+	'Cloudflare Workers',
+	'SSL + DDoS',
+	'CDN 300+ villes',
+];
+---
+
+<BaseLayout
+	title="SEO Local au Maroc — Google Business & Référencement | ATLASEO"
+	description="Dominez les recherches locales à Casablanca, Rabat et Marrakech. Optimisation Google Business Profile, mots-clés géolocalisés, stratégie d'avis clients."
+>
+	<!-- 4.1 Hero -->
+	<section data-animate class="relative overflow-hidden py-xl">
+		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
+			<div class="flex min-w-0 flex-1 flex-col gap-md">
+				<span class="label-caps text-secondary">SEO Local</span>
+				<h1 class="text-display-hero font-display text-on-surface">
+					Dominez les recherches locales.
+				</h1>
+				<p class="w-full text-body-lg text-on-surface-variant">
+					Vos clients vous cherchent sur Google. Nous nous assurons qu'ils vous trouvent — en premier, à
+					chaque fois.
+				</p>
+				<MilledButton href="/contact" text="Booster ma visibilité" icon="arrow_forward" />
+			</div>
+			<div class="relative">
+				<div
+					class="pointer-events-none absolute -right-10 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-secondary/25 blur-3xl"
+					aria-hidden="true"
+				/>
+				<img
+					src="/images/seo-phone-maps.webp"
+					alt="phone displaying Google Maps local search results in Casablanca"
+					width="1024"
+					height="1536"
+					class="cloud-shadow relative w-full rounded-2xl object-cover"
+					loading="eager"
+					fetchpriority="high"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- 4.2 Épicentre -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				title="L'épicentre du commerce au Maroc"
+				subtitle="80% des consommateurs marocains recherchent un commerce local sur Google avant de se déplacer. Votre fiche Google Business est votre vitrine #1."
+			/>
+			<div class="grid grid-cols-1 gap-md md:grid-cols-3" data-animate-stagger>
+				{
+					epicenterCards.map((card) => (
+						<article
+							data-animate
+							class="card-default card-icon-interactive flex flex-col gap-md p-lg transition-all duration-200 ease-out hover:border-primary"
+						>
+							<span class="icon-scale-wrap">
+								<span class="material-symbols-outlined text-3xl text-secondary transition-transform duration-300">
+									{card.icon}
+								</span>
+							</span>
+							<h3 class="font-display text-headline-md font-semibold">
+								{'titleCount' in card ? (
+									<>
+										<span data-count={card.titleCount} data-count-suffix="%">
+											0%
+										</span>
+										{card.titleSuffix}
+									</>
+								) : (
+									card.title
+								)}
+							</h3>
+							<p class="text-body-md text-on-surface-variant">{card.copy}</p>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- 4.3 Méthodologie -->
+	<section data-animate class="py-xl">
+		<div class="container-site grid grid-cols-1 gap-xl lg:grid-cols-2">
+			<div class="flex flex-col gap-xl">
+				<SectionHeader
+					title="Notre Méthodologie 360°"
+					subtitle="Un accompagnement complet pour dominer votre marché local."
+					align="left"
+				/>
+				<ol class="flex flex-col gap-lg" data-animate-stagger>
+					{
+						methodology.map((step) => (
+							<li data-animate class="flex gap-md border-l-2 border-secondary pl-md">
+								<span class="label-caps shrink-0 text-secondary">{step.num}</span>
+								<div>
+									<h3 class="font-display text-lg font-semibold text-on-surface">{step.title}</h3>
+									<p class="mt-2 text-body-md text-on-surface-variant">{step.desc}</p>
+								</div>
+							</li>
+						))
+					}
+				</ol>
+			</div>
+			<div class="flex items-center justify-center lg:self-stretch">
+				<img
+					src="/images/methode-360.webp"
+					alt="circular diagram of the 4 steps of the 360° local SEO methodology"
+					width="1024"
+					height="1024"
+					class="w-full object-contain"
+					loading="lazy"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- 4.4 Pourquoi ATLASEO -->
+	<section data-animate class="bg-surface-container-highest py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader title="Pourquoi choisir ATLASEO ?" />
+			<div class="grid grid-cols-1 gap-md md:grid-cols-4" data-animate-stagger>
+				<BentoCard span={2} title="Ultra Agile">
+					<p>
+						Pas de réunions interminables, pas de process kafkaïens. Un interlocuteur unique, des
+						décisions rapides, un site livré en 14 jours*.
+					</p>
+				</BentoCard>
+				<article
+					data-animate
+					class="card-icon-interactive relative overflow-hidden rounded-xl bg-primary-container bg-cover bg-center p-lg text-on-primary transition-all duration-200 ease-out md:col-span-2 md:row-span-2"
+					style="background-image: url('/images/seo-infra-premium.webp');"
+				>
+					<div class="absolute inset-0 bg-black/60" aria-hidden="true" />
+					<div class="relative z-10 flex h-full flex-col gap-md">
+						<h3 class="font-display text-headline-md font-semibold">Infrastructure Premium</h3>
+						<p class="text-body-md text-on-primary/80">
+							Cloudflare Workers, SSL, CDN mondial. Les mêmes technologies que les leaders du web,
+							accessibles aux PME marocaines.
+						</p>
+						<ul class="mt-auto flex flex-col gap-sm">
+							{
+								infraChecks.map((item) => (
+									<li class="flex items-center gap-2 text-body-md">
+										<span class="icon-scale-wrap">
+											<span class="material-symbols-outlined text-secondary-container">
+												check_circle
+											</span>
+										</span>
+										{item}
+									</li>
+								))
+							}
+						</ul>
+					</div>
+				</article>
+				<article
+					data-animate
+					class="rounded-xl bg-secondary p-lg text-on-secondary transition-all duration-200 ease-out hover:shadow-lg md:col-span-1"
+				>
+					<h3 class="font-display text-headline-md font-semibold">Tarif Transparent</h3>
+					<p class="mt-md text-body-md text-on-secondary/90">
+						Devis clair et détaillé. Pas de frais cachés, pas de mauvaises surprises. Consultez nos{' '}
+						<a href="/offres" class="underline underline-offset-2">offres SEO et web</a>.
+					</p>
+				</article>
+				<article
+					data-animate
+					class="card-default p-lg transition-all duration-200 ease-out md:col-span-1"
+				>
+					<h3 class="font-display text-headline-md font-semibold text-on-surface">Dès le 1er mois</h3>
+					<p class="mt-md text-body-md text-on-surface-variant">
+						De la stratégie au lancement. Résultats SEO visibles dès le 1er mois.
+					</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- 4.5 CTA -->
+	<section data-animate class="py-xl">
+		<div class="container-site">
+			<CtaBanner
+				title="Prêt à dominer votre ville ?"
+				subtitle="Devis gratuit — découvrez votre potentiel de croissance locale."
+				primaryCta={{ text: 'Obtenir mon devis', href: '/contact' }}
+				secondaryCta={{ text: 'Voir nos offres', href: '/offres' }}
+				rounded
+				class="!py-xl"
+			/>
+		</div>
+	</section>
+</BaseLayout>

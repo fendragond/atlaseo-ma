@@ -1,0 +1,51 @@
+---
+interface Props {
+	span?: 1 | 2;
+	dark?: boolean;
+	icon?: string;
+	title: string;
+	class?: string;
+}
+
+const { span = 1, dark = false, icon, title, class: className = '' } = Astro.props;
+
+const spanClass = span === 2 ? 'md:col-span-2' : 'md:col-span-1';
+const variantClass = dark
+	? 'bg-primary-container text-on-primary border-primary-container'
+	: 'card-default';
+---
+
+<article
+	data-animate
+	data-tilt
+	class:list={[
+		variantClass,
+		'card-icon-interactive group flex flex-col gap-md p-lg transition-all duration-200 ease-out',
+		spanClass,
+		className,
+	]}
+>
+	{
+		icon && (
+			<span class="icon-scale-wrap">
+				<span
+					class:list={[
+						'material-symbols-outlined text-3xl transition-transform duration-300',
+						dark ? 'text-secondary-container' : 'text-secondary',
+					]}
+				>
+					{icon}
+				</span>
+			</span>
+		)
+	}
+	<h3 class="font-display text-headline-md font-semibold">{title}</h3>
+	<div
+		class:list={[
+			'text-body-md [&_p]:text-inherit',
+			dark ? 'text-on-primary/80' : 'text-on-surface-variant',
+		]}
+	>
+		<slot />
+	</div>
+</article>

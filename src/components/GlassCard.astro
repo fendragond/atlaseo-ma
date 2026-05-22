@@ -1,0 +1,27 @@
+---
+interface Props {
+	class?: string;
+	padding?: 'sm' | 'md' | 'lg';
+	tilt?: boolean;
+}
+
+const { class: className = '', padding = 'md', tilt = false } = Astro.props;
+
+const paddingClasses = {
+	sm: 'p-sm',
+	md: 'p-md',
+	lg: 'p-lg',
+};
+---
+
+<div
+	data-animate
+	data-tilt={tilt || undefined}
+	class:list={[
+		'glass-card card-icon-interactive rounded-xl transition-all duration-200 ease-out',
+		paddingClasses[padding],
+		className,
+	]}
+>
+	<slot />
+</div>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Capture d'�cran du site dryousra.ma  m�decine esth�tique Casablanca">
+  <rect width="800" height="600" fill="#faf9f7"/>
+  <rect x="0" y="0" width="800" height="64" fill="#fff" stroke="#eceef0"/>
+  <text x="40" y="42" fill="#191c1e" font-family="Georgia, serif" font-size="22">Dr Yousra</text>
+  <rect x="0" y="64" width="800" height="280" fill="#e8dfd6"/>
+  <text x="400" y="220" text-anchor="middle" fill="#5c4a3d" font-family="Georgia, serif" font-size="32">M�decine Esth�tique</text>
+  <text x="400" y="260" text-anchor="middle" fill="#74777d" font-family="system-ui" font-size="16">Casablanca</text>
+  <rect x="40" y="380" width="220" height="160" rx="8" fill="#fff" stroke="#eceef0"/>
+  <rect x="290" y="380" width="220" height="160" rx="8" fill="#fff" stroke="#eceef0"/>
+  <rect x="540" y="380" width="220" height="160" rx="8" fill="#fff" stroke="#eceef0"/>
+</svg>

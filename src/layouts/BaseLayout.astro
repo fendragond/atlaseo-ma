@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+import '@fontsource/hanken-grotesk/600.css';
+import '@fontsource/hanken-grotesk/700.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource-variable/jetbrains-mono';
+import { SEO } from 'astro-seo';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFab from '../components/contact/WhatsAppFab.astro';
+import SchemaOrg from '../components/seo/SchemaOrg.astro';
+import { SITE } from '../data/site';
+
+interface Props {
+	title: string;
+	description: string;
+	canonical?: string;
+	noindex?: boolean;
+	ogImage?: string;
+	preloadHero?: string;
+	schema?: boolean;
+	hideWhatsAppFab?: boolean;
+}
+
+const {
+	title,
+	description,
+	canonical,
+	noindex = false,
+	ogImage = `${SITE.url}/images/og-default.jpg`,
+	preloadHero,
+	schema = false,
+	hideWhatsAppFab = false,
+} = Astro.props;
+
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		{
+			preloadHero && (
+				<link rel="preload" as="image" href={preloadHero} fetchpriority="high" />
+			)
+		}
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+		/>
+		<SEO
+			title={title}
+			description={description}
+			canonical={canonicalURL}
+			noindex={noindex}
+			nofollow={noindex}
+			openGraph={{
+				basic: {
+					title,
+					type: 'website',
+					image: ogImage,
+					url: canonicalURL,
+				},
+				optional: {
+					description,
+				},
+			}}
+		/>
+		{schema && <SchemaOrg />}
+		<slot name="head" />
+	</head>
+	<body>
+		<div
+			id="scroll-progress"
+			class="scroll-progress-bar"
+			role="progressbar"
+			aria-valuemin="0"
+			aria-valuemax="100"
+			aria-valuenow="0"
+			aria-label="Progression de lecture"
+		/>
+		<Navbar />
+		<main class="min-h-screen pt-24">
+			<slot />
+		</main>
+		<Footer />
+		{!hideWhatsAppFab && <WhatsAppFab />}
+		<script>
+			import { initAnimations } from '../scripts/animations';
+
+			initAnimations();
+		</script>
+	</body>
+</html>

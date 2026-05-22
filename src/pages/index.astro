@@ -1,17 +1,371 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MilledButton from '../components/MilledButton.astro';
+import OutlineButton from '../components/OutlineButton.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import BentoCard from '../components/BentoCard.astro';
+import PackCard from '../components/PackCard.astro';
+import GlassCard from '../components/GlassCard.astro';
+import { PACKS } from '../data/packs';
 
+const dataStats = [
+	{ title: 'Analyse SEO', desc: 'Étude complète de votre site et de vos concurrents' },
+	{ title: 'Mots-clés', desc: 'Recherche et ciblage des requêtes à fort potentiel' },
+	{ title: 'Suivi', desc: 'Monitoring mensuel de vos positions et performances' },
+	{ title: 'Rapports', desc: 'Reporting clair et actionnable chaque mois' },
+];
+
+const localChecks = [
+	{
+		title: 'Optimisation Google Business Profile',
+		desc: 'Nous créons et optimisons votre fiche Google pour maximiser votre visibilité dans les recherches locales et sur Google Maps.',
+	},
+	{
+		title: 'Gestion Stratégique des Avis',
+		desc: 'Un flux constant d\'avis positifs renforce votre crédibilité et votre classement local.',
+	},
+	{
+		title: 'Référencement Géolocalisé',
+		desc: 'Ciblage de mots-clés locaux (ex: "dentiste Casablanca", "avocat Rabat") pour attirer les clients de votre zone.',
+	},
+];
+
+const portfolioHighlights = [
+	'Design responsive sur-mesure',
+	'Pages de services détaillées avec FAQ intégrées',
+	'CTAs optimisés pour le marché marocain (WhatsApp + appel)',
+	'Meta descriptions et balises titre optimisées SEO',
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+	title="ATLASEO — Création de Site Web & SEO Local à Casablanca"
+	description="Agence web à Casablanca. Sites performants sur infrastructure Cloudflare + référencement Google local. Résultats visibles dès le 1er mois."
+	preloadHero="/images/hero-laptop.webp"
+	schema
+>
+	<!-- 1.1 Hero -->
+	<section data-animate class="relative overflow-hidden py-xl">
+		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
+			<div class="flex min-w-0 flex-1 flex-col gap-md">
+				<span class="label-caps inline-flex w-fit items-center gap-2 rounded border border-outline-variant/50 bg-surface-container-lowest px-3 py-2 text-secondary">
+					<span class="icon-scale-wrap">
+						<span class="material-symbols-outlined text-base">check</span>
+					</span>
+					Agence Web & SEO — Casablanca
+				</span>
+				<div class="w-full md:hidden">
+					<img
+						src="/images/hero-mobile-dashboard.webp"
+						alt="Tableau de bord mobile ATLASEO — suivi SEO et performance web"
+						width="720"
+						height="900"
+						class="cloud-shadow w-full rounded-2xl"
+						loading="eager"
+						fetchpriority="high"
+					/>
+				</div>
+				<h1 data-hero-reveal class="text-display-hero font-display text-on-surface">
+					<span class="hero-word">Votre</span>{' '}
+					<span class="hero-word">site.</span>{' '}
+					<span class="hero-word">Votre</span>{' '}
+					<span class="hero-word hero-gradient-text">croissance</span>
+				</h1>
+				<p class="w-full text-body-lg text-on-surface-variant">
+					Nous créons des sites ultra-performants et pilotons votre référencement local pour que vos
+					clients vous trouvent en premier — sur Google, Google Maps, et partout au Maroc.
+				</p>
+				<div class="flex w-full flex-col gap-md sm:flex-row sm:flex-wrap">
+					<MilledButton href="/contact" text="Démarrer mon projet" icon="trending_up" class="w-full justify-center sm:w-auto" />
+					<OutlineButton href="/offres" text="Voir nos offres" class="w-full justify-center sm:w-auto" />
+				</div>
+			</div>
+
+			<div class="relative hidden lg:block">
+				<div
+					data-parallax
+					data-parallax-speed="0.08"
+					data-parallax-float="true"
+					class="hero-blob pointer-events-none absolute -left-10 top-10 h-48 w-48 rounded-full bg-secondary/20 blur-3xl lg:-left-20 lg:h-64 lg:w-64"
+					aria-hidden="true"
+				/>
+				<div
+					data-parallax
+					data-parallax-speed="-0.05"
+					data-parallax-float="true"
+					class="hero-blob pointer-events-none absolute -right-6 bottom-0 h-48 w-48 rounded-full bg-primary-container/30 blur-3xl lg:-right-10 lg:h-64 lg:w-64"
+					aria-hidden="true"
+				/>
+				<GlassCard padding="sm" class="cloud-shadow relative overflow-hidden rounded-2xl p-2">
+					<img
+						src="/images/hero-laptop.webp"
+						alt="Tableau de bord SEO ATLASEO sur ordinateur portable — agence web et référencement local Casablanca, Maroc"
+						width="800"
+						height="600"
+						class="w-full rounded-xl"
+						loading="eager"
+						fetchpriority="high"
+					/>
+					<div
+						class="glass-card absolute left-[6%] top-[18%] rounded px-3 py-2 sm:px-4"
+						aria-hidden="true"
+					>
+						<span
+							class="font-display text-lg font-bold text-secondary sm:text-xl"
+							data-count="127"
+							data-count-prefix="+"
+							data-count-suffix="%"
+						>
+							+0%
+						</span>
+					</div>
+					<div
+						class="glass-card absolute bottom-4 left-4 flex min-h-11 items-center gap-2 rounded px-4 py-2 sm:bottom-6 sm:left-6"
+					>
+						<span class="material-symbols-outlined text-secondary">speed</span>
+						<span
+							class="font-display text-lg font-bold text-on-surface"
+							data-count="99"
+							data-count-suffix="/100"
+						>
+							0/100
+						</span>
+						<span class="label-caps text-on-surface-variant">Lighthouse</span>
+					</div>
+				</GlassCard>
+			</div>
+		</div>
+	</section>
+
+	<!-- 1.2 Infrastructure Bento -->
+	<section data-animate class="py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader title="Infrastructure Technique de Classe Mondiale" />
+			<div class="grid grid-cols-1 gap-md md:grid-cols-4" data-animate-stagger>
+				<BentoCard span={2} icon="cloud_done" title="Hébergement Cloudflare">
+					<div class="flex flex-col gap-md">
+						<div class="flex h-16 items-end gap-1" aria-hidden="true">
+							<div class="w-6 rounded-t bg-secondary/30" style="height: 40%" />
+							<div class="w-6 rounded-t bg-secondary/50" style="height: 60%" />
+							<div class="w-6 rounded-t bg-secondary/70" style="height: 75%" />
+							<div class="w-6 rounded-t bg-secondary" style="height: 100%" />
+						</div>
+						<p>
+							Vos sites sont hébergés sur le réseau mondial Cloudflare — le même qui protège 20% du
+							web mondial. Temps de chargement &lt;1s partout au Maroc.
+						</p>
+					</div>
+				</BentoCard>
+				<BentoCard icon="security" title="SSL & Sécurité">
+					<p>
+						Certificat SSL gratuit, protection DDoS, et firewall intégrés. Vos visiteurs sont en
+						sécurité.
+					</p>
+				</BentoCard>
+				<BentoCard icon="devices" title="100% Responsive">
+					<p>Desktop, tablette, mobile — chaque page s'adapte parfaitement à tous les écrans.</p>
+				</BentoCard>
+				<BentoCard span={2} dark icon="rocket_launch" title="Livraison Express">
+					<p class="font-display text-6xl font-bold text-secondary-container">
+						<span data-count="14" data-count-suffix="*">0*</span>
+					</p>
+					<p>jours de livraison moyenne</p>
+					<p class="mt-2 text-sm text-on-primary/70">
+						* Le délai commence à la réception de tous les éléments nécessaires.
+					</p>
+				</BentoCard>
+				<article
+					data-animate
+					class="card-icon-interactive group relative aspect-[8/5] overflow-hidden rounded-xl border border-outline-variant/30 transition-all duration-200 ease-out hover:border-primary md:col-span-2"
+				>
+					<img
+						src="/images/dev-setup.webp"
+						alt="Poste de développement web professionnel — expertise technique premium ATLASEO, agence création site Casablanca"
+						width="800"
+						height="500"
+						class="h-full w-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0"
+						loading="lazy"
+					/>
+					<div
+						class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary-container/90 to-transparent p-lg"
+					>
+						<h3 class="font-display text-headline-md font-semibold text-on-primary">
+							Expertise Technique Premium
+						</h3>
+						<p class="mt-2 text-body-md text-on-primary/80">
+							Code propre, performance maximale, et standards internationaux pour chaque projet.
+						</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- 1.3 Dominez le Marché Local -->
+	<section data-animate class="py-xl">
+		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
+			<div
+				data-animate
+				class="order-2 aspect-[4/3] overflow-hidden rounded-2xl border border-outline-variant/30 cloud-shadow transition-all duration-200 ease-out hover:border-primary lg:order-1"
+			>
+				<img
+					src="/images/hero-phone-maps.webp"
+					alt="Résultats Google Maps sur smartphone — domination du marché local SEO ATLASEO Casablanca, Maroc"
+					width="800"
+					height="600"
+					class="h-full w-full object-cover"
+					loading="lazy"
+				/>
+			</div>
+			<div class="order-1 flex min-w-0 flex-1 flex-col gap-md lg:order-2">
+				<SectionHeader title="Dominez le Marché Local" align="left" />
+				<ul class="flex flex-col gap-md" data-animate-stagger>
+					{
+						localChecks.map((item) => (
+							<li data-animate class="card-icon-interactive flex gap-md transition-all duration-200 ease-out">
+								<span class="icon-scale-wrap">
+									<span class="material-symbols-outlined text-2xl text-secondary transition-transform duration-300">
+										check_circle
+									</span>
+								</span>
+								<div>
+									<h3 class="font-display text-lg font-semibold text-on-surface">{item.title}</h3>
+									<p class="text-body-md text-on-surface-variant">{item.desc}</p>
+								</div>
+							</li>
+						))
+					}
+				</ul>
+				<a
+					href="/seo-local"
+					class="label-caps inline-flex items-center gap-1 text-secondary transition-all duration-200 ease-out hover:opacity-80"
+				>
+					En savoir plus sur le SEO local
+					<span class="material-symbols-outlined text-base">arrow_forward</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- 1.4 Stratégie Data -->
+	<section data-animate class="bg-primary-container py-xl text-on-primary">
+		<div class="container-site grid grid-cols-1 gap-xl lg:grid-cols-2">
+			<div class="flex min-w-0 flex-1 flex-col gap-lg">
+				<h2 class="font-display text-headline-lg-mobile font-semibold md:text-headline-lg">
+					Une Stratégie de Croissance basée sur la Data
+				</h2>
+				<div class="grid grid-cols-1 gap-md sm:grid-cols-2" data-animate-stagger>
+					{
+						dataStats.map((stat) => (
+							<div data-animate class="border-l-2 border-secondary pl-md">
+								<h3 class="font-display text-lg font-semibold">{stat.title}</h3>
+								<p class="mt-1 text-body-md text-on-primary/75">{stat.desc}</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+			<GlassCard class="flex flex-col gap-md !bg-white/5 !text-on-primary">
+				<div class="flex flex-col gap-2" aria-hidden="true">
+					<div class="flex gap-2">
+						<div class="h-3 flex-1 rounded bg-white/20" />
+						<div class="h-3 w-16 rounded bg-white/20" />
+					</div>
+					{
+						['dentiste casablanca', 'avocat rabat', 'clinique marrakech', 'seo local maroc'].map(
+							(kw, i) => (
+								<div class="flex items-center justify-between rounded border border-white/10 px-3 py-2">
+									<span class="text-sm text-on-primary/80">{kw}</span>
+									<span
+										class:list={[
+											'label-caps text-xs',
+											i === 0 ? 'text-secondary-container' : 'text-on-primary/50',
+										]}
+									>
+										#{i + 1}
+									</span>
+								</div>
+							),
+						)
+					}
+				</div>
+				<div class="mt-auto rounded-xl bg-secondary p-md text-center">
+					<p class="mb-md font-display text-lg font-semibold text-on-secondary">
+						Demandez votre devis gratuit
+					</p>
+					<MilledButton href="/contact" text="Obtenir mon devis" class="w-full justify-center" />
+				</div>
+			</GlassCard>
+		</div>
+	</section>
+
+	<!-- 1.5 Pricing Preview -->
+	<section data-animate class="py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				title="Des Offres Claires, Sans Surprises"
+				subtitle="Trois packs adaptés à chaque étape de croissance. Demandez un devis personnalisé — sans frais cachés."
+			/>
+			<div class="grid grid-cols-1 gap-md md:grid-cols-3" data-animate-stagger>
+				{PACKS.map((pack) => <PackCard pack={pack} variant="preview" showDeliveryFootnote showSupportFootnote />)}
+			</div>
+		</div>
+	</section>
+
+	<!-- 1.6 Portfolio -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader title="Nos Réalisations" />
+			<div class="grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
+				<div
+					data-animate
+					class="overflow-hidden rounded-xl border border-outline-variant/30 cloud-shadow transition-all duration-200 ease-out hover:border-primary"
+				>
+					<img
+						src="/images/portfolio-dryousra.webp"
+						alt="Site web dryousra.ma — médecine esthétique Casablanca, réalisation ATLASEO agence web Maroc"
+						width="1600"
+						height="900"
+						class="w-full"
+						loading="lazy"
+					/>
+				</div>
+				<div data-animate class="flex min-w-0 flex-1 flex-col gap-md">
+					<div>
+						<p class="label-caps text-secondary">Client</p>
+						<h3 class="font-display text-headline-md font-semibold text-on-surface">
+							Dr Yousra — Médecine Esthétique, Casablanca
+						</h3>
+					</div>
+					<p class="text-body-md text-on-surface-variant">
+						<strong class="text-on-surface">Résultat :</strong> Site vitrine complet avec 20+ pages de
+						services spécialisés. Intégration WhatsApp et click-to-call comme canaux de conversion
+						principaux.
+					</p>
+					<ul class="flex flex-col gap-sm">
+						{
+							portfolioHighlights.map((item) => (
+								<li class="card-icon-interactive flex items-start gap-2 text-body-md text-on-surface-variant">
+									<span class="icon-scale-wrap">
+										<span class="material-symbols-outlined text-secondary transition-transform duration-300">
+											check_circle
+										</span>
+									</span>
+									{item}
+								</li>
+							))
+						}
+					</ul>
+					<a
+						href="https://dryousra.ma"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="outline-button w-fit px-6 py-3"
+					>
+						Voir le site dryousra.ma
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+interface Props {
+	href: string;
+	text: string;
+	variant?: 'default' | 'light';
+	class?: string;
+}
+
+const { href, text, variant = 'default', class: className = '' } = Astro.props;
+const variantClass = variant === 'light' ? 'outline-button-light' : 'outline-button';
+---
+
+<a href={href} class:list={[variantClass, 'px-6 py-3', className]}>
+	{text}
+</a>

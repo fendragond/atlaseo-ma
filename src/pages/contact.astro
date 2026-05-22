@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GlassCard from '../components/GlassCard.astro';
+import { SITE } from '../data/site';
+
+const audienceTags = ['PME', 'Commerces', 'Professions Libérales'];
+---
+
+<BaseLayout
+	title="Contact — Devis SEO Gratuit | ATLASEO Casablanca"
+	description="Contactez ATLASEO pour votre projet web ou SEO. Devis gratuit, réponse sous 24h. WhatsApp disponible pour une réponse instantanée."
+	hideWhatsAppFab
+>
+	<!-- 5.1 Hero -->
+	<section data-animate class="py-xl">
+		<div class="container-site flex max-w-3xl flex-col gap-md">
+			<p class="label-caps text-secondary">Contact & Support</p>
+			<h1 class="text-display-hero font-display text-on-surface">
+				Parlons de votre{' '}
+				<span class="hero-gradient-text">croissance</span>
+			</h1>
+			<p class="text-body-lg text-on-surface-variant">
+				Que vous soyez une PME ou un commerçant local au Maroc, notre équipe est prête à booster votre
+				visibilité sur Google.
+			</p>
+		</div>
+	</section>
+
+	<!-- 5.2 Contact Channels -->
+	<section data-animate class="pb-xl">
+		<div class="container-site grid grid-cols-1 gap-xl lg:grid-cols-12">
+			<div class="flex flex-col gap-md lg:col-span-7" data-animate-stagger>
+				<!-- WhatsApp -->
+				<article
+					data-animate
+					class="flex flex-col gap-md rounded-xl border border-secondary/30 bg-secondary-container/20 p-lg transition-all duration-200 ease-out hover:shadow-lg"
+				>
+					<div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary-container">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							class="h-8 w-8 text-on-primary"
+							aria-hidden="true"
+						>
+							<path
+								d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+							/>
+						</svg>
+					</div>
+					<h2 class="font-display text-headline-md font-semibold text-on-surface">
+						Contactez-nous sur WhatsApp
+					</h2>
+					<p class="text-body-md text-on-surface-variant">
+						Pour une réponse instantanée, c'est le moyen le plus rapide de nous joindre.
+					</p>
+					<a
+						href={SITE.whatsapp}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="milled-button w-full justify-center py-4"
+					>
+						Démarrer une conversation WhatsApp
+					</a>
+				</article>
+
+				<!-- Email -->
+				<GlassCard tilt class="flex flex-col gap-md">
+					<span class="icon-scale-wrap">
+						<span class="material-symbols-outlined text-3xl text-secondary">mail</span>
+					</span>
+					<h3 class="font-display text-xl font-semibold text-on-surface">Envoyez-nous un email</h3>
+					<p class="text-body-md text-on-surface-variant">
+						Pour les demandes détaillées ou les documents à partager.
+					</p>
+					<a
+						href={`mailto:${SITE.email}`}
+						class="inline-flex min-h-11 items-center text-body-lg font-medium text-secondary hover:underline"
+					>
+						{SITE.email}
+					</a>
+				</GlassCard>
+
+				<!-- Phone -->
+				<GlassCard tilt class="flex flex-col gap-md">
+					<span class="icon-scale-wrap">
+						<span class="material-symbols-outlined text-3xl text-secondary">call</span>
+					</span>
+					<h3 class="font-display text-xl font-semibold text-on-surface">Appelez-nous</h3>
+					<p class="text-body-md text-on-surface-variant">
+						Disponible du lundi au vendredi, 9h-18h.
+					</p>
+					<a
+						href={`tel:${SITE.phoneTel}`}
+						class="inline-flex min-h-11 items-center text-body-lg font-medium text-secondary hover:underline"
+					>
+						{SITE.phone}
+					</a>
+				</GlassCard>
+			</div>
+
+			<div class="flex flex-col gap-md lg:col-span-5" data-animate-stagger>
+				<GlassCard tilt class="flex flex-col gap-md">
+					<span class="icon-scale-wrap">
+						<span class="material-symbols-outlined text-3xl text-secondary">support_agent</span>
+					</span>
+					<h4 class="font-display text-lg font-semibold text-on-surface">Support client</h4>
+					<a
+						href={`mailto:${SITE.email}`}
+						class="inline-flex min-h-11 items-center text-body-md text-secondary hover:underline"
+					>
+						{SITE.email}
+					</a>
+					<div class="border-l-4 border-secondary bg-secondary/5 p-md">
+						<p class="text-body-md text-on-surface">
+							<strong>Support prioritaire*</strong> — Réservé exclusivement aux clients du{' '}
+							<a href="/offres" class="text-secondary hover:underline">Pack Croissance</a>.
+							Réponse garantie en moins de 2 heures.
+						</p>
+					</div>
+					<p class="text-sm text-on-surface-variant">
+						* En jours ouvrés et dans les horaires normaux (lun–ven, 9h–18h).
+					</p>
+				</GlassCard>
+
+				<GlassCard tilt class="flex flex-col items-start justify-between gap-md sm:flex-row sm:items-center" padding="sm">
+					<div class="flex items-center gap-md">
+						<span class="icon-scale-wrap">
+							<span class="material-symbols-outlined text-2xl text-secondary">verified_user</span>
+						</span>
+						<span class="text-body-md font-medium text-on-surface">Infrastructure Cloudflare</span>
+					</div>
+					<span class="label-caps rounded bg-surface-container-high px-3 py-1 text-secondary">
+						Uptime 99.9%
+					</span>
+				</GlassCard>
+			</div>
+		</div>
+	</section>
+
+	<!-- 5.3 Location -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site grid grid-cols-1 gap-xl lg:grid-cols-2">
+			<div class="relative overflow-hidden rounded-2xl">
+				<img
+					src="/images/casablanca-aerial.webp"
+					alt="Vue aérienne de Casablanca au crépuscule — ATLASEO agence SEO local et création site web Maroc"
+					width="800"
+					height="500"
+					class="min-h-[200px] w-full object-cover sm:min-h-[280px]"
+					loading="lazy"
+				/>
+				<span
+					class="glass-card label-caps absolute bottom-4 left-4 rounded px-4 py-2 text-on-surface"
+				>
+					Siège social — Casablanca, Maroc
+				</span>
+			</div>
+			<div class="flex flex-col justify-center gap-md">
+				<h3 class="font-display text-headline-md font-semibold text-on-surface">
+					Expertise de proximité
+				</h3>
+				<p class="text-body-md text-on-surface-variant">
+					Nous comprenons les spécificités du marché marocain. Notre accompagnement en SEO local est
+					conçu pour connecter les entreprises de Casablanca, Marrakech et Rabat avec leurs clients
+					idéaux. Que vous recherchiez une{' '}
+					<a href="/seo-local" class="text-secondary hover:underline">
+						agence SEO locale à Casablanca
+					</a>{' '}
+					ou un partenaire pour votre{' '}
+					<a href="/creation-site-web" class="text-secondary hover:underline">
+						site vitrine professionnel
+					</a>
+					, ATLASEO vous accompagne de A à Z.
+				</p>
+				<div class="flex flex-wrap gap-sm">
+					{
+						audienceTags.map((tag) => (
+							<span class="label-caps rounded border border-outline-variant/50 bg-surface-container-lowest px-3 py-2 text-on-surface-variant">
+								{tag}
+							</span>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

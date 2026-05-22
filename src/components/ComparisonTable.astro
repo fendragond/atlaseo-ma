@@ -1,0 +1,91 @@
+---
+import { COMPARISON_ROWS, PACKS } from '../data/packs';
+
+const packNames = PACKS.map((p) => p.name.replace('Pack ', ''));
+---
+
+<!-- Desktop / tablet: horizontal scroll table -->
+<div
+	data-animate
+	class="comparison-table-scroll hidden overflow-x-auto rounded-xl border border-outline-variant/30 md:block"
+>
+	<table class="w-full min-w-[640px] border-collapse text-left">
+		<thead>
+			<tr class="border-b border-outline-variant/30 bg-surface-container-low">
+				<th class="label-caps p-md text-on-surface-variant" scope="col">Fonctionnalité</th>
+				<th class="label-caps p-md text-on-surface" scope="col">Starter</th>
+				<th class="label-caps p-md text-on-surface" scope="col">Visibilité</th>
+				<th class="label-caps p-md text-on-surface" scope="col">Croissance</th>
+			</tr>
+		</thead>
+		<tbody>
+			{
+				COMPARISON_ROWS.map((row) => (
+					<tr class="border-b border-outline-variant/20 last:border-0">
+						<td class="p-md text-body-md text-on-surface">{row.feature}</td>
+						{[row.starter, row.visibilite, row.croissance].map((value) => (
+							<td class="p-md">
+								{value === true ? (
+									<span class="material-symbols-outlined text-secondary" aria-label="Inclus">
+										check_circle
+									</span>
+								) : value === false ? (
+									<span class="text-on-surface-variant" aria-label="Non inclus">
+										—
+									</span>
+								) : (
+									<span class="text-body-md text-on-surface">{value}</span>
+								)}
+							</td>
+						))}
+					</tr>
+				))
+			}
+		</tbody>
+	</table>
+</div>
+
+<!-- Mobile: stacked per-pack feature lists -->
+<div class="flex flex-col gap-md md:hidden" data-animate-stagger>
+	{
+		packNames.map((packName, packIndex) => {
+			const values = COMPARISON_ROWS.map((row) =>
+				[row.starter, row.visibilite, row.croissance][packIndex],
+			);
+			return (
+				<article
+					data-animate
+					class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md"
+				>
+					<h3 class="label-caps mb-md text-secondary">{packName}</h3>
+					<ul class="flex flex-col gap-sm">
+						{COMPARISON_ROWS.map((row, i) => {
+							const value = values[i];
+							return (
+								<li class="flex items-start justify-between gap-md border-b border-outline-variant/15 pb-sm last:border-0 last:pb-0">
+									<span class="text-body-md text-on-surface-variant">{row.feature}</span>
+									<span class="shrink-0 text-right">
+										{value === true ? (
+											<span
+												class="material-symbols-outlined text-secondary"
+												aria-label="Inclus"
+											>
+												check_circle
+											</span>
+										) : value === false ? (
+											<span class="text-on-surface-variant" aria-label="Non inclus">
+												—
+											</span>
+										) : (
+											<span class="text-body-md font-medium text-on-surface">{value}</span>
+										)}
+									</span>
+								</li>
+							);
+						})}
+					</ul>
+				</article>
+			);
+		})
+	}
+</div>

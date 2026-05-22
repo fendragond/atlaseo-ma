@@ -1,0 +1,42 @@
+---
+import { SITE } from '../../data/site';
+
+interface Props {
+	type?: 'Organization';
+	name?: string;
+	url?: string;
+	logo?: string;
+	description?: string;
+}
+
+const {
+	type = 'Organization',
+	name = SITE.name,
+	url = SITE.url,
+	logo = `${SITE.url}/logo.svg`,
+	description = SITE.tagline,
+} = Astro.props;
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': type,
+	name,
+	url,
+	logo,
+	description,
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Casablanca',
+		addressCountry: 'MA',
+	},
+	contactPoint: {
+		'@type': 'ContactPoint',
+		contactType: 'customer service',
+		email: SITE.email,
+		availableLanguage: 'French',
+	},
+	sameAs: [SITE.linkedin, SITE.whatsapp],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

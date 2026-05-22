@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" role="img" aria-label="R�sultats de recherche locale Google Maps sur mobile">
+  <rect width="600" height="800" fill="#e8eaed"/>
+  <rect x="150" y="40" width="300" height="720" rx="32" fill="#fff" stroke="#c4c6cc"/>
+  <rect x="170" y="80" width="260" height="40" rx="8" fill="#f2f4f6"/>
+  <rect x="170" y="140" width="260" height="100" rx="8" fill="#6bfe9c20" stroke="#006d37"/>
+  <circle cx="200" cy="175" r="20" fill="#006d37"/>
+  <rect x="230" y="160" width="180" height="12" rx="4" fill="#191c1e"/>
+  <rect x="230" y="180" width="120" height="8" rx="4" fill="#74777d"/>
+  <rect x="170" y="260" width="260" height="80" rx="8" fill="#f7f9fb"/>
+  <rect x="170" y="360" width="260" height="80" rx="8" fill="#f7f9fb"/>
+  <rect x="170" y="460" width="260" height="80" rx="8" fill="#f7f9fb"/>
+</svg>

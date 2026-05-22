@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Tableau de bord SEO ATLASEO">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1c2c"/>
+      <stop offset="100%" stop-color="#1a2d42"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect x="40" y="40" width="720" height="48" rx="8" fill="#ffffff15"/>
+  <rect x="40" y="120" width="200" height="120" rx="8" fill="#6bfe9c30"/>
+  <rect x="260" y="120" width="200" height="120" rx="8" fill="#ffffff10"/>
+  <rect x="480" y="120" width="280" height="120" rx="8" fill="#ffffff10"/>
+  <rect x="40" y="280" width="720" height="280" rx="8" fill="#ffffff08"/>
+  <polyline points="80,500 180,420 280,450 380,320 480,350 580,260 680,280 760,200" fill="none" stroke="#6bfe9c" stroke-width="3"/>
+  <circle cx="760" cy="200" r="6" fill="#6bfe9c"/>
+</svg>
