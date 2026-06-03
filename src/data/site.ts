@@ -18,7 +18,7 @@ export const NAV_LINKS = [
 	{ href: '/', label: 'Accueil' },
 	{ href: '/offres', label: 'Nos offres' },
 	{ href: '/creation-site-web', label: 'Création Web' },
-	{ href: '/seo-local', label: 'SEO Local' },
+	{ href: '/seo-local', label: 'Visibilité Locale' },
 	{ href: '/contact', label: 'Contact' },
 ] as const;
 

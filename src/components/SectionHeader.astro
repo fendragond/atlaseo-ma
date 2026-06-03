@@ -4,9 +4,11 @@ interface Props {
 	title: string;
 	subtitle?: string;
 	align?: 'left' | 'center';
+	inverted?: boolean;
+	labelClass?: string;
 }
 
-const { label, title, subtitle, align = 'center' } = Astro.props;
+const { label, title, subtitle, align = 'center', inverted = false, labelClass } = Astro.props;
 const alignClass = align === 'center' ? 'text-center items-center' : 'text-left items-start';
 ---
 
@@ -15,12 +17,19 @@ const alignClass = align === 'center' ? 'text-center items-center' : 'text-left 
 	class:list={['flex flex-col gap-md max-w-3xl', alignClass, align === 'center' && 'mx-auto']}
 >
 	{label && (
-		<p class="label-caps text-secondary">{label}</p>
+		<p class:list={['label-caps text-secondary', labelClass]}>{label}</p>
 	)}
-	<h2 class="font-display text-headline-lg-mobile font-semibold text-on-surface md:text-headline-lg">
+	<h2
+		class:list={[
+			'font-display text-headline-lg-mobile font-semibold md:text-headline-lg',
+			inverted ? 'text-on-primary' : 'text-on-surface',
+		]}
+	>
 		{title}
 	</h2>
 	{subtitle && (
-		<p class="text-body-lg text-on-surface-variant">{subtitle}</p>
+		<p class:list={['text-body-lg', inverted ? 'text-on-primary/80' : 'text-on-surface-variant']}>
+			{subtitle}
+		</p>
 	)}
 </header>

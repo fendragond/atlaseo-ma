@@ -53,6 +53,199 @@ const infraChecks = [
 	'CDN 300+ villes',
 ];
 
+const localSeoErrors = [
+	{
+		title: 'Une fiche Google Business incomplète',
+		copy: "C'est l'erreur la plus répandue au Maroc. Des milliers de professionnels ont créé leur fiche Google sans remplir les services, les horaires détaillés, les attributs ou la description. Google interprète une fiche incomplète comme un signal de faible pertinence et la relègue derrière les concurrents mieux renseignés. La différence entre une fiche complète à 100% et une fiche remplie à 60% peut représenter 3 à 5 positions dans le Local Pack.",
+	},
+	{
+		title: 'Des informations incohérentes entre le site et la fiche',
+		copy: 'Le NAP (Nom, Adresse, Téléphone) doit être strictement identique partout : sur votre site web, votre fiche Google, vos réseaux sociaux et chaque annuaire où vous apparaissez. "Dr. Khalid — Av. Hassan II, Casablanca" sur le site et "Docteur Khalid — Avenue Hassan 2, Casa" sur Google, ce sont deux entités différentes pour l\'algorithme. Cette incohérence fragmente votre autorité locale.',
+	},
+	{
+		title: 'Ignorer les avis clients (ou pire, y répondre mal)',
+		copy: "Ne pas répondre aux avis Google — positifs comme négatifs — envoie un signal d'inactivité. Pire encore : une réponse agressive ou défensive à un avis négatif détruit la confiance de tous les prospects qui liront l'échange. La bonne pratique : répondre à chaque avis dans les 48 heures, remercier les positifs avec un détail personnalisé, traiter les négatifs avec professionnalisme et une proposition concrète de résolution.",
+	},
+	{
+		title: 'Aucune photo ou des photos de mauvaise qualité',
+		copy: "Selon Google, les fiches avec des photos reçoivent 42% de demandes d'itinéraire en plus et 35% de clics vers le site web en plus. Pourtant, la majorité des fiches de PME marocaines n'ont que la photo de couverture par défaut. Des photos professionnelles de votre local, de votre équipe et de vos réalisations sont un investissement minimal à impact maximal.",
+	},
+	{
+		title: 'Un site web non optimisé pour mobile',
+		copy: "Au Maroc, 85% du trafic web provient du mobile. Un site qui met plus de 3 secondes à charger sur un smartphone perd plus de la moitié de ses visiteurs avant même qu'ils voient votre contenu. Google intègre la vitesse mobile comme facteur de classement direct — un site lent pénalise aussi votre fiche Google Business dans les résultats locaux.",
+	},
+] as const;
+
+const localSeoTimeline = [
+	{
+		step: '1',
+		label: 'Semaines 1-2',
+		title: 'Fondations techniques',
+		desc: "Configuration de votre Google Business Profile optimisé, installation du tracking (Google Analytics + Search Console), audit technique de votre site. Votre fiche apparaît dans les résultats Google dès la validation — souvent en moins de 7 jours.",
+	},
+	{
+		step: '2',
+		label: 'Mois 1',
+		title: 'Premiers signaux',
+		desc: 'Vos premières impressions apparaissent dans Google Search Console. Votre fiche commence à remonter sur les requêtes de marque (votre nom + ville). Les citations locales (annuaires marocains, réseaux sociaux) commencent à renforcer votre cohérence NAP.',
+	},
+	{
+		step: '3',
+		label: 'Mois 2-3',
+		title: 'Traction visible',
+		desc: "Votre fiche Google Business gagne en visibilité sur les requêtes génériques de votre secteur. Les avis clients s'accumulent — chaque avis supplémentaire au-dessus de 4.5 étoiles renforce votre positionnement. Votre site apparaît dans les résultats organiques sur les requêtes longue traîne liées à vos services spécifiques.",
+	},
+	{
+		step: '4',
+		label: 'Mois 4-6',
+		title: 'Résultats mesurables',
+		desc: 'Votre fiche se stabilise dans le top 5 du Local Pack sur vos requêtes principales. Le trafic organique vers votre site augmente régulièrement. Les leads qualifiés (appels, WhatsApp, demandes de rendez-vous) deviennent un flux prévisible.',
+		active: true,
+	},
+] as const;
+
+const localSeoFaqs = [
+	{
+		question: "Qu'est-ce que le SEO local et pourquoi est-ce important pour mon entreprise au Maroc ?",
+		answer: "Le référencement local est l'ensemble des techniques qui permettent à votre entreprise d'apparaître dans les résultats de recherche géolocalisés de Google — notamment dans le Local Pack (les 3 fiches avec carte) et sur Google Maps. Au Maroc, 80% des consommateurs recherchent un commerce ou un professionnel sur Google avant de se déplacer. Sans optimisation locale, votre entreprise est invisible pour ces clients potentiels, même s'ils se trouvent à 200 mètres de votre local.",
+	},
+	{
+		question: 'Quelle est la différence entre le SEO classique et le SEO local ?',
+		answer: 'Le SEO classique vise à positionner votre site web dans les résultats organiques de Google sur des requêtes nationales ou thématiques. Le SEO local cible spécifiquement les requêtes géolocalisées ("médecin Casablanca", "restaurant Marrakech") et optimise votre présence sur Google Maps et dans le Local Pack. Pour une entreprise qui sert des clients dans une zone géographique définie, le SEO local génère un retour sur investissement plus rapide et plus direct que le SEO national.',
+	},
+	{
+		question: 'Combien coûte une prestation de SEO local au Maroc ?',
+		answer: 'Chez ATLASEO, le SEO local est intégré dans nos packs. Le <a href="/offres">Pack Visibilité à 7 000 MAD</a> inclut la création de votre site web, la configuration de votre Google Business Profile et un mois de suivi SEO. Le <a href="/offres">Pack Croissance à 9 500 MAD + 1 300 MAD/mois</a> ajoute un suivi mensuel continu avec rapport de performance, optimisation des mots-clés et gestion des avis.',
+	},
+	{
+		question: "Combien de temps faut-il pour apparaître dans le Local Pack de Google ?",
+		answer: 'Les premiers résultats apparaissent généralement entre 2 et 4 semaines après la configuration complète de votre fiche Google Business Profile. Un positionnement stable dans le top 3 du Local Pack prend en moyenne 2 à 4 mois, selon votre secteur et le niveau de concurrence à Casablanca, Rabat ou Marrakech.',
+	},
+	{
+		question: "Qu'est-ce que Google Business Profile et pourquoi est-ce indispensable ?",
+		answer: 'Google Business Profile (anciennement Google My Business) est l\'outil gratuit de Google qui permet à votre entreprise d\'apparaître sur Google Maps et dans les résultats de recherche locaux. C\'est votre vitrine numérique la plus visible : elle affiche vos horaires, votre adresse, votre numéro de téléphone, vos photos, vos avis clients et un lien vers votre <a href="/creation-site-web">site web</a>. Au Maroc, c\'est souvent le tout premier contact entre un client potentiel et votre entreprise.',
+	},
+	{
+		question: 'Les avis Google influencent-ils réellement mon classement local ?',
+		answer: "Oui, de manière significative. Google utilise trois critères liés aux avis pour le classement local : le nombre total d'avis, la note moyenne et la fréquence des nouveaux avis. Une entreprise avec 50 avis à 4.7 étoiles sera systématiquement mieux classée qu'un concurrent avec 5 avis à 5 étoiles. La réponse aux avis compte aussi — Google interprète les réponses régulières comme un signal d'engagement et d'activité.",
+	},
+	{
+		question: 'Est-ce que le SEO local fonctionne pour toutes les professions au Maroc ?',
+		answer: 'Le SEO local est particulièrement efficace pour les professions libérales (médecins, dentistes, avocats, architectes), les commerces de proximité (restaurants, salons de beauté, boutiques) et les prestataires de services locaux. Toute entreprise qui reçoit des clients dans un lieu physique ou qui sert une zone géographique définie bénéficie du SEO local.',
+	},
+	{
+		question: "Puis-je faire mon SEO local moi-même ou ai-je besoin d'une agence ?",
+		answer: "Les bases sont accessibles à tous : créer une fiche Google Business Profile, ajouter vos informations et demander des avis à vos clients satisfaits. Cependant, l'optimisation avancée — recherche de mots-clés géolocalisés, stratégie de citations locales cohérentes, suivi des positions, optimisation technique du site — nécessite une expertise et du temps régulier.",
+	},
+	{
+		question: 'Quelle est la différence entre Google Ads et le SEO local ?',
+		answer: 'Google Ads vous place en haut des résultats immédiatement, mais vous payez pour chaque clic (5 à 30 MAD par clic selon le secteur à Casablanca). Dès que vous arrêtez de payer, vous disparaissez. Le SEO local construit une visibilité organique durable : votre fiche Google et votre site web continuent d\'attirer des clients même sans budget publicitaire actif.',
+	},
+	{
+		question: 'ATLASEO travaille-t-il uniquement à Casablanca ?',
+		answer: "ATLASEO est basée à Casablanca mais accompagne des entreprises dans les quatre principales villes du Maroc : Casablanca, Rabat, Marrakech et Tanger. Le SEO local étant un travail principalement digital, la proximité physique n'est pas un prérequis. Nous adaptons la stratégie de mots-clés et de citations locales aux spécificités de chaque ville.",
+	},
+	{
+		question: "Qu'est-ce que le GEO/AEO et est-ce que ça s'applique aux entreprises marocaines ?",
+		answer: 'Le GEO (Generative Engine Optimization) et l\'AEO (Answer Engine Optimization) désignent les techniques permettant d\'apparaître dans les réponses des moteurs IA — ChatGPT, Perplexity, Gemini — qui citent des sources web en répondant aux questions des utilisateurs. En 2026, ces moteurs représentent une part croissante des recherches d\'information. Au Maroc, quasi aucune entreprise n\'optimise encore pour ces canaux. ATLASEO intègre l\'optimisation GEO/AEO dans son <a href="/offres">Pack Croissance</a>, ce qui représente une opportunité concrète d\'avance sur vos concurrents.',
+	},
+] as const;
+
+const faqPageSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: [
+		{
+			'@type': 'Question',
+			name: "Qu'est-ce que le SEO local et pourquoi est-ce important pour mon entreprise au Maroc ?",
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: "Le référencement local est l'ensemble des techniques qui permettent à votre entreprise d'apparaître dans les résultats de recherche géolocalisés de Google — notamment dans le Local Pack (les 3 fiches avec carte) et sur Google Maps. Au Maroc, 80% des consommateurs recherchent un commerce ou un professionnel sur Google avant de se déplacer. Sans optimisation locale, votre entreprise est invisible pour ces clients potentiels, même s'ils se trouvent à 200 mètres de votre local.",
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Quelle est la différence entre le SEO classique et le SEO local ?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: "Le SEO classique vise à positionner votre site web dans les résultats organiques de Google sur des requêtes nationales ou thématiques. Le SEO local cible spécifiquement les requêtes géolocalisées et optimise votre présence sur Google Maps et dans le Local Pack. Pour une entreprise qui sert des clients dans une zone géographique définie, le SEO local génère un retour sur investissement plus rapide et plus direct que le SEO national.",
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Combien coûte une prestation de SEO local au Maroc ?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Chez ATLASEO, le SEO local est intégré dans nos packs. Le Pack Visibilité à 7 000 MAD inclut la création de votre site web, la configuration de votre Google Business Profile et un mois de suivi SEO. Le Pack Croissance à 9 500 MAD + 1 300 MAD/mois ajoute un suivi mensuel continu avec rapport de performance, optimisation des mots-clés et gestion des avis.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Combien de temps faut-il pour apparaître dans le Local Pack de Google ?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Les premiers résultats apparaissent généralement entre 2 et 4 semaines après la configuration complète de votre fiche Google Business Profile. Un positionnement stable dans le top 3 du Local Pack prend en moyenne 2 à 4 mois, selon votre secteur et le niveau de concurrence à Casablanca, Rabat ou Marrakech.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: "Qu'est-ce que Google Business Profile et pourquoi est-ce indispensable ?",
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: "Google Business Profile est l'outil gratuit de Google qui permet à votre entreprise d'apparaître sur Google Maps et dans les résultats de recherche locaux. C'est votre vitrine numérique la plus visible : elle affiche vos horaires, votre adresse, votre numéro de téléphone, vos photos, vos avis clients et un lien vers votre site web. Au Maroc, c'est souvent le tout premier contact entre un client potentiel et votre entreprise.",
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Les avis Google influencent-ils réellement mon classement local ?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: "Oui. Google utilise trois critères liés aux avis pour le classement local : le nombre total d'avis, la note moyenne et la fréquence des nouveaux avis. Une entreprise avec 50 avis à 4.7 étoiles sera systématiquement mieux classée qu'un concurrent avec 5 avis à 5 étoiles. La réponse aux avis compte aussi — Google interprète les réponses régulières comme un signal d'engagement.",
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Est-ce que le SEO local fonctionne pour toutes les professions au Maroc ?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'Le SEO local est particulièrement efficace pour les professions libérales (médecins, dentistes, avocats, architectes), les commerces de proximité et les prestataires de services locaux. Toute entreprise qui reçoit des clients dans un lieu physique ou qui sert une zone géographique définie bénéficie du SEO local.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: "Puis-je faire mon SEO local moi-même ou ai-je besoin d'une agence ?",
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: "Les bases sont accessibles à tous : créer une fiche Google Business Profile et demander des avis à vos clients. L'optimisation avancée — recherche de mots-clés géolocalisés, stratégie de citations cohérentes, suivi des positions, optimisation technique du site — nécessite une expertise et du temps régulier.",
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'Quelle est la différence entre Google Ads et le SEO local ?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: "Google Ads vous place en haut des résultats immédiatement, mais vous payez pour chaque clic (5 à 30 MAD selon le secteur à Casablanca). Dès que vous arrêtez de payer, vous disparaissez. Le SEO local construit une visibilité organique durable qui continue d'attirer des clients même sans budget publicitaire actif.",
+			},
+		},
+		{
+			'@type': 'Question',
+			name: 'ATLASEO travaille-t-il uniquement à Casablanca ?',
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: 'ATLASEO est basée à Casablanca mais accompagne des entreprises dans les quatre principales villes du Maroc : Casablanca, Rabat, Marrakech et Tanger. Nous adaptons la stratégie de mots-clés et de citations locales aux spécificités de chaque ville.',
+			},
+		},
+		{
+			'@type': 'Question',
+			name: "Qu'est-ce que le GEO/AEO et est-ce que ça s'applique aux entreprises marocaines ?",
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: "Le GEO (Generative Engine Optimization) et l'AEO (Answer Engine Optimization) désignent les techniques permettant d'apparaître dans les réponses des moteurs IA — ChatGPT, Claude, Gemini. En 2026, ces moteurs représentent une part croissante des recherches. Au Maroc, quasi aucune entreprise n'optimise encore pour ces canaux. ATLASEO intègre l'optimisation GEO/AEO dans son Pack Croissance.",
+			},
+		},
+	],
+} as const;
+
 const breadcrumbSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'BreadcrumbList',
@@ -68,11 +261,13 @@ const breadcrumbSchema = {
 	description="SEO local Maroc: Casablanca, Rabat, Marrakech. Google Business Profile + avis clients + suivi mensuel. Résultats visibles en 2-4 sem. 📞 +212 6XX XX XX XX"
 	breadcrumbSchema={breadcrumbSchema}
 >
+	<script slot="head" type="application/ld+json" set:html={JSON.stringify(faqPageSchema)} />
+
 	<!-- 4.1 Hero -->
 	<section data-animate class="relative overflow-hidden py-xl">
 		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
 			<div class="flex min-w-0 flex-1 flex-col gap-md">
-				<span class="label-caps text-secondary">SEO Local</span>
+				<span class="label-caps text-secondary">Visibilité Locale</span>
 				<h1 class="text-display-hero font-display text-on-surface">
 					Dominez les recherches locales.
 				</h1>
@@ -139,7 +334,175 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 4.3 Méthodologie -->
+	<!-- 4.3 Comprendre le SEO local -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site grid grid-cols-1 gap-xl lg:grid-cols-12 lg:items-center">
+			<div class="flex flex-col gap-md lg:col-span-7">
+				<SectionHeader
+					label="COMPRENDRE LE SEO LOCAL"
+					title="Comment fonctionne le référencement local en 2026 ?"
+					subtitle="Google utilise trois signaux principaux pour classer les entreprises locales. Les comprendre, c'est déjà prendre de l'avance sur 90% de vos concurrents."
+					align="left"
+					labelClass="font-mono"
+				/>
+				<div class="flex flex-col gap-md text-body-md text-on-surface-variant">
+					<p>
+						Le référencement local est le processus qui permet à une entreprise d'apparaître dans
+						les résultats de recherche géolocalisés de Google — notamment dans le "Local Pack",
+						ces trois fiches qui s'affichent en haut de la page avec une carte Google Maps. Pour
+						un médecin à Casablanca, un avocat à Rabat ou un restaurant à Marrakech, c'est souvent
+						le premier point de contact avec un nouveau client.
+					</p>
+					<h3 class="font-display text-headline-md font-semibold text-on-surface">
+						Les trois piliers du classement local
+					</h3>
+					<p>
+						Google détermine quelles entreprises apparaissent dans le Local Pack en combinant trois
+						facteurs, par ordre d'importance :
+					</p>
+					<p>
+						<strong class="font-semibold text-on-surface">La pertinence</strong> mesure à quel
+						point votre fiche Google Business Profile correspond à ce que l'utilisateur recherche.
+						Une fiche complète — avec la bonne catégorie principale, des services détaillés, des
+						attributs renseignés et une description riche en mots-clés naturels — envoie un signal
+						de pertinence bien plus fort qu'une fiche à moitié remplie. Par exemple, un dentiste qui
+						renseigne "implantologie" et "orthodontie" dans ses services sera affiché sur ces
+						requêtes spécifiques, pas seulement sur "dentiste Casablanca".
+					</p>
+					<p>
+						<strong class="font-semibold text-on-surface">La distance</strong> est le facteur que
+						vous ne contrôlez pas : Google privilégie les entreprises physiquement proches de
+						l'utilisateur au moment de la recherche. C'est pourquoi une adresse précise et vérifiée
+						est indispensable — une boîte postale ou une adresse approximative pénalise votre
+						visibilité.
+					</p>
+					<p>
+						<strong class="font-semibold text-on-surface">La notoriété</strong> est le signal le
+						plus difficile à construire et le plus puissant à long terme. Google évalue votre
+						réputation en ligne à travers le volume et la qualité de vos avis Google, la cohérence de
+						vos informations (nom, adresse, téléphone) sur l'ensemble du web marocain — annuaires,
+						réseaux sociaux, sites partenaires — et les backlinks qui pointent vers votre site. Au
+						Maroc, où de nombreuses entreprises n'ont même pas de fiche Google optimisée, investir
+						dans la notoriété en ligne donne un avantage compétitif mesurable en quelques semaines.
+					</p>
+					<p>
+						En 2026, un quatrième facteur prend de l'importance : l'activité régulière. Google
+						favorise les fiches qui publient des posts, répondent aux avis, ajoutent des photos
+						récemment et mettent à jour leurs informations. Une fiche active est une fiche vivante
+						aux yeux de l'algorithme.
+					</p>
+				</div>
+			</div>
+			<aside
+				data-animate
+				class="relative min-h-[360px] overflow-hidden rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-lg lg:col-span-5"
+				aria-label="Signaux du référencement local vers la visibilité locale"
+			>
+				<svg
+					class="absolute inset-0 h-full w-full text-secondary/30"
+					viewBox="0 0 400 360"
+					fill="none"
+					aria-hidden="true"
+				>
+					<line x1="200" y1="100" x2="200" y2="180" stroke="currentColor" stroke-width="2" stroke-dasharray="6 8" />
+					<line x1="105" y1="235" x2="185" y2="195" stroke="currentColor" stroke-width="2" stroke-dasharray="6 8" />
+					<line x1="295" y1="235" x2="215" y2="195" stroke="currentColor" stroke-width="2" stroke-dasharray="6 8" />
+				</svg>
+				<div class="absolute left-1/2 top-8 flex -translate-x-1/2 flex-col items-center gap-sm text-center">
+					<span class="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+						<span class="material-symbols-outlined text-3xl">storefront</span>
+					</span>
+					<span class="label-caps text-on-surface-variant">Profil</span>
+				</div>
+				<div class="absolute left-6 top-56 flex flex-col items-center gap-sm text-center sm:left-12">
+					<span class="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+						<span class="material-symbols-outlined text-3xl">article</span>
+					</span>
+					<span class="label-caps text-on-surface-variant">Contenu</span>
+				</div>
+				<div class="absolute right-6 top-56 flex flex-col items-center gap-sm text-center sm:right-12">
+					<span class="flex h-16 w-16 items-center justify-center rounded-full bg-secondary/10 text-secondary">
+						<span class="material-symbols-outlined text-3xl">share</span>
+					</span>
+					<span class="label-caps text-on-surface-variant">Notoriété</span>
+				</div>
+				<div
+					class="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-xl border border-secondary/30 bg-surface-container-lowest px-md py-sm text-center shadow-cloud"
+				>
+					<span class="label-caps text-secondary">Visibilité Locale</span>
+				</div>
+			</aside>
+		</div>
+	</section>
+
+	<!-- 4.4 GEO / AEO -->
+	<section data-animate class="bg-primary-container py-xl text-on-primary">
+		<div class="container-site grid grid-cols-1 gap-xl lg:grid-cols-12 lg:items-center">
+			<div class="flex flex-col gap-md lg:col-span-7">
+				<SectionHeader
+					label="GEO / AEO — 2026"
+					title="En 2026, Google n'est plus le seul moteur qui compte."
+					subtitle="ChatGPT, Perplexity et Gemini répondent désormais directement aux questions de vos clients potentiels. ATLASEO optimise votre visibilité sur tous ces canaux — pas uniquement sur Google."
+					align="left"
+					inverted
+					labelClass="font-mono"
+				/>
+				<div class="flex flex-col gap-md text-body-md text-on-primary/80">
+					<p>
+						En 2026, une part croissante des recherches commerciales ne passent plus par Google. Des
+						millions d'utilisateurs posent directement leurs questions à des moteurs IA — ChatGPT,
+						Perplexity, Gemini — qui répondent en citant des sources. Quand un patient à Casablanca
+						demande à ChatGPT "quel est le meilleur dentiste près de chez moi ?", ou quand un chef
+						d'entreprise à Rabat interroge Perplexity pour "quelle agence web choisir au Maroc ?",
+						ces moteurs citent des sites web et des entreprises dans leurs réponses. Les entreprises
+						optimisées pour ces moteurs apparaissent. Les autres sont invisibles.
+					</p>
+					<p>
+						Cette discipline s'appelle le GEO (Generative Engine Optimization) ou AEO (Answer Engine
+						Optimization). Au Maroc en 2026, pratiquement aucune agence ne la maîtrise. C'est une
+						fenêtre d'opportunité concrète pour les entreprises qui agissent maintenant.
+					</p>
+					<h3 class="font-display text-headline-md font-semibold text-on-primary">
+						Comment ATLASEO optimise votre visibilité dans les moteurs IA
+					</h3>
+					<p>
+						Trois leviers principaux : un contenu structuré en format questions-réponses (que les LLM
+						extraient plus facilement), des données chiffrées et des sources attribuées qui
+						renforcent la crédibilité de chaque passage, et une cohérence de votre identité en ligne
+						sur l'ensemble du web marocain — annuaires, réseaux sociaux, mentions presse. L'ensemble
+						de ces signaux permet aux moteurs IA de vous identifier comme une source fiable et de vous
+						citer dans leurs réponses.
+					</p>
+					<p>
+						L'optimisation GEO/AEO est incluse dans le{' '}
+						<a href="/offres" class="font-medium text-secondary-container hover:underline">
+							Pack Croissance
+						</a>{' '}
+						et fait partie du suivi mensuel ATLASEO.
+					</p>
+				</div>
+			</div>
+			<aside
+				data-animate
+				class="flex flex-col gap-md rounded-2xl border border-white/10 bg-white/5 p-lg lg:col-span-5"
+			>
+				<div class="flex flex-col items-center gap-sm rounded-xl border border-white/20 bg-white/5 p-md text-center">
+					<img src="/images/logo-chatgpt.webp" alt="ChatGPT" class="h-8 w-8" />
+					<span class="font-display text-xl font-semibold">ChatGPT</span>
+				</div>
+				<div class="flex flex-col items-center gap-sm rounded-xl border border-white/20 bg-white/5 p-md text-center">
+					<img src="/images/logo-claude.webp" alt="Claude" class="h-8 w-8" />
+					<span class="font-display text-xl font-semibold">Claude</span>
+				</div>
+				<div class="flex flex-col items-center gap-sm rounded-xl border border-white/20 bg-white/5 p-md text-center">
+					<img src="/images/logo-gemini.webp" alt="Gemini" class="h-8 w-8" />
+					<span class="font-display text-xl font-semibold">Gemini</span>
+				</div>
+			</aside>
+		</div>
+	</section>
+
+	<!-- 4.5 Méthodologie -->
 	<section data-animate class="py-xl">
 		<div class="container-site grid grid-cols-1 gap-xl lg:grid-cols-2">
 			<div class="flex flex-col gap-xl">
@@ -175,7 +538,144 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 4.4 Pourquoi ATLASEO -->
+	<!-- 4.6 Erreurs SEO locales -->
+	<section data-animate class="bg-surface-container-lowest py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="À ÉVITER"
+				title="Les 6 erreurs SEO locales les plus fréquentes au Maroc"
+				subtitle="Ces erreurs sont courantes — et chacune coûte des clients. ATLASEO les corrige systématiquement dès le démarrage d'un projet."
+				labelClass="font-mono"
+			/>
+			<div class="grid grid-cols-1 gap-md lg:grid-cols-2" data-animate-stagger>
+				{
+					localSeoErrors.map((error) => (
+						<article
+							data-animate
+							class="card-default flex flex-col gap-md border-l-4 border-l-error p-lg"
+						>
+							<span class="flex h-12 w-12 items-center justify-center rounded-full bg-error/10 text-error">
+								<span class="material-symbols-outlined">warning</span>
+							</span>
+							<div class="flex flex-col gap-sm">
+								<h3 class="font-display text-headline-md font-semibold text-on-surface">
+									{error.title}
+								</h3>
+								<p class="text-body-md text-on-surface-variant">{error.copy}</p>
+							</div>
+						</article>
+					))
+				}
+				<article data-animate class="card-default flex flex-col gap-md border-l-4 border-l-error p-lg">
+					<span class="flex h-12 w-12 items-center justify-center rounded-full bg-error/10 text-error">
+						<span class="material-symbols-outlined">warning</span>
+					</span>
+					<div class="flex flex-col gap-sm">
+						<h3 class="font-display text-headline-md font-semibold text-on-surface">
+							Croire que le SEO local se fait une seule fois
+						</h3>
+						<p class="text-body-md text-on-surface-variant">
+							Le SEO local n'est pas une action ponctuelle mais un processus continu. Les
+							algorithmes de Google évoluent, vos concurrents optimisent leurs fiches, les avis
+							s'accumulent. Une stratégie locale qui n'est pas maintenue mensuellement perd son
+							efficacité en 3 à 6 mois. C'est la raison pour laquelle le{' '}
+							<a href="/offres" class="font-medium text-secondary hover:underline">
+								Pack Croissance
+							</a>{' '}
+							d'ATLASEO inclut un suivi mensuel — parce que les résultats durables exigent un
+							effort durable.
+						</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- 4.7 Timeline réaliste -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="TIMELINE RÉALISTE"
+				title="Combien de temps pour voir des résultats concrets ?"
+				subtitle="Nous préférons être honnêtes plutôt que de vendre du rêve. Voici un calendrier réaliste basé sur notre expérience avec des entreprises marocaines."
+				labelClass="font-mono"
+			/>
+			<ol class="grid grid-cols-1 gap-lg md:grid-cols-4" data-animate-stagger>
+				{
+					localSeoTimeline.map((item, index) => (
+						<li data-animate class="relative flex gap-md md:flex-col">
+							{index < localSeoTimeline.length - 1 && (
+								<>
+									<div
+										class="absolute left-5 top-10 h-[calc(100%+48px)] w-px bg-outline-variant md:hidden"
+										aria-hidden="true"
+									/>
+									<div
+										class="absolute left-5 top-5 hidden h-px w-full bg-outline-variant md:block"
+										aria-hidden="true"
+									/>
+								</>
+							)}
+							<div
+								class:list={[
+									'z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-display text-sm font-bold',
+									item.active
+										? 'bg-secondary text-on-secondary'
+										: 'bg-primary text-on-primary',
+								]}
+							>
+								{item.step}
+							</div>
+							<div>
+								<p class="label-caps mb-sm text-secondary">{item.label}</p>
+								<h3 class="font-display text-lg font-semibold text-on-surface">{item.title}</h3>
+								<p class="mt-2 text-body-md text-on-surface-variant">{item.desc}</p>
+							</div>
+						</li>
+					))
+				}
+			</ol>
+		</div>
+	</section>
+
+	<!-- 4.8 FAQ -->
+	<section data-animate class="bg-surface-container-lowest py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="QUESTIONS FRÉQUENTES"
+				title="Vos questions sur le SEO local au Maroc"
+				labelClass="font-mono"
+			/>
+			<div class="mx-auto flex w-full max-w-[800px] flex-col gap-sm" data-animate-stagger>
+				{
+					localSeoFaqs.map((item) => (
+						<details
+							data-animate
+							class="group rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md transition-all duration-200 ease-out open:border-secondary"
+						>
+							<summary class="flex cursor-pointer list-none items-center justify-between gap-md [&::-webkit-details-marker]:hidden">
+								<h3 class="font-display text-lg font-semibold text-on-surface">
+									{item.question}
+								</h3>
+								<span class="material-symbols-outlined shrink-0 text-secondary group-open:hidden">
+									expand_more
+								</span>
+								<span class="material-symbols-outlined hidden shrink-0 text-secondary group-open:inline">
+									expand_less
+								</span>
+							</summary>
+							<p
+								class="mt-md text-body-md text-on-surface-variant [&_a]:font-medium [&_a]:text-secondary [&_a]:hover:underline"
+								set:html={item.answer}
+							/>
+						</details>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- 4.9 Pourquoi ATLASEO -->
 	<section data-animate class="bg-surface-container-highest py-xl">
 		<div class="container-site flex flex-col gap-xl">
 			<SectionHeader title="Pourquoi choisir ATLASEO ?" />
@@ -237,7 +737,7 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 4.5 CTA -->
+	<!-- 4.10 CTA -->
 	<section data-animate class="py-xl">
 		<div class="container-site">
 			<CtaBanner
