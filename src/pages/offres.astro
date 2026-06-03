@@ -5,11 +5,21 @@ import PackCard from '../components/PackCard.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import { PACKS } from '../data/packs';
+
+const breadcrumbSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://atlaseo.ma/' },
+		{ '@type': 'ListItem', position: 2, name: 'Nos Offres', item: 'https://atlaseo.ma/offres' },
+	],
+};
 ---
 
 <BaseLayout
 	title="Nos Offres — Création de Site Web & SEO | ATLASEO"
-	description="Trois packs adaptés à votre budget : Starter, Visibilité, et Croissance. Site web performant + SEO local inclus. Comparez et choisissez."
+	description="3 packs création site web au Maroc : Starter 4 000 MAD, Visibilité 7 000 MAD, Croissance 9 500 MAD + suivi mensuel. Sans frais cachés. 📞 +212 6XX XX XX XX"
+	breadcrumbSchema={breadcrumbSchema}
 >
 	<!-- 2.1 Hero -->
 	<section data-animate class="py-xl">

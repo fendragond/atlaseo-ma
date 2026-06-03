@@ -1,9 +1,16 @@
 # ATLASEO.ma — Project Brief
 
-> **Purpose**: This document is the single source of truth for building ATLASEO.ma in Astro. Cursor works from this file exclusively — no re-deriving decisions.
+> **Ce document fait partie d'un système à 3 documents.**
+> - **`ATLASEO_strategy.md`** — vision, positionnement, pricing, plan 12 mois (master doc business)
+> - **`ATLASEO_context.md`** — méthodes techniques, infrastructure, protocole d'indexation (applicable à tous les projets)
+> - **`atlaseo-ma_brief.md`** — ce fichier. Projet du site ATLASEO.ma en cours.
+>
+> **Hiérarchie** : ce brief hérite des deux autres. Pour les décisions de stratégie ou de méthode, ne pas re-débattre ici — référer aux docs parents. Ce brief contient uniquement les décisions spécifiques au projet ATLASEO.ma.
+>
+> **Purpose**: Single source of truth for building ATLASEO.ma in Astro. Cursor works from this file exclusively — no re-deriving decisions.
 > **Generated from**: Stitch mockup (5 pages + design system) + project context document.
 > **Created**: 2026-05-17
-> **Last updated**: 2026-05-21 — v1.8 (wrangler deploy, Lighthouse production)
+> **Last updated**: 2026-05-25 — v1.9 (header updated for 3-doc system)
 >
 > **Session log:**
 > - 2026-05-17 — Brief generated from Stitch mockup. Design system, pages, CTAs, content decisions.
@@ -12,6 +19,7 @@
 > - 2026-05-21 — Images intégrées seo-local (3 images). Hero mobile image above H1. Benchmark image /offres. Footer copyright updated. Real device mobile test passed. /offres heading order fixed (a11y 98 → 100). Lighthouse mobile : A11y 100, BP 100, SEO 100 partout — Perf ~62 (dev server, expected to improve in production).
 > - 2026-05-21 — Suppression @astrojs/cloudflare adapter (inutile pour site statique pur). wrangler.jsonc créé. wrangler deploy réussi — URL live : https://atlaseo-ma.fahd-d-d01.workers.dev. Lighthouse production /seo-local : Desktop 98/100/100/100, Mobile 90/100/100/100. LCP desktop 1.1s, LCP mobile 3.2s.
 > - 2026-05-22 — Git tree cleaned (61 changes committed). .wrangler/ and .vscode/ added to .gitignore. .gitattributes added for LF normalization. Deployment protocol documented: manual build + deploy required for Workers Static Assets (no auto-deploy unlike Cloudflare Pages).
+> - 2026-05-25 — Document strategy ATLASEO produit. Réorganisation 3-docs. Pricing actualisé (Croissance 1300 MAD/mois). Quick wins SEO (téléphone, meta, FAQ, schema LocalBusiness) identifiés comme priorité Phase 1.
 >
 > **Pending (next session):**
 > - [ ] Achat domaine atlaseo.ma
@@ -21,6 +29,7 @@
 > - [ ] Google Business Profile création + lien site
 > - [ ] GA4 property + tracking code vérifié
 > - [ ] LCP mobile (3.2s → objectif <2.5s) : preload image hero mobile
+> - [ ] **Quick wins SEO (cf. strategy §5.7)** : numéro tel partout, meta descriptions avec ☎️, schema LocalBusiness, schema BreadcrumbList, bug Lighthouse 0/100 hero, section "Pourquoi pas un site low-cost ?" sur /creation-site-web, mention CNDP/RGPD
 
 ## 1. Site Overview
 
@@ -777,45 +786,17 @@ Per indexation rules, every page must have substantial content:
 
 ---
 
-## 11. What NOT to Do
+## 11. Rules and Process (références)
 
-Extracted from context doc — hard rules:
+Les règles dures techniques (page count, content minimums, internal linking, technical zero tolerance, sitemap discipline) sont dans **`ATLASEO_context.md` §8 Indexation Protocol**. Cette section n'est pas dupliquée ici pour éviter la divergence.
 
-- ❌ Do NOT create additional thin pages (no /blog at launch, no individual service sub-pages)
-- ❌ Do NOT use Cloudflare Pages (deprecated) — Workers Static Assets only
-- ❌ Do NOT use `www.atlaseo.ma` — canonical is `atlaseo.ma`
-- ❌ Do NOT use trailing slashes — Astro `trailingSlash: 'never'`
-- ❌ Do NOT add `.html` extensions to URLs
-- ❌ Do NOT launch without GSC setup same day
-- ❌ Do NOT skip mobile testing
-- ❌ Do NOT use generic anchor text ("cliquez ici")
-- ❌ Do NOT create pages without at least 300 words of real content
-- ❌ Do NOT request indexing before fixing any issues found
-## 12. Deployment Protocol
+Le protocole de déploiement (`npm run build` + `wrangler deploy`, différence avec Cloudflare Pages, notes Windows/PowerShell) est dans **`ATLASEO_context.md` §4 Workflow Model → Deployment Protocol**.
 
-> Hard-won lesson from first Cloudflare deployment. Never skip the build step.
+La launch checklist template (Pre-launch / Launch day / Post-launch) est dans **`ATLASEO_context.md` §7 Launch Checklist**. Voir la version atlaseo.ma-spécifique dans §8 ci-dessus.
 
-### The build/deploy distinction
-- `npm run dev` — local dev server only. Serves directly from `src/`. Changes appear instantly but this has nothing to do with production.
-- `npm run build` — compiles everything into `dist/`. This is what Cloudflare gets.
-- `npx wrangler deploy` — pushes `dist/` to Cloudflare Workers. Never skip the build before this.
+### Rappels critiques spécifiques à atlaseo.ma
+- ❌ Pas de blog au lancement, pas de sous-pages de services (5 pages indexables max — cf. §3)
+- ❌ Canonical = `atlaseo.ma` sans www, sans trailing slash, sans `.html` (cf. §1)
+- ❌ Pas de mise en ligne sans GSC + sitemap soumis le jour même
+- ❌ Pas d'indexing request avant correction des problèmes identifiés en URL Inspection
 
-### Deployment process
-
-**Now (pre-domain):**
-1. `npm run build`
-2. `npx wrangler deploy`
-
-**After domain is configured:**
-- Set up a GitHub Action to auto-build and deploy on every push to `main`
-- From that point: `git push` is enough
-
-### Why this is different from previous projects
-- Cloudflare Pages (used in past projects) auto-builds on every git push — no manual step needed.
-- Workers Static Assets (current setup) has no auto-deploy. Wrangler is a manual CLI tool.
-- The VS Code three-icon push only does `git push` — Cloudflare never sees it.
-
-### Windows / PowerShell notes
-- `&&` is not a valid command separator — run commands on separate lines
-- `2>/dev/null` does not work — use `2>$null` instead
-- `true` is not a built-in — use separate commands instead of chaining

@@ -7,6 +7,7 @@ interface Props {
 	url?: string;
 	logo?: string;
 	description?: string;
+	breadcrumbSchema?: Record<string, unknown>;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
 	url = SITE.url,
 	logo = `${SITE.url}/logo.svg`,
 	description = SITE.tagline,
+	breadcrumbSchema,
 } = Astro.props;
 
 const schema = {
@@ -37,6 +39,34 @@ const schema = {
 	},
 	sameAs: [SITE.linkedin, SITE.whatsapp],
 };
+
+const localBusinessSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	name: 'ATLASEO',
+	url: 'https://atlaseo.ma',
+	telephone: '+212 6XX XX XX XX',
+	email: 'contact@atlaseo.ma',
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Casablanca',
+		addressCountry: 'MA',
+	},
+	areaServed: [
+		{ '@type': 'City', name: 'Casablanca' },
+		{ '@type': 'City', name: 'Rabat' },
+		{ '@type': 'City', name: 'Marrakech' },
+		{ '@type': 'City', name: 'Tanger' },
+	],
+	priceRange: '4000-9500 MAD',
+	image: 'https://atlaseo.ma/logo.svg',
+	sameAs: [
+		'https://www.linkedin.com/company/atlaseo',
+		'https://www.instagram.com/atlaseo.ma',
+	],
+};
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}

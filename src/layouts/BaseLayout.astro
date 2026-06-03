@@ -20,6 +20,7 @@ interface Props {
 	ogImage?: string;
 	preloadHero?: string;
 	schema?: boolean;
+	breadcrumbSchema?: Record<string, unknown>;
 	hideWhatsAppFab?: boolean;
 }
 
@@ -31,6 +32,7 @@ const {
 	ogImage = `${SITE.url}/images/og-default.jpg`,
 	preloadHero,
 	schema = false,
+	breadcrumbSchema,
 	hideWhatsAppFab = false,
 } = Astro.props;
 
@@ -70,7 +72,7 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 				},
 			}}
 		/>
-		{schema && <SchemaOrg />}
+		{(schema || breadcrumbSchema) && <SchemaOrg breadcrumbSchema={breadcrumbSchema} />}
 		<slot name="head" />
 	</head>
 	<body>

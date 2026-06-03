@@ -52,11 +52,21 @@ const infraChecks = [
 	'SSL + DDoS',
 	'CDN 300+ villes',
 ];
+
+const breadcrumbSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://atlaseo.ma/' },
+		{ '@type': 'ListItem', position: 2, name: 'SEO Local', item: 'https://atlaseo.ma/seo-local' },
+	],
+};
 ---
 
 <BaseLayout
 	title="SEO Local au Maroc — Google Business & Référencement | ATLASEO"
-	description="Dominez les recherches locales à Casablanca, Rabat et Marrakech. Optimisation Google Business Profile, mots-clés géolocalisés, stratégie d'avis clients."
+	description="SEO local Maroc: Casablanca, Rabat, Marrakech. Google Business Profile + avis clients + suivi mensuel. Résultats visibles en 2-4 sem. 📞 +212 6XX XX XX XX"
+	breadcrumbSchema={breadcrumbSchema}
 >
 	<!-- 4.1 Hero -->
 	<section data-animate class="relative overflow-hidden py-xl">

@@ -42,12 +42,27 @@ const ctaStats = [
 	{ text: 'SEO', label: 'Intégré' },
 	{ count: 14, suffix: 'j*', label: 'Livraison' },
 ];
+
+const breadcrumbSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://atlaseo.ma/' },
+		{
+			'@type': 'ListItem',
+			position: 2,
+			name: 'Création de Site Web',
+			item: 'https://atlaseo.ma/creation-site-web',
+		},
+	],
+};
 ---
 
 <BaseLayout
 	title="Création de Site Web à Casablanca — Infrastructure Cloudflare | ATLASEO"
-	description="Sites web ultra-rapides sur Cloudflare. Design responsive, Lighthouse 99/100, livraison en 14 jours. L'infrastructure premium pour votre entreprise au Maroc."
+	description="Site web professionnel sur Astro + Cloudflare. Design sur-mesure, mobile-first, Lighthouse 99/100, livraison 7 jours au Maroc. 📞 +212 6XX XX XX XX"
 	preloadHero="/images/hero-creation-web.webp"
+	breadcrumbSchema={breadcrumbSchema}
 >
 	<!-- 3.1 Hero -->
 	<section data-animate class="bg-surface-container-low py-xl">
@@ -105,6 +120,12 @@ const ctaStats = [
 					<p>
 						Réseau de 300+ data centers dans le monde. Temps de réponse &lt;50ms depuis le Maroc.
 						CDN, cache intelligent, et protection DDoS inclus.
+					</p>
+					<p class="mt-md flex items-start gap-2 border-l-2 border-secondary pl-sm text-sm font-medium text-on-surface">
+						<span class="material-symbols-outlined text-base text-secondary">shield</span>
+						<span>
+							Conformité CNDP incluse — vos données et celles de vos clients protégées dès le lancement.
+						</span>
 					</p>
 				</BentoCard>
 				<BentoCard icon="devices" title="Responsive Design">
@@ -196,6 +217,81 @@ const ctaStats = [
 					))
 				}
 			</ol>
+		</div>
+	</section>
+
+	<!-- 3.4 Low-cost Comparison -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex max-w-4xl flex-col gap-xl">
+			<SectionHeader title="Pourquoi pas un site à 1 500 MAD ?" align="left" />
+
+			<div class="flex flex-col gap-lg">
+				<p class="text-body-md text-on-surface">
+					La question mérite une réponse honnête. Des sites à 999 ou 1 500 MAD existent,
+					ils fonctionnent techniquement, et ils ont leur place — pour un hobby, une page
+					personnelle, ou un test rapide. Mais pour une entreprise qui veut des clients
+					via Google, ce modèle a des limites structurelles qu'il faut connaître avant
+					de choisir.
+				</p>
+
+				<article class="flex flex-col gap-sm">
+					<h3 class="font-display text-headline-md font-semibold text-on-surface">
+						Performance et vitesse
+					</h3>
+					<p class="text-body-md text-on-surface">
+						Un site low-cost repose presque toujours sur WordPress avec un hébergement
+						mutualisé bas de gamme. Résultat : un Lighthouse mobile entre 30 et 55/100,
+						un LCP (temps d'affichage du contenu principal) souvent au-dessus de 5 secondes.
+						Google pénalise explicitement les sites lents dans son classement depuis 2021.
+						ATLASEO livre des sites sur Cloudflare Workers avec un LCP mobile sous 2,5
+						secondes et un Lighthouse 90+/100 — pas comme argument marketing, comme
+						prérequis technique.
+					</p>
+				</article>
+
+				<article class="flex flex-col gap-sm">
+					<h3 class="font-display text-headline-md font-semibold text-on-surface">
+						SEO réel vs SEO de façade
+					</h3>
+					<p class="text-body-md text-on-surface">
+						Beaucoup de prestataires low-cost mentionnent le SEO dans leur offre. Dans la
+						pratique, cela se limite à remplir le titre et la meta description de chaque
+						page. Le SEO structurel — schema markup, BreadcrumbList, LocalBusiness, sitemap
+						propre, canonical tags, Core Web Vitals — est absent. Ce sont pourtant ces
+						éléments qui déterminent si Google indexe vos pages ou les ignore.
+					</p>
+				</article>
+
+				<article class="flex flex-col gap-sm">
+					<h3 class="font-display text-headline-md font-semibold text-on-surface">
+						Sécurité et maintenance
+					</h3>
+					<p class="text-body-md text-on-surface">
+						WordPress représente 43% du web et 90% des sites hackés. Sans mises à jour
+						régulières des plugins (souvent négligées après livraison), votre site devient
+						une cible. ATLASEO utilise une stack statique — pas de base de données, pas de
+						PHP, pas de surface d'attaque. Le SSL et la protection DDoS sont inclus via
+						Cloudflare, sans surcoût annuel.
+					</p>
+				</article>
+
+				<article class="flex flex-col gap-sm">
+					<h3 class="font-display text-headline-md font-semibold text-on-surface">
+						Ce que vous payez vraiment
+					</h3>
+					<p class="text-body-md text-on-surface">
+						Un site à 1 500 MAD vous coûte souvent bien plus à terme : hébergement annuel
+						facturé séparément, plugin SEO payant, mise à jour de sécurité urgente, refonte
+						dans 18 mois parce que le site ne convertit pas. Le{' '}
+						<a href="/offres" class="font-medium text-secondary hover:underline">
+							Pack Starter ATLASEO à 4 000 MAD
+						</a>{' '}
+						inclut l'hébergement Cloudflare la première année, le SSL, le design
+						responsive, et une base SEO technique solide. C'est un investissement, pas une
+						dépense — avec un résultat mesurable.
+					</p>
+				</article>
+			</div>
 		</div>
 	</section>
 
