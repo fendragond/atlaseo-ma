@@ -49,13 +49,13 @@
 
 ### Quick wins SEO (avant ou juste après lancement)
 
-- [ ] **[S]** Ajouter numéro de tel partout : header, footer, schema LocalBusiness — 🔗 strategy §5.7 #1
-- [ ] **[S]** Refaire les 5 meta descriptions avec ☎️ + numéro — 🔗 strategy §5.7 #2
-- [ ] **[M]** Ajouter schema LocalBusiness (en plus d'Organization) avec areaServed = [Casa, Rabat, Marrakech, Tanger] — 🔗 strategy §5.7 #3 + §10 annexes
-- [ ] **[M]** Ajouter schema BreadcrumbList sur toutes les pages internes — 🔗 strategy §5.7 #4
-- [ ] **[S]** Corriger bug "Lighthouse 0/100" hero accueil (compteur animé qui ne se déclenche pas) — 🔗 strategy §5.7 #5
-- [ ] **[M]** Section "Pourquoi pas un site low-cost ?" sur /creation-site-web (~400 mots) — attaque frontale sites à 999-1500 MAD — 🔗 strategy §5.7 #6
-- [ ] **[XS]** Mention CNDP/RGPD discrète sur /creation-site-web ou footer — 🔗 strategy §5.7 #7
+- [x] Refaire les 5 meta descriptions avec 📞 + numéro — 2026-06-03
+- [x] Ajouter schema LocalBusiness (en plus d'Organization) avec areaServed — 2026-06-03
+- [x] Ajouter schema BreadcrumbList sur toutes les pages internes — 2026-06-03
+- [x] Corriger bug "Lighthouse 0/100" hero accueil — 2026-06-03
+- [x] Mention CNDP/RGPD discrète sur /creation-site-web ou footer — 2026-06-03
+- [x] Section "Pourquoi pas un site low-cost ?" sur /creation-site-web — 2026-06-03
+- [ ] Update numéro de téléphone
 
 ### Suivi indexation (récurrent juin 2026)
 

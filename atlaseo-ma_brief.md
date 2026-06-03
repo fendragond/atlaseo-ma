@@ -13,23 +13,23 @@
 > **Last updated**: 2026-05-25 — v1.9 (header updated for 3-doc system)
 >
 > **Session log:**
-> - 2026-05-17 — Brief generated from Stitch mockup. Design system, pages, CTAs, content decisions.
-> - 2026-05-18 — Repo created (fendragond/atlaseo-ma). Astro scaffold, Tailwind v4, Cloudflare adapter, all 7 pages built. Build passes.
-> - 2026-05-19 — QA rounds 1–5, copy/UX fixes, animations, images WebP intégrées, config site.ts. Lighthouse desktop 90+ partout.
-> - 2026-05-21 — Images intégrées seo-local (3 images). Hero mobile image above H1. Benchmark image /offres. Footer copyright updated. Real device mobile test passed. /offres heading order fixed (a11y 98 → 100). Lighthouse mobile : A11y 100, BP 100, SEO 100 partout — Perf ~62 (dev server, expected to improve in production).
-> - 2026-05-21 — Suppression @astrojs/cloudflare adapter (inutile pour site statique pur). wrangler.jsonc créé. wrangler deploy réussi — URL live : https://atlaseo-ma.fahd-d-d01.workers.dev. Lighthouse production /seo-local : Desktop 98/100/100/100, Mobile 90/100/100/100. LCP desktop 1.1s, LCP mobile 3.2s.
-> - 2026-05-22 — Git tree cleaned (61 changes committed). .wrangler/ and .vscode/ added to .gitignore. .gitattributes added for LF normalization. Deployment protocol documented: manual build + deploy required for Workers Static Assets (no auto-deploy unlike Cloudflare Pages).
-> - 2026-05-25 — Document strategy ATLASEO produit. Réorganisation 3-docs. Pricing actualisé (Croissance 1300 MAD/mois). Quick wins SEO (téléphone, meta, FAQ, schema LocalBusiness) identifiés comme priorité Phase 1.
+> - 2026-05-17 — Brief generated from Stitch mockup.
+> - 2026-05-18 — Repo created, Astro scaffold, Tailwind v4, 7 pages built.
+> - 2026-05-19 — QA rounds 1–5, images WebP, Lighthouse desktop 90+.
+> - 2026-05-21 — Images intégrées, mobile test passed, a11y 100. Cloudflare adapter supprimé, wrangler deploy réussi. LCP desktop 1.1s, mobile 3.2s.
+> - 2026-05-22 — Git tree cleaned, .gitignore updated, deployment protocol documenté.
+> - 2026-05-25 — Strategy doc produit, réorganisation 3-docs, quick wins SEO identifiés Phase 1.
+> - 2026-06-03 — Quick wins SEO lot 1 (commit df638a6) : LocalBusiness schema, BreadcrumbList x4, meta descriptions 📞, CNDP/RGPD, section low-cost. Validé schema.org 0 erreur. Docs remis à la racine.
 >
 > **Pending (next session):**
-> - [ ] Achat domaine atlaseo.ma
+> - [ ] Numéro de téléphone → remplacer +212 6XX XX XX XX partout
+> - [ ] Achat domaine atlaseo.ma — en attente de validation
 > - [ ] Custom domain Cloudflare + redirect www → non-www
-> - [ ] Lighthouse production sur URL live avec domaine réel
+> - [ ] Lighthouse production sur URL réelle (atlaseo.ma)
 > - [ ] Google Search Console : verify + sitemap submit
 > - [ ] Google Business Profile création + lien site
 > - [ ] GA4 property + tracking code vérifié
-> - [ ] LCP mobile (3.2s → objectif <2.5s) : preload image hero mobile
-> - [ ] **Quick wins SEO (cf. strategy §5.7)** : numéro tel partout, meta descriptions avec ☎️, schema LocalBusiness, schema BreadcrumbList, bug Lighthouse 0/100 hero, section "Pourquoi pas un site low-cost ?" sur /creation-site-web, mention CNDP/RGPD
+> - [ ] LCP mobile (3.2s → objectif <2.5s)
 
 ## 1. Site Overview
 
