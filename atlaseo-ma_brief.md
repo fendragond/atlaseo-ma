@@ -20,6 +20,7 @@
 > - 2026-05-22 — Git tree cleaned, .gitignore updated, deployment protocol documenté.
 > - 2026-05-25 — Strategy doc produit, réorganisation 3-docs, quick wins SEO identifiés Phase 1.
 > - 2026-06-03 — Quick wins SEO lot 1 (commit df638a6) : LocalBusiness schema, BreadcrumbList x4, meta descriptions 📞, CNDP/RGPD, section low-cost. Validé schema.org 0 erreur. Docs remis à la racine.
+> - 2026-06-05 — Enrichissement sémantique /creation-site-web : section "Pourquoi Cloudflare change tout" (3 cartes + bannière), section "Méthode ATLASEO" (3 piliers numérotés), FAQ x11 + FAQPage schema JSON-LD. Fix FAQ accordion arrow (JS toggle). Fix footer label "Visibilité Locale". Commit: feat: creation-site-web semantic enrichment.
 >
 > **Pending (next session):**
 > - [ ] Numéro de téléphone → remplacer +212 6XX XX XX XX partout
