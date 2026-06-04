@@ -71,10 +71,10 @@
 ### Enrichissement sémantique pages d'expertise (juillet-août 2026)
 
 - [ ] **[XL]** FAQ longue (8-12 questions) ajoutée en bas de `/`, `/creation-site-web`, `/seo-local`, `/offres` + schema FAQPage — 🔗 strategy §7 Phase 2 + §5.6 GEO
-- [ ] **[L]** Section "Comprendre le SEO local en 2026" sur `/seo-local` (~350 mots + schéma visuel) — 🔗 strategy §7 Phase 2
-- [ ] **[L]** Section "Erreurs courantes des PME marocaines en SEO local" sur `/seo-local` (~450 mots) — 🔗 strategy §7 Phase 2
+- [x] **[L]** Section "Comprendre le SEO local en 2026" sur `/seo-local` (~350 mots + schéma visuel) — 🔗 strategy §7 Phase 2 — 2026-06-03
+- [x] **[L]** Section "Erreurs courantes des PME marocaines en SEO local" sur `/seo-local` (~450 mots) — 🔗 strategy §7 Phase 2  — 2026-06-03
 - [ ] **[L]** Section "L'infrastructure Cloudflare en détail" sur `/creation-site-web` (~350 mots) — 🔗 strategy §7 Phase 2
-- [ ] **[M]** Section "Combien de temps pour des résultats SEO ?" sur `/seo-local` (~250 mots, timeline mois par mois) — 🔗 strategy §7 Phase 2
+- [x] **[M]** Section "Combien de temps pour des résultats SEO ?" sur `/seo-local` (~250 mots, timeline mois par mois) — 🔗 strategy §7 Phase 2  — 2026-06-03
 
 ### Étude de cas Dr Yousra (priorité business haute)
 
@@ -181,7 +181,12 @@
 - [x] 2026-05-22 Git tree nettoyé (61 changes commit), .wrangler/ et .vscode/ dans .gitignore, .gitattributes ajouté, deployment protocol documenté
 - [x] 2026-05-24 Document stratégie ATLASEO produit (analyse benchmark 14 sites, positionnement, plan 12 mois)
 - [x] 2026-05-25 Restructuration système 3 docs (strategy / context / brief) — frontières nettes
-- [x] 2026-05-25 Backlog opérationnel créé (ce fichier)
+- [x] 2026-05-25 Backlog opérationnel créé
+
+### Juin 2026
+
+- [x] 2026-06-03 Quick wins SEO lot 1 (commit df638a6) : LocalBusiness schema, BreadcrumbList x4, meta descriptions 📞, CNDP/RGPD, section low-cost. Validé schema.org 0 erreur. Docs remis à la racine.
+- [x] 2026-06-03 Enrichissement sémantique /seo-local complet : nav "Visibilité Locale", section Comprendre SEO local (~350 mots), section GEO/AEO avec logos ChatGPT/Claude/Gemini (~200 mots), section Erreurs PME x6 (~450 mots), timeline 4 jalons (~250 mots), FAQ x11 + FAQPage schema. Total ~2800 mots.
 
 ---
 

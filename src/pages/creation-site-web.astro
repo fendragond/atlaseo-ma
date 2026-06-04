@@ -43,6 +43,88 @@ const ctaStats = [
 	{ count: 14, suffix: 'j*', label: 'Livraison' },
 ];
 
+const creationSiteFaqs = [
+	{
+		question: "Combien coûte la création d'un site web professionnel au Maroc en 2026 ?",
+		answer: `Les prix d'un site web professionnel au Maroc varient énormément. Les sites à 1 000-1 500 MAD existent mais sont généralement basés sur des templates WordPress sans optimisation SEO sérieuse. Les agences traditionnelles facturent souvent entre 15 000 et 50 000 MAD pour un site vitrine. ATLASEO positionne ses packs entre 4 000 et 9 500 MAD : <a href="/offres" class="text-secondary underline">Pack Starter à 4 000 MAD</a> pour une présence en ligne propre, Pack Visibilité à 7 000 MAD avec SEO local, Pack Croissance à 9 500 MAD plus 1 300 MAD/mois pour un suivi mensuel continu.`,
+		schemaAnswer:
+			"Les prix d'un site web professionnel au Maroc varient énormément. Les sites à 1 000-1 500 MAD existent mais sont généralement basés sur des templates WordPress sans optimisation SEO sérieuse. Les agences traditionnelles facturent souvent entre 15 000 et 50 000 MAD pour un site vitrine. ATLASEO positionne ses packs entre 4 000 et 9 500 MAD : Pack Starter à 4 000 MAD pour une présence en ligne propre, Pack Visibilité à 7 000 MAD avec SEO local, Pack Croissance à 9 500 MAD plus 1 300 MAD/mois pour un suivi mensuel continu.",
+	},
+	{
+		question: 'Pourquoi ATLASEO utilise Astro et Cloudflare plutôt que WordPress ?',
+		answer: `WordPress alimente 43% du web et reste une excellente solution pour les blogs et les e-commerces complexes. Pour un site vitrine d'entreprise au Maroc, ses inconvénients sont mesurables : lenteur sur mobile, plugins payants pour les fonctions de base, mises à jour de sécurité régulières à gérer, et vulnérabilité aux piratages (90% des sites hackés sont sous WordPress). Astro génère un site statique ultra-rapide hébergé sur Cloudflare Workers — pas de base de données à attaquer, pas de plugin à mettre à jour, et un score Lighthouse mobile qui démarre à 90+/100 dès la livraison.`,
+		schemaAnswer:
+			"WordPress alimente 43% du web et reste une excellente solution pour les blogs et les e-commerces complexes. Pour un site vitrine d'entreprise au Maroc, ses inconvénients sont mesurables : lenteur sur mobile, plugins payants pour les fonctions de base, mises à jour de sécurité régulières à gérer, et vulnérabilité aux piratages (90% des sites hackés sont sous WordPress). Astro génère un site statique ultra-rapide hébergé sur Cloudflare Workers — pas de base de données à attaquer, pas de plugin à mettre à jour, et un score Lighthouse mobile qui démarre à 90+/100 dès la livraison.",
+	},
+	{
+		question: 'En combien de temps mon site est-il livré ?',
+		answer: `Le délai standard est de 14 jours ouvrés à partir de la réception complète de vos éléments (contenu textes, logo, photos, informations légales). Ce délai inclut la stratégie, le design, le développement, le SEO technique et la mise en ligne. Pour les projets plus complexes ou les refontes, le délai peut s'étendre à 3-4 semaines. <a href="/contact" class="text-secondary underline">Demandez un devis personnalisé</a> pour obtenir une estimation précise selon votre projet.`,
+		schemaAnswer:
+			"Le délai standard est de 14 jours ouvrés à partir de la réception complète de vos éléments (contenu textes, logo, photos, informations légales). Ce délai inclut la stratégie, le design, le développement, le SEO technique et la mise en ligne. Pour les projets plus complexes ou les refontes, le délai peut s'étendre à 3-4 semaines. Demandez un devis personnalisé pour obtenir une estimation précise selon votre projet.",
+	},
+	{
+		question: 'Le site sera-t-il optimisé pour mobile ?',
+		answer: `Oui, et c'est une priorité absolue. Au Maroc, 85% du trafic web provient du mobile. Tous les sites ATLASEO sont conçus selon une approche mobile-first : le design part de l'écran d'un smartphone, puis s'adapte au tablette et au desktop. Les images sont compressées en WebP, le menu est pensé pour la navigation au pouce, les CTA principaux sont WhatsApp et l'appel direct. Le score Lighthouse mobile cible est 90+/100 — un seuil qui influence directement votre positionnement Google.`,
+		schemaAnswer:
+			"Oui, et c'est une priorité absolue. Au Maroc, 85% du trafic web provient du mobile. Tous les sites ATLASEO sont conçus selon une approche mobile-first : le design part de l'écran d'un smartphone, puis s'adapte au tablette et au desktop. Les images sont compressées en WebP, le menu est pensé pour la navigation au pouce, les CTA principaux sont WhatsApp et l'appel direct. Le score Lighthouse mobile cible est 90+/100 — un seuil qui influence directement votre positionnement Google.",
+	},
+	{
+		question: 'Le référencement SEO est-il inclus dans la création du site ?',
+		answer: `Le SEO technique de base est inclus dans tous nos packs : balises title et meta description optimisées, schema markup (Organization, LocalBusiness, BreadcrumbList), sitemap, canonical tags, structure HTML sémantique, et soumission à Google Search Console au lancement. Pour aller plus loin avec du <a href="/seo-local" class="text-secondary underline">SEO local actif</a> — création de la fiche Google Business Profile, inscription aux annuaires marocains, suivi mensuel des positions — il faut le Pack Visibilité ou le Pack Croissance.`,
+		schemaAnswer:
+			'Le SEO technique de base est inclus dans tous nos packs : balises title et meta description optimisées, schema markup (Organization, LocalBusiness, BreadcrumbList), sitemap, canonical tags, structure HTML sémantique, et soumission à Google Search Console au lancement. Pour aller plus loin avec du SEO local actif — création de la fiche Google Business Profile, inscription aux annuaires marocains, suivi mensuel des positions — il faut le Pack Visibilité ou le Pack Croissance.',
+	},
+	{
+		question: 'Pourrai-je modifier moi-même le contenu de mon site après livraison ?',
+		answer: `Tout dépend de votre besoin. Les sites ATLASEO étant des sites statiques générés par Astro, ils ne disposent pas d'une interface d'administration de type WordPress. Pour les modifications ponctuelles (changement de texte, ajout d'une photo, mise à jour d'horaires), nous proposons soit une intervention forfaitaire à la demande, soit un suivi mensuel intégré dans le <a href="/offres" class="text-secondary underline">Pack Croissance</a> qui inclut les modifications courantes. Cette approche garantit que votre site reste performant et sécurisé dans le temps.`,
+		schemaAnswer:
+			"Tout dépend de votre besoin. Les sites ATLASEO étant des sites statiques générés par Astro, ils ne disposent pas d'une interface d'administration de type WordPress. Pour les modifications ponctuelles (changement de texte, ajout d'une photo, mise à jour d'horaires), nous proposons soit une intervention forfaitaire à la demande, soit un suivi mensuel intégré dans le Pack Croissance qui inclut les modifications courantes. Cette approche garantit que votre site reste performant et sécurisé dans le temps.",
+	},
+	{
+		question: 'Que se passe-t-il si je veux ajouter des pages plus tard ?',
+		answer: `Ajouter des pages à un site ATLASEO est tout à fait possible et fait partie du cycle de vie normal d'un projet. Une nouvelle page représente quelques heures de travail (contenu, design, développement, SEO) et est facturée à la prestation. Pour les entreprises qui prévoient d'ajouter du contenu régulièrement — pages services, études de cas, articles de blog — le Pack Croissance inclut un volume de modifications mensuel qui couvre la plupart des besoins courants.`,
+		schemaAnswer:
+			"Ajouter des pages à un site ATLASEO est tout à fait possible et fait partie du cycle de vie normal d'un projet. Une nouvelle page représente quelques heures de travail (contenu, design, développement, SEO) et est facturée à la prestation. Pour les entreprises qui prévoient d'ajouter du contenu régulièrement — pages services, études de cas, articles de blog — le Pack Croissance inclut un volume de modifications mensuel qui couvre la plupart des besoins courants.",
+	},
+	{
+		question: 'Mon site sera-t-il conforme à la CNDP et au RGPD ?',
+		answer: `Oui. Tous les sites ATLASEO sont conçus en conformité avec la loi 09-08 marocaine (CNDP) et avec le RGPD européen pour les entreprises qui ciblent une clientèle internationale. Cela inclut une politique de confidentialité claire, des mentions légales conformes, un système de consentement aux cookies si nécessaire, et une gestion responsable des données collectées via les formulaires de contact. La conformité est intégrée dès le développement, pas ajoutée en correctif.`,
+		schemaAnswer:
+			'Oui. Tous les sites ATLASEO sont conçus en conformité avec la loi 09-08 marocaine (CNDP) et avec le RGPD européen pour les entreprises qui ciblent une clientèle internationale. Cela inclut une politique de confidentialité claire, des mentions légales conformes, un système de consentement aux cookies si nécessaire, et une gestion responsable des données collectées via les formulaires de contact. La conformité est intégrée dès le développement, pas ajoutée en correctif.',
+	},
+	{
+		question: "L'hébergement Cloudflare est-il payant après la première année ?",
+		answer: `L'hébergement Cloudflare Workers est inclus dans tous les packs ATLASEO la première année sans surcoût. À partir de la deuxième année, un forfait annuel de maintenance et hébergement de 500 MAD par an couvre l'ensemble : hébergement, SSL, CDN mondial, sauvegardes, et mises à jour techniques mineures. Ce tarif est environ 5 à 10 fois inférieur à un hébergement WordPress géré équivalent, parce que la stack statique demande beaucoup moins de ressources et de maintenance.`,
+		schemaAnswer:
+			"L'hébergement Cloudflare Workers est inclus dans tous les packs ATLASEO la première année sans surcoût. À partir de la deuxième année, un forfait annuel de maintenance et hébergement de 500 MAD par an couvre l'ensemble : hébergement, SSL, CDN mondial, sauvegardes, et mises à jour techniques mineures. Ce tarif est environ 5 à 10 fois inférieur à un hébergement WordPress géré équivalent, parce que la stack statique demande beaucoup moins de ressources et de maintenance.",
+	},
+	{
+		question: 'ATLASEO peut-il refondre un site existant ou faut-il repartir de zéro ?',
+		answer: `Les deux sont possibles. Une refonte complète part généralement d'une analyse de l'existant : ce qui fonctionne déjà en SEO, ce qui doit être conservé (URLs principales, contenu rankant), et ce qui doit être repensé. Nous reproduisons et améliorons la structure existante sur la nouvelle stack technique, avec un plan de redirections 301 pour préserver votre référencement acquis. <a href="/contact" class="text-secondary underline">Contactez-nous pour un audit gratuit</a> de votre site actuel et un devis de refonte.`,
+		schemaAnswer:
+			"Les deux sont possibles. Une refonte complète part généralement d'une analyse de l'existant : ce qui fonctionne déjà en SEO, ce qui doit être conservé (URLs principales, contenu rankant), et ce qui doit être repensé. Nous reproduisons et améliorons la structure existante sur la nouvelle stack technique, avec un plan de redirections 301 pour préserver votre référencement acquis. Contactez-nous pour un audit gratuit de votre site actuel et un devis de refonte.",
+	},
+	{
+		question: "À qui s'adressent les sites créés par ATLASEO ?",
+		answer: `Nos packs sont conçus pour les professions libérales (médecins, dentistes, avocats, architectes, kinésithérapeutes), les TPE et PME marocaines (10 à 50 employés), et les commerces de proximité qui veulent transformer Google en canal d'acquisition. Si vous cherchez un site e-commerce complexe avec catalogue produit dynamique et gestion de stock, notre offre standard ne couvre pas ce besoin — nous orientons alors vers un devis sur-mesure ou vers un partenaire spécialisé. Toutes les autres entreprises qui veulent une vitrine professionnelle, rapide et bien référencée sont notre cible naturelle.`,
+		schemaAnswer:
+			"Nos packs sont conçus pour les professions libérales (médecins, dentistes, avocats, architectes, kinésithérapeutes), les TPE et PME marocaines (10 à 50 employés), et les commerces de proximité qui veulent transformer Google en canal d'acquisition. Si vous cherchez un site e-commerce complexe avec catalogue produit dynamique et gestion de stock, notre offre standard ne couvre pas ce besoin — nous orientons alors vers un devis sur-mesure ou vers un partenaire spécialisé. Toutes les autres entreprises qui veulent une vitrine professionnelle, rapide et bien référencée sont notre cible naturelle.",
+	},
+] as const;
+
+const faqPageSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: creationSiteFaqs.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.schemaAnswer,
+		},
+	})),
+} as const;
+
 const breadcrumbSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'BreadcrumbList',
@@ -64,6 +146,8 @@ const breadcrumbSchema = {
 	preloadHero="/images/hero-creation-web.webp"
 	breadcrumbSchema={breadcrumbSchema}
 >
+	<script slot="head" type="application/ld+json" set:html={JSON.stringify(faqPageSchema)} />
+
 	<!-- 3.1 Hero -->
 	<section data-animate class="bg-surface-container-low py-xl">
 		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
@@ -179,7 +263,117 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 3.3 Timeline -->
+	<!-- 3.3 Cloudflare Infrastructure -->
+	<section data-animate class="bg-surface-container-low py-lg md:py-xl">
+		<div class="container-site">
+			<p class="mb-md font-['JetBrains_Mono'] text-label-caps uppercase text-secondary">
+				INFRASTRUCTURE
+			</p>
+			<h2 class="max-w-3xl font-display text-headline-lg-mobile font-semibold text-on-surface md:text-headline-lg">
+				Pourquoi Cloudflare change tout pour votre site web au Maroc
+			</h2>
+			<p class="mb-xl mt-md max-w-2xl text-body-lg text-on-surface-variant">
+				Cloudflare est le réseau qui propulse 20% du web mondial — Discord, OpenAI, Shopify
+				et des millions de sites s'appuient dessus. Voici concrètement ce que ça change pour
+				votre site au Maroc.
+			</p>
+			<p class="mb-xl max-w-3xl text-body-md text-on-surface-variant">
+				Au Maroc, la performance d'un site web ne dépend pas seulement de son code. Elle dépend
+				surtout de l'endroit physique d'où il est servi. Un site hébergé chez un hébergeur
+				mutualisé français met 800 millisecondes à répondre depuis Casablanca. Le même site
+				servi via le réseau Cloudflare répond en moins de 50 millisecondes — soit 16 fois plus
+				vite. Cette différence est invisible quand on parle d'hébergement, mais décisive quand
+				on parle de conversion et de référencement.
+			</p>
+
+			<div class="mb-xl grid grid-cols-1 gap-lg md:grid-cols-3" data-animate-stagger>
+				<article
+					data-animate
+					class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md md:p-lg"
+				>
+					<span class="material-symbols-outlined mb-md block text-3xl text-secondary" aria-hidden="true">
+						bolt
+					</span>
+					<h3 class="mb-md font-display text-headline-md font-semibold text-on-surface">
+						Vitesse depuis le Maroc
+					</h3>
+					<p class="text-body-md text-on-surface-variant">
+						Le réseau Cloudflare compte 300+ data centers répartis dans le monde, dont des
+						points de présence en Europe du Sud très proches du Maroc. Quand un visiteur charge
+						votre site depuis Casablanca, Rabat ou Marrakech, la réponse vient du serveur le plus
+						proche — pas d'un datacenter en France ou en Allemagne. Le temps de réponse tombe
+						sous les 50ms. Sur mobile, où 85% du trafic marocain se trouve, chaque milliseconde
+						compte directement dans votre taux de conversion.
+					</p>
+				</article>
+
+				<article
+					data-animate
+					class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md md:p-lg"
+				>
+					<span class="material-symbols-outlined mb-md block text-3xl text-secondary" aria-hidden="true">
+						security
+					</span>
+					<h3 class="mb-md font-display text-headline-md font-semibold text-on-surface">
+						Sécurité sans maintenance
+					</h3>
+					<p class="text-body-md text-on-surface-variant">
+						SSL gratuit activé automatiquement, protection DDoS incluse, firewall applicatif
+						géré par Cloudflare — votre site est protégé dès le lancement, sans plugin de
+						sécurité à maintenir, sans certificat à renouveler manuellement chaque année.
+						WordPress représente 43% du web et concentre 90% des sites piratés. La stack ATLASEO
+						(Astro statique sur Cloudflare Workers) n'a pas de base de données, pas de PHP, pas
+						de surface d'attaque. Il n'y a rien à pirater.
+					</p>
+				</article>
+
+				<article
+					data-animate
+					class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md md:p-lg"
+				>
+					<span class="material-symbols-outlined mb-md block text-3xl text-secondary" aria-hidden="true">
+						trending_up
+					</span>
+					<h3 class="mb-md font-display text-headline-md font-semibold text-on-surface">
+						Performance comme signal SEO
+					</h3>
+					<p class="text-body-md text-on-surface-variant">
+						Google intègre les Core Web Vitals dans son algorithme de classement depuis 2021.
+						Le LCP, le CLS et l'INP mesurent la rapidité et la stabilité de votre site sur
+						mobile. Un site lent est pénalisé dans les résultats, indépendamment de la qualité de
+						son contenu. Les sites ATLASEO ciblent un LCP mobile sous 2,5 secondes et un score
+						Lighthouse 90+/100 — pas comme argument commercial, comme plancher technique non
+						négociable pour tout site qui veut <a href="/seo-local" class="text-secondary underline"
+							>apparaître dans les recherches locales</a
+						>.
+					</p>
+				</article>
+			</div>
+
+			<div class="flex flex-col items-center justify-between gap-lg rounded-2xl bg-primary-container p-lg md:flex-row md:p-xl">
+				<p class="text-body-lg text-on-primary md:flex-1">
+					L'hébergement Cloudflare est inclus dans <a
+						href="/offres"
+						class="text-secondary-container underline">tous les packs ATLASEO</a
+					> — sans surcoût annuel caché, sans configuration côté client, sans compromis sur la
+					performance.
+				</p>
+				<div class="flex flex-wrap gap-sm">
+					<span class="rounded-full border border-on-primary/30 px-md py-xs text-label-caps text-on-primary">
+						SSL inclus
+					</span>
+					<span class="rounded-full border border-on-primary/30 px-md py-xs text-label-caps text-on-primary">
+						DDoS Protection
+					</span>
+					<span class="rounded-full border border-on-primary/30 px-md py-xs text-label-caps text-on-primary">
+						CDN 300+ villes
+					</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 3.4 Timeline -->
 	<section data-animate class="bg-surface-container-low py-xl">
 		<div class="container-site flex flex-col gap-xl">
 			<SectionHeader
@@ -220,7 +414,97 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 3.4 Low-cost Comparison -->
+	<!-- 3.5 Method -->
+	<section data-animate class="py-lg md:py-xl">
+		<div class="container-site">
+			<p class="mb-md font-mono text-label-caps uppercase text-secondary">NOTRE MÉTHODE</p>
+			<h2 class="max-w-3xl font-display text-headline-lg-mobile font-semibold text-on-surface md:text-headline-lg">
+				Au-delà du calendrier : ce qui fait qu'un site ATLASEO performe différemment
+			</h2>
+			<p class="mb-xl mt-md max-w-2xl text-body-lg text-on-surface-variant">
+				Livrer un site en 14 jours n'a aucune valeur si le site ne génère pas de clients.
+				Notre méthode est construite autour de trois piliers techniques qui produisent un
+				résultat mesurable.
+			</p>
+
+			<div class="mb-xl grid grid-cols-1 gap-lg md:grid-cols-3" data-animate-stagger>
+				<article
+					data-animate
+					class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md md:p-lg"
+				>
+					<div class="mb-md flex h-12 w-12 items-center justify-center rounded-full bg-primary-container font-display text-headline-md text-on-primary">
+						01
+					</div>
+					<h3 class="mb-md font-display text-headline-md font-semibold text-on-surface">
+						Une architecture pensée pour Google
+					</h3>
+					<p class="text-body-md text-on-surface-variant">
+						Chaque page d'un site ATLASEO est générée en HTML statique par Astro — pas de base
+						de données, pas de JavaScript bloquant pour le rendu initial. Google reçoit du
+						contenu prêt à indexer dès la première requête. Nous intégrons dès la conception le
+						schema markup approprié (Organization, LocalBusiness, BreadcrumbList, FAQPage), des
+						balises canonical propres sans paramètres parasites, et un sitemap qui ne référence
+						que les pages qui méritent d'être indexées. Cette discipline technique élimine 80%
+						des problèmes d'indexation qu'on observe sur les sites WordPress mal configurés.
+					</p>
+				</article>
+
+				<article
+					data-animate
+					class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md md:p-lg"
+				>
+					<div class="mb-md flex h-12 w-12 items-center justify-center rounded-full bg-primary-container font-display text-headline-md text-on-primary">
+						02
+					</div>
+					<h3 class="mb-md font-display text-headline-md font-semibold text-on-surface">
+						Un design conçu pour le mobile marocain
+					</h3>
+					<p class="text-body-md text-on-surface-variant">
+						Au Maroc, 85% du trafic web vient du mobile. Cela ne signifie pas seulement que le
+						site doit s'adapter à un petit écran — cela signifie que chaque décision de design
+						part du mobile. Les CTA principaux sont WhatsApp et l'appel direct, parce que c'est
+						ainsi qu'un client marocain prend contact. Les images sont compressées en WebP et
+						préchargées intelligemment. Le menu est conçu pour être utilisé au pouce, pas à la
+						souris. Le résultat : un taux de conversion mobile deux à trois fois supérieur à un
+						site qui se contente d'être 'responsive'.
+					</p>
+				</article>
+
+				<article
+					data-animate
+					class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md md:p-lg"
+				>
+					<div class="mb-md flex h-12 w-12 items-center justify-center rounded-full bg-primary-container font-display text-headline-md text-on-primary">
+						03
+					</div>
+					<h3 class="mb-md font-display text-headline-md font-semibold text-on-surface">
+						Un lancement pensé pour l'indexation
+					</h3>
+					<p class="text-body-md text-on-surface-variant">
+						Mettre un site en ligne ne suffit pas — il faut le faire connaître à Google. Dès le
+						jour de mise en ligne, nous vérifions votre site dans Google Search Console,
+						soumettons le sitemap, et déclenchons l'indexation des pages prioritaires. Pour les
+						clients du <a href="/offres" class="text-secondary underline">Pack Visibilité</a> ou <a
+							href="/offres"
+							class="text-secondary underline">Pack Croissance</a
+						>, nous créons et optimisons en parallèle votre fiche Google Business Profile pour
+						activer immédiatement le <a href="/seo-local" class="text-secondary underline"
+							>référencement local</a
+						>. À 30 jours, vos pages sont indexées, votre fiche apparaît sur Google Maps, et
+						vous commencez à recevoir des impressions mesurables.
+					</p>
+				</article>
+			</div>
+
+			<p class="mt-xl max-w-3xl text-body-md italic text-on-surface-variant">
+				Ces trois piliers ne sont pas des étapes successives — ils sont travaillés en parallèle
+				pendant les 14 jours du projet. C'est ce qui fait la différence entre un site livré et un
+				site qui produit des résultats.
+			</p>
+		</div>
+	</section>
+
+	<!-- 3.6 Low-cost Comparison -->
 	<section data-animate class="bg-surface-container-low py-xl">
 		<div class="container-site flex max-w-4xl flex-col gap-xl">
 			<SectionHeader title="Pourquoi pas un site à 1 500 MAD ?" align="left" />
@@ -295,7 +579,46 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 3.4 CTA Block -->
+	<!-- 3.7 FAQ -->
+	<section data-animate class="bg-surface-container-low py-lg md:py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="QUESTIONS FRÉQUENTES"
+				title="Vos questions sur la création de site web au Maroc"
+				labelClass="font-mono"
+			/>
+			<div class="mx-auto flex w-full max-w-[800px] flex-col gap-sm" data-animate-stagger>
+				{
+					creationSiteFaqs.map((item) => (
+						<details
+							data-animate
+							data-faq-item
+							class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md transition-all duration-200 ease-out open:border-secondary"
+						>
+							<summary class="flex cursor-pointer list-none items-center justify-between gap-md [&::-webkit-details-marker]:hidden">
+								<h3 class="font-display text-lg font-semibold text-on-surface">
+									{item.question}
+								</h3>
+								<span
+									data-faq-icon
+									class="material-symbols-outlined shrink-0 text-secondary"
+									aria-hidden="true"
+								>
+									expand_more
+								</span>
+							</summary>
+							<p
+								class="mt-md text-body-md text-on-surface-variant [&_a]:font-medium [&_a]:text-secondary [&_a]:hover:underline"
+								set:html={item.answer}
+							/>
+						</details>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- 3.8 CTA Block -->
 	<section data-animate class="py-xl">
 		<div class="container-site">
 			<div
@@ -345,7 +668,7 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 3.5 Pack Visibilité -->
+	<!-- 3.9 Pack Visibilité -->
 	<section data-animate class="py-xl">
 		<div class="container-site flex flex-col gap-xl">
 			<div class="flex flex-col items-center gap-md text-center">
@@ -392,4 +715,15 @@ const breadcrumbSchema = {
 			</GlassCard>
 		</div>
 	</section>
+
+	<script>
+		document.querySelectorAll('[data-faq-item]').forEach(details => {
+			const icon = details.querySelector('[data-faq-icon]');
+			if (!icon) return;
+			icon.textContent = 'expand_more';
+			details.addEventListener('toggle', () => {
+				icon.textContent = details.open ? 'expand_less' : 'expand_more';
+			});
+		});
+	</script>
 </BaseLayout>

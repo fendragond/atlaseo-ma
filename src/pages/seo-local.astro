@@ -651,17 +651,19 @@ const breadcrumbSchema = {
 					localSeoFaqs.map((item) => (
 						<details
 							data-animate
-							class="group rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md transition-all duration-200 ease-out open:border-secondary"
+							data-faq-item
+							class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md transition-all duration-200 ease-out open:border-secondary"
 						>
 							<summary class="flex cursor-pointer list-none items-center justify-between gap-md [&::-webkit-details-marker]:hidden">
 								<h3 class="font-display text-lg font-semibold text-on-surface">
 									{item.question}
 								</h3>
-								<span class="material-symbols-outlined shrink-0 text-secondary group-open:hidden">
+								<span
+									data-faq-icon
+									class="material-symbols-outlined shrink-0 text-secondary"
+									aria-hidden="true"
+								>
 									expand_more
-								</span>
-								<span class="material-symbols-outlined hidden shrink-0 text-secondary group-open:inline">
-									expand_less
 								</span>
 							</summary>
 							<p
@@ -750,4 +752,15 @@ const breadcrumbSchema = {
 			/>
 		</div>
 	</section>
+
+	<script>
+		document.querySelectorAll('[data-faq-item]').forEach(details => {
+			const icon = details.querySelector('[data-faq-icon]');
+			if (!icon) return;
+			icon.textContent = 'expand_more';
+			details.addEventListener('toggle', () => {
+				icon.textContent = details.open ? 'expand_less' : 'expand_more';
+			});
+		});
+	</script>
 </BaseLayout>
