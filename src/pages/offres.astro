@@ -6,6 +6,99 @@ import ComparisonTable from '../components/ComparisonTable.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import { PACKS } from '../data/packs';
 
+const offresFaqs = [
+	{
+		question: 'Combien coûte un site web professionnel au Maroc en 2026 ?',
+		answer:
+			"Au Maroc en 2026, le tarif d'un site web professionnel s'étale entre 1 500 MAD pour un site low-cost sur template et 50 000 MAD pour une agence corporate. ATLASEO se positionne dans le segment mid-premium avec trois packs : Starter à 4 000 MAD, Visibilité à 7 000 MAD et Croissance à 9 500 MAD avec un suivi mensuel à 1 300 MAD. Ces tarifs incluent le design sur-mesure, le développement, l'hébergement Cloudflare la première année et une base SEO technique solide.",
+		schemaAnswer:
+			"Au Maroc en 2026, le tarif d'un site web professionnel s'étale entre 1 500 MAD pour un site low-cost sur template et 50 000 MAD pour une agence corporate. ATLASEO se positionne dans le segment mid-premium avec trois packs : Starter à 4 000 MAD, Visibilité à 7 000 MAD et Croissance à 9 500 MAD avec un suivi mensuel à 1 300 MAD. Ces tarifs incluent le design sur-mesure, le développement, l'hébergement Cloudflare la première année et une base SEO technique solide.",
+	},
+	{
+		question: 'Pourquoi un Pack Starter ATLASEO coûte-t-il 4 000 MAD et pas 1 500 MAD ?',
+		answer:
+			"Un site à 1 500 MAD repose presque toujours sur WordPress avec un template générique et un hébergement mutualisé bas de gamme — performance Lighthouse mobile autour de 50, sécurité minimale, SEO de surface limité au titre et à la meta description. Le Pack Starter d'ATLASEO inclut un design sur-mesure, une infrastructure Cloudflare Workers, une base SEO technique complète (schema markup, sitemap, canonical, BreadcrumbList) et la livraison sous 14 jours. La différence ne se voit pas sur le devis, mais elle se mesure sur Google.",
+		schemaAnswer:
+			"Un site à 1 500 MAD repose presque toujours sur WordPress avec un template générique et un hébergement mutualisé bas de gamme — performance Lighthouse mobile autour de 50, sécurité minimale, SEO de surface limité au titre et à la meta description. Le Pack Starter d'ATLASEO inclut un design sur-mesure, une infrastructure Cloudflare Workers, une base SEO technique complète (schema markup, sitemap, canonical, BreadcrumbList) et la livraison sous 14 jours. La différence ne se voit pas sur le devis, mais elle se mesure sur Google.",
+	},
+	{
+		question: 'Quelle est la différence entre le Pack Visibilité et le Pack Croissance ?',
+		answer:
+			'Le Pack Visibilité (7 000 MAD) couvre le lancement complet : site jusqu\'à 5 pages, <a href="/seo-local">SEO local de base, création Google Business Profile</a>, Google Analytics, Search Console et un mois de suivi post-lancement. Le Pack Croissance (9 500 MAD + 1 300 MAD/mois) ajoute un suivi mensuel continu, deux articles de blog inclus, une optimisation Google Business Profile avancée, un rapport de performance mensuel et un support prioritaire avec réponse en moins de 2 heures. Croissance est conçu pour les entreprises qui veulent transformer leur site en canal d\'acquisition durable.',
+		schemaAnswer:
+			"Le Pack Visibilité (7 000 MAD) couvre le lancement complet : site jusqu'à 5 pages, SEO local de base, création Google Business Profile, Google Analytics, Search Console et un mois de suivi post-lancement. Le Pack Croissance (9 500 MAD + 1 300 MAD/mois) ajoute un suivi mensuel continu, deux articles de blog inclus, une optimisation Google Business Profile avancée, un rapport de performance mensuel et un support prioritaire avec réponse en moins de 2 heures. Croissance est conçu pour les entreprises qui veulent transformer leur site en canal d'acquisition durable.",
+	},
+	{
+		question: 'Le tarif récurrent du Pack Croissance (1 300 MAD/mois) inclut quoi exactement ?',
+		answer:
+			"Le récurrent mensuel du Pack Croissance couvre quatre prestations : un article de blog rédigé et optimisé SEO chaque mois, l'optimisation continue de votre Google Business Profile (publications, photos, gestion des avis), le suivi de vos positions sur les mots-clés cibles avec rapport mensuel détaillé, et le support prioritaire WhatsApp avec réponse garantie sous 2 heures en horaires ouvrables. C'est l'équivalent d'un département marketing digital miniature pour un coût inférieur à une demi-journée de Google Ads mensuelle.",
+		schemaAnswer:
+			"Le récurrent mensuel du Pack Croissance couvre quatre prestations : un article de blog rédigé et optimisé SEO chaque mois, l'optimisation continue de votre Google Business Profile (publications, photos, gestion des avis), le suivi de vos positions sur les mots-clés cibles avec rapport mensuel détaillé, et le support prioritaire WhatsApp avec réponse garantie sous 2 heures en horaires ouvrables. C'est l'équivalent d'un département marketing digital miniature pour un coût inférieur à une demi-journée de Google Ads mensuelle.",
+	},
+	{
+		question: "Faut-il payer l'hébergement séparément après la première année ?",
+		answer:
+			"Tous les packs ATLASEO incluent l'hébergement Cloudflare pour la première année sans surcoût. À partir de la deuxième année, l'hébergement est facturé 500 MAD par an pour les Packs Starter et Visibilité, et reste inclus dans le forfait mensuel du Pack Croissance. Ce tarif couvre l'infrastructure Cloudflare, le certificat SSL, la protection DDoS et la maintenance technique du site.",
+		schemaAnswer:
+			"Tous les packs ATLASEO incluent l'hébergement Cloudflare pour la première année sans surcoût. À partir de la deuxième année, l'hébergement est facturé 500 MAD par an pour les Packs Starter et Visibilité, et reste inclus dans le forfait mensuel du Pack Croissance. Ce tarif couvre l'infrastructure Cloudflare, le certificat SSL, la protection DDoS et la maintenance technique du site.",
+	},
+	{
+		question: "Puis-je passer d'un pack à un autre après le lancement de mon site ?",
+		answer:
+			"Oui, l'évolution entre packs est possible à tout moment. Passer du Pack Starter au Pack Visibilité ajoute le SEO local et la configuration Google Business Profile pour un complément de 3 000 MAD. Passer du Pack Visibilité au Pack Croissance active le suivi mensuel et la création de contenu pour 2 500 MAD de complément initial puis le forfait mensuel de 1 300 MAD. Aucun engagement de durée n'est exigé sur le récurrent — vous pouvez l'arrêter à tout moment avec un préavis de 30 jours.",
+		schemaAnswer:
+			"Oui, l'évolution entre packs est possible à tout moment. Passer du Pack Starter au Pack Visibilité ajoute le SEO local et la configuration Google Business Profile pour un complément de 3 000 MAD. Passer du Pack Visibilité au Pack Croissance active le suivi mensuel et la création de contenu pour 2 500 MAD de complément initial puis le forfait mensuel de 1 300 MAD. Aucun engagement de durée n'est exigé sur le récurrent — vous pouvez l'arrêter à tout moment avec un préavis de 30 jours.",
+	},
+	{
+		question: 'Combien de temps faut-il pour livrer un site web complet ?',
+		answer:
+			"Le délai standard ATLASEO est de 14 jours ouvrés à compter de la réception de l'ensemble des éléments nécessaires (textes, photos, accès aux comptes Google, validations de maquettes). Cette durée couvre la phase stratégie, le design sur-mesure, le développement, les tests et la mise en ligne. Pour les sites incluant un volume important de contenu rédactionnel ou des intégrations spécifiques, le délai peut s'étendre à 21 jours sans surcoût.",
+		schemaAnswer:
+			"Le délai standard ATLASEO est de 14 jours ouvrés à compter de la réception de l'ensemble des éléments nécessaires (textes, photos, accès aux comptes Google, validations de maquettes). Cette durée couvre la phase stratégie, le design sur-mesure, le développement, les tests et la mise en ligne. Pour les sites incluant un volume important de contenu rédactionnel ou des intégrations spécifiques, le délai peut s'étendre à 21 jours sans surcoût.",
+	},
+	{
+		question: 'Les packs incluent-ils la création de contenu rédactionnel ?',
+		answer:
+			"Le Pack Starter et le Pack Visibilité partent du contenu que vous nous fournissez. Nous structurons et optimisons ce contenu pour le SEO mais ne le rédigeons pas intégralement. Le Pack Croissance inclut deux articles de blog optimisés SEO au lancement, puis un article par mois dans le suivi récurrent. Pour les clients qui ont besoin d'aide à la rédaction sur le site lui-même, nous proposons une prestation rédactionnelle additionnelle à partir de 800 MAD pour 1 000 mots optimisés.",
+		schemaAnswer:
+			"Le Pack Starter et le Pack Visibilité partent du contenu que vous nous fournissez. Nous structurons et optimisons ce contenu pour le SEO mais ne le rédigeons pas intégralement. Le Pack Croissance inclut deux articles de blog optimisés SEO au lancement, puis un article par mois dans le suivi récurrent. Pour les clients qui ont besoin d'aide à la rédaction sur le site lui-même, nous proposons une prestation rédactionnelle additionnelle à partir de 800 MAD pour 1 000 mots optimisés.",
+	},
+	{
+		question: 'ATLASEO propose-t-il des sites e-commerce ?',
+		answer:
+			'Les packs standard ATLASEO sont conçus pour les sites vitrines et les pages d\'acquisition de leads. Un site vitrine intégrant un ou deux produits en vente directe reste possible dans le Pack Croissance, avec passerelle de paiement simple (CMI, Stripe, virement). Pour une véritable boutique en ligne avec catalogue, gestion de stock et tunnel de commande avancé, nous établissons un devis sur-mesure à partir de 15 000 MAD selon le périmètre et l\'intégration aux outils existants.',
+		schemaAnswer:
+			"Les packs standard ATLASEO sont conçus pour les sites vitrines et les pages d'acquisition de leads. Un site vitrine intégrant un ou deux produits en vente directe reste possible dans le Pack Croissance, avec passerelle de paiement simple (CMI, Stripe, virement). Pour une véritable boutique en ligne avec catalogue, gestion de stock et tunnel de commande avancé, nous établissons un devis sur-mesure à partir de 15 000 MAD selon le périmètre et l'intégration aux outils existants.",
+	},
+	{
+		question: 'Quels modes de paiement acceptez-vous au Maroc ?',
+		answer:
+			'ATLASEO accepte les virements bancaires (Banque Populaire, Attijariwafa, BMCE), le paiement par carte via lien sécurisé CMI et le paiement par chèque pour les clients basés à Casablanca. Les paiements internationaux sont possibles par virement SWIFT ou via Stripe en euros. La facturation est conforme à la réglementation marocaine (TVA, mentions légales, facture nominative).',
+		schemaAnswer:
+			'ATLASEO accepte les virements bancaires (Banque Populaire, Attijariwafa, BMCE), le paiement par carte via lien sécurisé CMI et le paiement par chèque pour les clients basés à Casablanca. Les paiements internationaux sont possibles par virement SWIFT ou via Stripe en euros. La facturation est conforme à la réglementation marocaine (TVA, mentions légales, facture nominative).',
+	},
+	{
+		question: "Que se passe-t-il si je ne suis pas satisfait du résultat ?",
+		answer:
+			"Le processus ATLASEO intègre deux points de validation explicites avant la mise en ligne : la validation de la maquette graphique avant développement, et la recette finale du site avant publication. À chaque étape, vous validez par écrit avant que nous passions à la suivante — ce qui supprime la quasi-totalité des incompréhensions de fin de projet. En cas de désaccord sur un livrable, nous ajustons jusqu'à validation. Si malgré tout le projet ne peut aboutir, nous appliquons une politique de remboursement partiel proportionnelle au travail non livré.",
+		schemaAnswer:
+			"Le processus ATLASEO intègre deux points de validation explicites avant la mise en ligne : la validation de la maquette graphique avant développement, et la recette finale du site avant publication. À chaque étape, vous validez par écrit avant que nous passions à la suivante — ce qui supprime la quasi-totalité des incompréhensions de fin de projet. En cas de désaccord sur un livrable, nous ajustons jusqu'à validation. Si malgré tout le projet ne peut aboutir, nous appliquons une politique de remboursement partiel proportionnelle au travail non livré.",
+	},
+] as const;
+
+const faqPageSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: offresFaqs.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.schemaAnswer,
+		},
+	})),
+} as const;
+
 const breadcrumbSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'BreadcrumbList',
@@ -21,6 +114,8 @@ const breadcrumbSchema = {
 	description="3 packs création site web au Maroc : Starter 4 000 MAD, Visibilité 7 000 MAD, Croissance 9 500 MAD + suivi mensuel. Sans frais cachés. 📞 +212 6XX XX XX XX"
 	breadcrumbSchema={breadcrumbSchema}
 >
+	<script slot="head" type="application/ld+json" set:html={JSON.stringify(faqPageSchema)} />
+
 	<!-- 2.1 Hero -->
 	<section data-animate class="py-xl">
 		<div class="container-site flex max-w-3xl flex-col gap-md">
@@ -53,8 +148,159 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 2.3 Comparison Table -->
+	<!-- 2.3 Comprendre la tarification -->
 	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="COMPRENDRE LA TARIFICATION"
+				title="Tarification web au Maroc en 2026 : comprendre les écarts"
+				labelClass="font-mono"
+			/>
+
+			<div class="mx-auto flex max-w-4xl flex-col gap-md text-body-md text-on-surface-variant">
+				<p>
+					Au Maroc, le tarif d'un site web professionnel s'étale aujourd'hui entre 1 500 MAD et
+					50 000 MAD selon le prestataire. Cet écart de 1 à 33 ne reflète pas une fantaisie de
+					marges — il traduit des différences concrètes de qualité technique, d'infrastructure et de
+					méthode. Comprendre ce qui justifie ces différences permet d'éviter à la fois le piège du
+					low-cost qui ne convertit jamais et la surfacturation corporate qui n'apporte rien à une PME
+					locale.
+				</p>
+
+				<h3 class="font-display text-headline-md font-semibold text-on-surface">
+					Les quatre composantes d'un devis web honnête
+				</h3>
+				<p>
+					Un site web professionnel intègre quatre éléments distincts, et chacun représente un coût
+					réel qu'un prestataire sérieux peut détailler.
+				</p>
+				<p>
+					<strong class="font-semibold text-on-surface">Le design sur-mesure</strong> représente
+					entre 25% et 40% du budget total d'un site. Un template WordPress acheté 50 euros n'est pas
+					un design — c'est une mise en forme générique partagée avec des milliers d'autres sites. Un
+					design sur-mesure traduit votre identité visuelle, votre positionnement et votre cible
+					commerciale en une expérience cohérente. Tous les packs ATLASEO incluent un design
+					sur-mesure validé avant développement.
+				</p>
+				<p>
+					<strong class="font-semibold text-on-surface">Le développement technique</strong> couvre le
+					code, l'intégration responsive, la performance et la sécurité. Un site qui charge en moins
+					d'une seconde n'utilise pas la même infrastructure qu'un site qui met 5 secondes — la
+					différence se mesure en architecture (statique vs WordPress mutualisé), en hébergement
+					(réseau mondial Cloudflare vs serveur local marocain) et en standards de code. La stack{' '}
+					<a href="/creation-site-web" class="text-secondary underline-offset-2 hover:underline">
+						Astro et Cloudflare Workers
+					</a>{' '}
+					utilisée par ATLASEO place chaque site au-dessus de 90/100 sur Lighthouse, y compris sur
+					mobile.
+				</p>
+				<p>
+					<strong class="font-semibold text-on-surface">Le SEO technique</strong> détermine si Google
+					indexera vos pages et les classera correctement. Schema markup, sitemap, canonical tags,
+					structure sémantique, Core Web Vitals — ces éléments sont invisibles pour vos visiteurs mais
+					décisifs pour Google. Un site sans SEO technique reste invisible quel que soit son design.
+					Tous les packs ATLASEO incluent une base SEO technique solide ; les Packs Visibilité et
+					Croissance ajoutent l'<a href="/seo-local" class="text-secondary underline-offset-2 hover:underline">
+						optimisation locale et le suivi mensuel
+					</a>.
+				</p>
+				<p>
+					<strong class="font-semibold text-on-surface">L'hébergement et la maintenance</strong>{' '}
+					constituent les coûts récurrents les plus souvent cachés dans les offres bas de gamme. Un
+					hébergement mutualisé chez un revendeur marocain coûte entre 300 et 800 MAD par an mais
+					expose votre site à des temps de chargement variables et à des failles de sécurité
+					régulières. ATLASEO inclut l'hébergement Cloudflare pour la première année dans tous ses
+					packs, sans surcoût caché à la facturation suivante.
+				</p>
+
+				<h3 class="font-display text-headline-md font-semibold text-on-surface">
+					Les trois segments tarifaires du marché web marocain en 2026
+				</h3>
+				<p>
+					Le marché de la création de sites web au Maroc s'organise aujourd'hui en trois segments
+					tarifaires distincts. Chacun répond à un usage différent.
+				</p>
+				<p>
+					<strong class="font-semibold text-on-surface">Le segment low-cost (1 500 à 4 000 MAD)</strong>{' '}
+					regroupe les freelances et micro-agences proposant des sites WordPress sur templates,
+					hébergement mutualisé bas de gamme et SEO réduit au strict minimum. Le résultat technique
+					est généralement inférieur à 60 sur Lighthouse mobile. Ce segment convient pour une présence
+					symbolique ou un test de concept ponctuel — il ne génère pas de leads qualifiés via Google à
+					moyen terme.
+				</p>
+				<p>
+					<strong class="font-semibold text-on-surface">Le segment mid-premium (4 000 à 12 000 MAD)</strong>{' '}
+					est celui d'ATLASEO. Design sur-mesure, infrastructure professionnelle Cloudflare, SEO
+					technique intégré, livraison sous deux semaines. Ce segment est pensé pour les professions
+					libérales et PME marocaines qui veulent un site qui convertit, sans engager un budget
+					corporate. C'est le segment qui offre le meilleur rapport qualité/prix pour 80% des cas
+					d'usage au Maroc.
+				</p>
+				<p>
+					<strong class="font-semibold text-on-surface">Le segment corporate (15 000 à 50 000 MAD et plus)</strong>{' '}
+					propose Webflow haut de gamme ou WordPress avancé, chefs de projet dédiés, multiples cycles
+					de validation, équipes pluridisciplinaires. Ce niveau d'investissement se justifie pour des
+					organisations à fort enjeu de marque (grands groupes, e-commerce complexe, sites
+					multilingues avancés). Il reste inadapté pour un cabinet libéral ou une PME locale.
+				</p>
+
+				<h3 class="font-display text-headline-md font-semibold text-on-surface">
+					Le positionnement assumé d'ATLASEO
+				</h3>
+				<p>
+					ATLASEO se positionne volontairement dans le segment mid-premium, avec une approche qui
+					combine la qualité technique du segment corporate et l'accessibilité tarifaire qui le
+					rapproche du segment low-cost. Cette position est rendue possible par un workflow d'agence
+					allégé : pas de chefs de projet intermédiaires, pas de comités de validation, un
+					interlocuteur unique du devis à la livraison. Le résultat est un site comparable à ce qu'une
+					agence corporate facturerait 25 000 MAD, livré à 7 000 MAD avec le Pack Visibilité.
+				</p>
+			</div>
+
+			<div class="grid grid-cols-1 gap-md md:grid-cols-3" data-animate-stagger>
+				<article class="flex flex-col gap-sm rounded-xl border border-outline-variant/30 bg-surface-container p-md">
+					<span class="material-symbols-outlined text-3xl text-secondary" aria-hidden="true">
+						trending_down
+					</span>
+					<h4 class="font-display text-body-lg font-semibold text-on-surface">Segment low-cost</h4>
+					<p class="label-caps font-mono text-secondary">1 500 — 4 000 MAD</p>
+					<p class="text-body-md text-on-surface-variant">
+						WordPress sur templates, hébergement mutualisé, SEO minimal. Présence symbolique sans
+						capacité d'acquisition réelle.
+					</p>
+				</article>
+
+				<article class="flex scale-105 flex-col gap-sm rounded-xl border-2 border-secondary bg-surface-container-lowest p-md shadow-cloud">
+					<span class="material-symbols-outlined text-3xl text-secondary" aria-hidden="true">
+						verified
+					</span>
+					<h4 class="font-display text-body-lg font-semibold text-on-surface">
+						Segment mid-premium (ATLASEO)
+					</h4>
+					<p class="label-caps font-mono text-secondary">4 000 — 12 000 MAD</p>
+					<p class="text-body-md text-on-surface-variant">
+						Design sur-mesure, infrastructure Cloudflare, SEO technique intégré. Le meilleur rapport
+						résultat/investissement pour 80% des cas d'usage marocains.
+					</p>
+				</article>
+
+				<article class="flex flex-col gap-sm rounded-xl border border-outline-variant/30 bg-surface-container p-md">
+					<span class="material-symbols-outlined text-3xl text-secondary" aria-hidden="true">
+						business_center
+					</span>
+					<h4 class="font-display text-body-lg font-semibold text-on-surface">Segment corporate</h4>
+					<p class="label-caps font-mono text-secondary">15 000 — 50 000+ MAD</p>
+					<p class="text-body-md text-on-surface-variant">
+						Agences à structure lourde pour groupes et e-commerce complexe. Largement surdimensionné
+						pour une PME locale ou un cabinet libéral.
+					</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.4 Comparison Table -->
+	<section data-animate class="py-xl">
 		<div class="container-site flex flex-col gap-xl">
 			<SectionHeader
 				title="Comparatif des fonctionnalités"
@@ -68,52 +314,279 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
-	<!-- 2.4 Benchmark -->
-	<section data-animate class="py-xl">
-		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
-			<div class="flex flex-col gap-md">
-				<SectionHeader
-					title="Benchmark Marché Maroc 2026"
-					align="left"
-					subtitle="Le paysage digital marocain évolue rapidement. Voici comment ATLASEO se positionne face aux agences traditionnelles."
-				/>
-				<p class="text-body-md text-on-surface-variant">
-					En 2026, le coût moyen d'un site vitrine chez une agence web au Maroc varie considérablement,
-					avec des délais de livraison souvent supérieurs à 4 semaines et une infrastructure héritée
-					peu performante. ATLASEO propose une alternative transparente : infrastructure Cloudflare de
-					classe mondiale, livraison en 14 jours*, et un accompagnement SEO local intégré dès le premier
-					pack Visibilité.
-				</p>
-				<p class="text-sm text-on-surface-variant">
-					* Le délai commence à la réception de tous les éléments nécessaires.
-				</p>
-				<p class="text-body-md text-on-surface-variant">
-					Notre approche élimine les intermédiaires techniques coûteux. Vous savez exactement ce que
-					vous obtenez, sans surprise en fin de projet. Pour aller plus loin sur notre expertise{' '}
-					<a href="/creation-site-web" class="text-secondary underline-offset-2 hover:underline">
-						création de site web professionnel au Maroc
+	<!-- 2.5 Guide de décision -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="GUIDE DE DÉCISION"
+				title="Quel pack ATLASEO correspond à votre activité ?"
+				subtitle="Cinq profils types, cinq recommandations claires basées sur 14 sites livrés au Maroc."
+				labelClass="font-mono"
+			/>
+
+			<div class="grid grid-cols-1 gap-md md:grid-cols-2 lg:grid-cols-6" data-animate-stagger>
+				<article data-animate class="card-default flex flex-col gap-md p-lg lg:col-span-2">
+					<span class="material-symbols-outlined text-[32px] text-secondary" aria-hidden="true">
+						medical_services
+					</span>
+					<div class="flex flex-1 flex-col gap-sm">
+						<p class="label-caps font-mono text-on-surface-variant">SOLO PROFESSIONNEL</p>
+						<h3 class="font-display text-headline-md font-semibold text-on-surface">
+							Médecin, dentiste, avocat ou expert-comptable libéral
+						</h3>
+						<p class="text-body-md text-on-surface-variant">
+							Vous exercez en cabinet et vos clients vous trouvent principalement via Google et le
+							bouche-à-oreille. Votre priorité est d'apparaître dans le Local Pack de votre ville et
+							de convertir les recherches en prises de rendez-vous. La présence Google Business
+							Profile est aussi critique que le site lui-même.
+						</p>
+					</div>
+					<a
+						href="/contact"
+						class="label-caps mt-auto w-fit rounded-full bg-secondary/10 px-3 py-2 font-mono text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
+					>
+						Pack recommandé : Pack Visibilité (7 000 MAD)
 					</a>
-					, consultez notre page dédiée.
-				</p>
-			</div>
-			<div class="overflow-hidden rounded-2xl border border-outline-variant/30">
-				<img
-					src="/images/benchmark-maroc.webp"
-					alt="comparaison performance agences web Maroc 2026"
-					width="800"
-					height="400"
-					class="w-full rounded-2xl"
-					loading="lazy"
-				/>
+				</article>
+
+				<article data-animate class="card-default flex flex-col gap-md p-lg lg:col-span-2">
+					<span class="material-symbols-outlined text-[32px] text-secondary" aria-hidden="true">
+						storefront
+					</span>
+					<div class="flex flex-1 flex-col gap-sm">
+						<p class="label-caps font-mono text-on-surface-variant">TPE LOCALE</p>
+						<h3 class="font-display text-headline-md font-semibold text-on-surface">
+							Restaurant, salon, atelier ou commerce de proximité
+						</h3>
+						<p class="text-body-md text-on-surface-variant">
+							Vous servez une clientèle géographiquement définie et vous dépendez fortement de Google
+							Maps et des avis clients. Le Pack Visibilité couvre l'essentiel ; si vous voulez
+							accélérer la croissance et alimenter régulièrement vos canaux, le Pack Croissance ajoute
+							le suivi mensuel et la création de contenu.
+						</p>
+					</div>
+					<a
+						href="/contact"
+						class="label-caps mt-auto w-fit rounded-full bg-secondary/10 px-3 py-2 font-mono text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
+					>
+						Pack recommandé : Pack Visibilité ou Croissance
+					</a>
+				</article>
+
+				<article data-animate class="card-default flex flex-col gap-md p-lg lg:col-span-2">
+					<span class="material-symbols-outlined text-[32px] text-secondary" aria-hidden="true">
+						business_center
+					</span>
+					<div class="flex flex-1 flex-col gap-sm">
+						<p class="label-caps font-mono text-on-surface-variant">PME EN CROISSANCE</p>
+						<h3 class="font-display text-headline-md font-semibold text-on-surface">
+							Cabinet d'expertise, agence B2B, société de services
+						</h3>
+						<p class="text-body-md text-on-surface-variant">
+							Vous visez une croissance soutenue avec une stratégie marketing à long terme. Le SEO
+							local et national, la production régulière de contenu et le reporting mensuel sont des
+							leviers structurels — pas des options ponctuelles. Le récurrent du Pack Croissance
+							devient un investissement marketing prévisible.
+						</p>
+					</div>
+					<a
+						href="/contact"
+						class="label-caps mt-auto w-fit rounded-full bg-secondary/10 px-3 py-2 font-mono text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
+					>
+						Pack recommandé : Pack Croissance (9 500 MAD + 1 300 MAD/mois)
+					</a>
+				</article>
+
+				<article data-animate class="card-default flex flex-col gap-md p-lg lg:col-span-2 lg:col-start-2">
+					<span class="material-symbols-outlined text-[32px] text-secondary" aria-hidden="true">
+						web
+					</span>
+					<div class="flex flex-1 flex-col gap-sm">
+						<p class="label-caps font-mono text-on-surface-variant">PRÉSENCE SIMPLE</p>
+						<h3 class="font-display text-headline-md font-semibold text-on-surface">
+							Page de contact, site vitrine sans ambition SEO
+						</h3>
+						<p class="text-body-md text-on-surface-variant">
+							Vous avez besoin d'une présence en ligne professionnelle pour rassurer vos contacts
+							directs, sans objectif d'acquisition via Google. Un site simple, rapide et bien conçu
+							suffit. Pas besoin de SEO local poussé ni de suivi mensuel.
+						</p>
+					</div>
+					<a
+						href="/contact"
+						class="label-caps mt-auto w-fit rounded-full bg-secondary/10 px-3 py-2 font-mono text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
+					>
+						Pack recommandé : Pack Starter (4 000 MAD)
+					</a>
+				</article>
+
+				<article data-animate class="card-default flex flex-col gap-md p-lg lg:col-span-2">
+					<span class="material-symbols-outlined text-[32px] text-secondary" aria-hidden="true">
+						tune
+					</span>
+					<div class="flex flex-1 flex-col gap-sm">
+						<p class="label-caps font-mono text-on-surface-variant">BESOIN SPÉCIFIQUE</p>
+						<h3 class="font-display text-headline-md font-semibold text-on-surface">
+							E-commerce, multilingue avancé, application sur-mesure
+						</h3>
+						<p class="text-body-md text-on-surface-variant">
+							Votre projet sort du périmètre standard d'un site vitrine — boutique en ligne, gestion
+							de catalogue, espace membre, application web spécifique. Les packs standard ne sont pas
+							adaptés. ATLASEO propose un devis personnalisé pour ces projets, à partir de 15 000 MAD
+							selon le périmètre.
+						</p>
+					</div>
+					<a
+						href="/contact"
+						class="label-caps mt-auto w-fit rounded-full bg-secondary/10 px-3 py-2 font-mono text-secondary transition-colors hover:bg-secondary hover:text-on-secondary"
+					>
+						Pack recommandé : Devis sur-mesure
+					</a>
+				</article>
 			</div>
 		</div>
 	</section>
 
-	<!-- 2.5 CTA Banner -->
+	<!-- 2.6 Transparence -->
+	<section data-animate class="bg-surface py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="TRANSPARENCE"
+				title="Ce que les packs ATLASEO n'incluent pas"
+				labelClass="font-mono"
+			/>
+
+			<div class="mx-auto flex max-w-4xl flex-col gap-md text-body-md text-on-surface-variant">
+				<p>
+					ATLASEO se concentre exclusivement sur la création de sites web professionnels et le
+					référencement Google et IA. Cette spécialisation est ce qui nous permet de livrer rapidement
+					et de tenir nos standards de qualité technique. Les services suivants sortent volontairement
+					du périmètre de nos packs standard :
+				</p>
+
+				<ul class="flex flex-col gap-md">
+					<li class="flex items-start gap-sm">
+						<span class="material-symbols-outlined mt-0.5 shrink-0 text-error" aria-hidden="true">
+							close
+						</span>
+						<span>
+							Gestion des réseaux sociaux. Nous configurons vos comptes au démarrage mais l'animation
+							éditoriale relève d'un community manager dédié.
+						</span>
+					</li>
+					<li class="flex items-start gap-sm">
+						<span class="material-symbols-outlined mt-0.5 shrink-0 text-error" aria-hidden="true">
+							close
+						</span>
+						<span>
+							Production de logo ou identité visuelle. Nous travaillons avec votre logo existant ou
+							vous orientons vers un graphiste partenaire.
+						</span>
+					</li>
+					<li class="flex items-start gap-sm">
+						<span class="material-symbols-outlined mt-0.5 shrink-0 text-error" aria-hidden="true">
+							close
+						</span>
+						<span>
+							Motion design et vidéos promotionnelles. Nous intégrons les vidéos que vous fournissez,
+							mais ne les produisons pas.
+						</span>
+					</li>
+					<li class="flex items-start gap-sm">
+						<span class="material-symbols-outlined mt-0.5 shrink-0 text-error" aria-hidden="true">
+							close
+						</span>
+						<span>
+							E-commerce complet avec catalogue et gestion de stock. Un ou deux produits en vente
+							directe restent possibles dans le Pack Croissance.
+						</span>
+					</li>
+					<li class="flex items-start gap-sm">
+						<span class="material-symbols-outlined mt-0.5 shrink-0 text-error" aria-hidden="true">
+							close
+						</span>
+						<span>
+							Garantie de position numéro un sur Google. Nous nous engageons sur la méthode et le
+							reporting, pas sur une position chiffrée.
+						</span>
+					</li>
+					<li class="flex items-start gap-sm">
+						<span class="material-symbols-outlined mt-0.5 shrink-0 text-error" aria-hidden="true">
+							close
+						</span>
+						<span>
+							Support 24h/24, 7j/7. Horaires ouvrables pour tous les packs, réponse sous 2h WhatsApp
+							pour le Pack Croissance.
+						</span>
+					</li>
+				</ul>
+
+				<p>
+					Pour tout besoin sortant de ce périmètre, contactez-nous : nous pouvons soit construire un
+					devis sur-mesure, soit vous orienter vers un partenaire spécialisé dans notre réseau. La
+					transparence sur nos limites est l'une des raisons pour lesquelles nos clients restent avec
+					nous.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.7 FAQ -->
+	<section data-animate class="bg-surface-container-low py-xl">
+		<div class="container-site flex flex-col gap-xl">
+			<SectionHeader
+				label="QUESTIONS FRÉQUENTES"
+				title="Vos questions sur les tarifs et les packs ATLASEO"
+				subtitle="Les réponses concrètes aux questions reçues le plus souvent au moment du devis."
+				labelClass="font-mono"
+			/>
+			<div class="mx-auto flex w-full max-w-[800px] flex-col gap-sm" data-animate-stagger>
+				{
+					offresFaqs.map((item) => (
+						<details
+							data-animate
+							data-faq-item
+							class="rounded-xl border border-outline-variant/30 bg-surface-container-lowest p-md transition-all duration-200 ease-out open:border-secondary"
+						>
+							<summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-md [&::-webkit-details-marker]:hidden">
+								<h3 class="font-display text-lg font-semibold text-on-surface">
+									{item.question}
+								</h3>
+								<span
+									data-faq-icon
+									class="material-symbols-outlined shrink-0 text-secondary transition-transform duration-200"
+									aria-hidden="true"
+								>
+									expand_more
+								</span>
+							</summary>
+							<p
+								class="mt-md text-body-md text-on-surface-variant [&_a]:font-medium [&_a]:text-secondary [&_a]:hover:underline"
+								set:html={item.answer}
+							/>
+						</details>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- 2.8 CTA Banner -->
 	<CtaBanner
 		title="Prêt à dominer votre marché local ?"
 		subtitle="Obtenez votre devis gratuit et découvrez comment nous pouvons booster votre visibilité."
 		primaryCta={{ text: 'Obtenir mon devis', href: '/contact' }}
 		secondaryCta={{ text: 'Nous contacter', href: '/contact' }}
 	/>
+
+	<script>
+		document.querySelectorAll('[data-faq-item]').forEach(details => {
+			const icon = details.querySelector('[data-faq-icon]');
+			if (!icon) return;
+			icon.textContent = 'expand_more';
+			details.addEventListener('toggle', () => {
+				icon.classList.toggle('rotate-180', details.open);
+			});
+		});
+	</script>
 </BaseLayout>
