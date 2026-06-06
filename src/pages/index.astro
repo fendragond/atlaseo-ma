@@ -6,6 +6,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import BentoCard from '../components/BentoCard.astro';
 import PackCard from '../components/PackCard.astro';
 import GlassCard from '../components/GlassCard.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 import { PACKS } from '../data/packs';
 
 const dataStats = [
@@ -109,9 +110,10 @@ const faqPageSchema = {
 	description="Agence web Casablanca. Sites ultra-rapides sur Cloudflare, Lighthouse 99/100, SEO local inclus. Résultats visibles en 2-4 semaines. 📞 +212 6XX XX XX XX"
 	preloadHero="/images/hero-laptop.webp"
 	schema
+	whatsAppFabDesktopOnly
 >
 	<!-- 1.1 Hero -->
-	<section data-animate class="relative overflow-hidden py-xl">
+	<section data-animate data-sticky-mobile-cta-hero class="relative overflow-hidden py-xl">
 		<div class="container-site grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
 			<div class="flex min-w-0 flex-1 flex-col gap-md">
 				<span class="label-caps inline-flex w-fit items-center gap-2 rounded border border-outline-variant/50 bg-surface-container-lowest px-3 py-2 text-secondary">
@@ -200,6 +202,53 @@ const faqPageSchema = {
 					</div>
 				</GlassCard>
 			</div>
+		</div>
+	</section>
+
+	<!-- 1.1a Trust Strip -->
+	<section data-animate class="bg-surface-container-low py-md md:py-lg">
+		<div class="mx-auto w-full max-w-container px-gutter">
+			<article
+				class="cloud-shadow relative mx-auto max-w-2xl overflow-hidden rounded-2xl border border-outline-variant/30 bg-white p-md transition-colors duration-200 ease-out hover:border-primary/20 md:p-lg"
+			>
+				<span class="label-caps inline-flex rounded-full bg-secondary-container/40 px-3 py-1 text-secondary-on-container">
+					CAS CLIENT
+				</span>
+				<span
+					class="material-symbols-outlined pointer-events-none absolute left-6 top-6 text-5xl text-secondary/20 md:left-8 md:top-8"
+					aria-hidden="true"
+				>
+					format_quote
+				</span>
+				<blockquote class="relative z-10 mt-lg">
+					<p class="text-body-lg italic leading-relaxed text-on-surface">
+						"L'équipe ATLASEO a livré exactement ce qui était promis : un site rapide, propre, qui me
+						ramène des patientes depuis Google. C'est rare au Maroc."
+					</p>
+					<footer class="mt-lg flex items-center gap-md">
+						<img
+							src="/images/dryousra-portrait.webp"
+							alt="Dr Yousra El Khadri"
+							width="56"
+							height="56"
+							loading="lazy"
+							class="h-14 w-14 shrink-0 rounded-full border border-outline-variant/30 object-cover"
+						/>
+						<div class="min-w-0">
+							<cite class="not-italic font-semibold text-on-surface">Dr Yousra El Khadri</cite>
+							<p class="text-sm text-on-surface-variant">Médecine esthétique · Casablanca</p>
+							<a
+								href="https://dryousra.ma"
+								target="_blank"
+								rel="noopener"
+								class="text-sm font-semibold text-secondary hover:underline"
+							>
+								dryousra.ma →
+							</a>
+						</div>
+					</footer>
+				</blockquote>
+			</article>
 		</div>
 	</section>
 
@@ -503,4 +552,6 @@ const faqPageSchema = {
 			});
 		});
 	</script>
+
+	<StickyMobileCTA debug={import.meta.env.DEV} />
 </BaseLayout>

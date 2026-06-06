@@ -3,9 +3,10 @@ import { SITE } from '../../data/site';
 
 interface Props {
 	href?: string;
+	desktopOnly?: boolean;
 }
 
-const { href = SITE.whatsapp } = Astro.props;
+const { href = SITE.whatsapp, desktopOnly = false } = Astro.props;
 ---
 
 <a
@@ -13,7 +14,10 @@ const { href = SITE.whatsapp } = Astro.props;
 	target="_blank"
 	rel="noopener noreferrer"
 	aria-label="Contacter ATLASEO sur WhatsApp"
-	class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-secondary text-on-secondary shadow-cloud transition-transform hover:scale-105"
+	class:list={[
+		'fixed bottom-6 right-6 z-50 h-14 w-14 items-center justify-center rounded-full bg-secondary text-on-secondary shadow-cloud transition-transform hover:scale-105',
+		desktopOnly ? 'hidden md:flex' : 'flex',
+	]}
 >
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7" aria-hidden="true">
 		<path
