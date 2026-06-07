@@ -70,7 +70,7 @@
 
 ### Enrichissement sémantique pages d'expertise (juillet-août 2026)
 
-- [x] **[XL]** FAQ longue (8-12 questions) ajoutée en bas de `/`, `/creation-site-web`, `/seo-local`, `/offres` + schema FAQPage — 2026-06-05
+- [x] **[XL]** FAQ longue (8-12 questions) ajoutée en bas de `/`, `/creation-site-web`, `/seo-local`, `/offres` + schema FAQPage — 2026-06-07
 - [x] **[L]** Section "Comprendre le SEO local en 2026" sur `/seo-local` (~350 mots + schéma visuel) — 🔗 strategy §7 Phase 2 — 2026-06-03
 - [x] **[L]** Section "Erreurs courantes des PME marocaines en SEO local" sur `/seo-local` (~450 mots) — 🔗 strategy §7 Phase 2  — 2026-06-03
 - [x] **[L]** Section "L'infrastructure Cloudflare en détail" sur `/creation-site-web` (~350 mots) — 🔗 strategy §7 Phase 2 — 2026-06-05
@@ -190,6 +190,7 @@
 - [x] 2026-06-05 Enrichissement sémantique /creation-site-web complet : section Infrastructure Cloudflare (~350 mots), section Méthode ATLASEO x3 piliers (~300 mots), FAQ x11 + FAQPage schema. Total ~1000 mots ajoutés.
 - [x] 2026-06-05 Fix footer label SEO Local → Visibilité Locale + FAQ accordion JS toggle fix (arrow icon, JS data-faq-item / data-faq-icon pattern)
 - [x] 2026-06-05 Enrichissement sémantique /offres complet : section "Comprendre la tarification" (3 tiers marché), guide de décision (5 profils), section transparence "Ce qui n'est pas inclus" (6 items icône close rouge), FAQ x11 + FAQPage schema. Suppression section Benchmark redondante. ~2000 mots ajoutés.
+- [x] 2026-06-07 — Homepage conversion : FAQ accueil x10 + FAQPage schema. Trust strip card Dr Yousra El Khadri (CAS CLIENT badge, citation, photo, lien dryousra.ma). Sticky mobile CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Commits 4b8abba + 5082c4b. Mergé sur main + déployé.
 
 ---
 

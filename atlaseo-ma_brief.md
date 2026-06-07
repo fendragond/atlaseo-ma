@@ -10,7 +10,7 @@
 > **Purpose**: Single source of truth for building ATLASEO.ma in Astro. Cursor works from this file exclusively — no re-deriving decisions.
 > **Generated from**: Stitch mockup (5 pages + design system) + project context document.
 > **Created**: 2026-05-17
-> **Last updated**: 2026-05-25 — v1.9 (header updated for 3-doc system)
+> **Last updated**: 2026-06-07 — v2.0
 >
 > **Session log:**
 > - 2026-05-17 — Brief generated from Stitch mockup.
@@ -22,10 +22,11 @@
 > - 2026-06-03 — Quick wins SEO lot 1 (commit df638a6) : LocalBusiness schema, BreadcrumbList x4, meta descriptions 📞, CNDP/RGPD, section low-cost. Validé schema.org 0 erreur. Docs remis à la racine.
 > - 2026-06-05 — Enrichissement sémantique /creation-site-web : section "Pourquoi Cloudflare change tout" (3 cartes + bannière), section "Méthode ATLASEO" (3 piliers numérotés), FAQ x11 + FAQPage schema JSON-LD. Fix FAQ accordion arrow (JS toggle). Fix footer label "Visibilité Locale". Commit: feat: creation-site-web semantic enrichment.
 > - 2026-06-05 — Enrichissement sémantique /offres : section "Comprendre la tarification" (3 tiers marché web Maroc, 4 composantes devis), guide de décision 5 profils, section transparence "Ce qui n'est pas inclus" (6 items, icône close rouge), FAQ x11 + FAQPage schema JSON-LD. Suppression section Benchmark Maroc (redondante).
+> - 2026-06-07 — Homepage conversion phase 2 : FAQ accueil x10 + FAQPage schema (commit 4b8abba), trust strip card Dr Yousra El Khadri (CAS CLIENT badge, format_quote ornament, dryousra.ma link, no stars), sticky mobile bottom CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Branch feat/homepage-conversion mergée sur main et déployée.
 >
 > **Pending (next session):**
 > - [ ] Numéro de téléphone → remplacer +212 6XX XX XX XX partout
-> - [ ] Achat domaine atlaseo.ma — en attente de validation
+> - [ ] Achat domaine atlaseo.ma — en attente de validation ANRT
 > - [ ] Custom domain Cloudflare + redirect www → non-www
 > - [ ] Lighthouse production sur URL réelle (atlaseo.ma)
 > - [ ] Google Search Console : verify + sitemap submit
