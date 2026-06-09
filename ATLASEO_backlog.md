@@ -55,7 +55,7 @@
 - [x] Corriger bug "Lighthouse 0/100" hero accueil — 2026-06-03
 - [x] Mention CNDP/RGPD discrète sur /creation-site-web ou footer — 2026-06-03
 - [x] Section "Pourquoi pas un site low-cost ?" sur /creation-site-web — 2026-06-03
-- [ ] Update numéro de téléphone
+- [x] Update numéro de téléphone — 2026-06-03
 
 ### Suivi indexation (récurrent juin 2026)
 
@@ -192,6 +192,7 @@
 - [x] 2026-06-05 Enrichissement sémantique /offres complet : section "Comprendre la tarification" (3 tiers marché), guide de décision (5 profils), section transparence "Ce qui n'est pas inclus" (6 items icône close rouge), FAQ x11 + FAQPage schema. Suppression section Benchmark redondante. ~2000 mots ajoutés.
 - [x] 2026-06-07 — Homepage conversion : FAQ accueil x10 + FAQPage schema. Trust strip card Dr Yousra El Khadri (CAS CLIENT badge, citation, photo, lien dryousra.ma). Sticky mobile CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Commits 4b8abba + 5082c4b. Mergé sur main + déployé.
 - [x] 2026-06-09 — Intégration logo et favicon : 5 PNG rognés dans `public/images/logos/`, favicons dans `public/`, Navbar/Footer/SchemaOrg mis à jour. Commits : 889add9, b326c9e + fix crop.
+- [x] 2026-06-09 — Enrichissement /contact : section About ATLASEO (logo h-56, motto, narrative, carte fondateur Fahd D., 3 piliers approche produit). Reorder (About → Expertise de proximité → Channels). Contact Channels restructuré (full-width WhatsApp + grille 3 cols). Infrastructure card supprimée. Support client simplifié. Tags audience supprimés.
 
 ---
 

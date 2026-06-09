@@ -10,7 +10,7 @@
 > **Purpose**: Single source of truth for building ATLASEO.ma in Astro. Cursor works from this file exclusively — no re-deriving decisions.
 > **Generated from**: Stitch mockup (5 pages + design system) + project context document.
 > **Created**: 2026-05-17
-> **Last updated**: 2026-06-07 — v2.0
+> **Last updated**: 2026-06-09 — v2.1
 >
 > **Session log:**
 > - 2026-05-17 — Brief generated from Stitch mockup.
@@ -24,9 +24,9 @@
 > - 2026-06-05 — Enrichissement sémantique /offres : section "Comprendre la tarification" (3 tiers marché web Maroc, 4 composantes devis), guide de décision 5 profils, section transparence "Ce qui n'est pas inclus" (6 items, icône close rouge), FAQ x11 + FAQPage schema JSON-LD. Suppression section Benchmark Maroc (redondante).
 > - 2026-06-07 — Homepage conversion phase 2 : FAQ accueil x10 + FAQPage schema (commit 4b8abba), trust strip card Dr Yousra El Khadri (CAS CLIENT badge, format_quote ornament, dryousra.ma link, no stars), sticky mobile bottom CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Branch feat/homepage-conversion mergée sur main et déployée.
 > - 2026-06-09 — Logo et favicon intégrés. 5 variantes PNG (transparent, rognées) dans `public/images/logos/`. Favicons (16/32/48/180/192/512 + .ico) dans `public/`. Navbar : `atlaseo-logo-horizontal.png` à `h-10`. Footer : `atlaseo-logo-stacked.png` à `h-16`. SchemaOrg Organization logo mis à jour. Commits : 889add9, b326c9e + fix crop.
+> - 2026-06-09 — Contact page enrichment : nouvelle section "À propos d'ATLASEO" (logo h-56 + motto "Pensé local. Indexé global.", narrative agence, carte fondateur Fahd D. + fondateur.webp, 3 piliers Notre approche). Reorder sections : About → Expertise de proximité → Contact Channels. Contact Channels restructuré en full-width WhatsApp + grille 3 colonnes (Email, Phone, Support client). Carte Infrastructure Cloudflare supprimée. Support client simplifié. Tags audience (PME, Commerces, Professions Libérales) supprimés. Copy "Expertise de proximité" élargie.
 >
 > **Pending (next session):**
-> - [ ] Numéro de téléphone → remplacer +212 6XX XX XX XX partout
 > - [ ] Achat domaine atlaseo.ma — en attente de validation ANRT
 > - [ ] Custom domain Cloudflare + redirect www → non-www
 > - [ ] Lighthouse production sur URL réelle (atlaseo.ma)
@@ -235,7 +235,7 @@ Create these as reusable `.astro` components:
 | Hébergement Cloudflare | 2 cols | `cloud_done` | Hébergement Cloudflare | Mini bar chart (decorative, showing growth). Copy: "Vos sites sont hébergés sur le réseau mondial Cloudflare — le même qui protège 20% du web mondial. Temps de chargement <1s partout au Maroc." |
 | SSL & Sécurité | 1 col | `security` | SSL & Sécurité | "Certificat SSL gratuit, protection DDoS, et firewall intégrés. Vos visiteurs sont en sécurité." |
 | 100% Responsive | 1 col | `devices` | 100% Responsive | "Desktop, tablette, mobile — chaque page s'adapte parfaitement à tous les écrans." |
-| Livraison Express | 2 cols, dark bg | `rocket_launch` | Livraison Express | Big number: **7** + "jours de livraison moyenne" |
+| Livraison Express | 2 cols, dark bg | `rocket_launch` | Livraison Express | Big number: **14** + "jours de livraison moyenne" |
 | Expertise Premium | 2 cols, image overlay | — | Expertise Technique Premium | Image of code/dev setup with grayscale→color hover. Overlay text. |
 
 #### 1.3 Dominez le Marché Local
@@ -271,7 +271,7 @@ Create these as reusable `.astro` components:
 | Pack Croissance | Yes (border-2 border-primary, scale-105, badge "Recommandé") | "Choisir ce pack" (milled green) → /contact |
 
 - Features are summary-level here (4-5 bullet points per card). Full details on /offres.
-- Pack Starter features: Site vitrine (1-3 pages), Design responsive, Hébergement Cloudflare, SSL inclus, Livraison 7 jours
+- Pack Starter features: Site vitrine (1-3 pages), Design responsive, Hébergement Cloudflare, SSL inclus, Livraison 14 jours
 - Pack Visibilité features: Tout du Pack Starter, SEO local de base, Google Business Profile, Optimisation meta tags, Suivi 1 mois
 - Pack Croissance features: Tout du Pack Visibilité, SEO local avancé, Stratégie de contenu, Rapport mensuel, Support prioritaire (2h)
 
@@ -318,7 +318,7 @@ Same 3-column layout as homepage but with full feature lists. No prices displaye
 - Certificat SSL gratuit
 - Optimisation vitesse (Lighthouse 90+)
 - Intégration WhatsApp + click-to-call
-- Livraison en 7 jours ouvrés
+- Livraison en 14 jours ouvrés
 - CTA: "Démarrer avec Starter" (outline) → /contact
 
 **Pack Visibilité**
@@ -366,7 +366,7 @@ Same 3-column layout as homepage but with full feature lists. No prices displaye
 
 **Meta:**
 - `<title>`: Création de Site Web à Casablanca — Infrastructure Cloudflare | ATLASEO
-- `<meta description>`: Sites web ultra-rapides sur Cloudflare. Design responsive, Lighthouse 99/100, livraison en 7 jours. L'infrastructure premium pour votre entreprise au Maroc.
+- `<meta description>`: Sites web ultra-rapides sur Cloudflare. Design responsive, Lighthouse 99/100, livraison en 14 jours. L'infrastructure premium pour votre entreprise au Maroc.
 
 **Sections:**
 
@@ -374,7 +374,7 @@ Same 3-column layout as homepage but with full feature lists. No prices displaye
 - **Background**: `surface-container-low`
 - **Badge**: Création Web
 - **H1**: `Créez un site web qui propulse votre activité.`
-- **Subtitle**: Infrastructure Cloudflare, design sur-mesure, performance maximale. Votre site professionnel livré en 7 jours, prêt à convertir.
+- **Subtitle**: Infrastructure Cloudflare, design sur-mesure, performance maximale. Votre site professionnel livré en 14 jours, prêt à convertir.
 - **CTA** (milled green): Lancer mon projet → /contact
 - **Visual** (right): Dashboard screenshot in rounded card. Floating glass badge: speed icon + **99/100** (Lighthouse score)
 
@@ -390,8 +390,8 @@ Same 3-column layout as homepage but with full feature lists. No prices displaye
 | Design Sur-mesure | 1 col | `palette` | Design Sur-mesure | Pas de templates génériques. Votre identité visuelle traduite en un design unique et professionnel. |
 | Intégration Business | 2 cols, dark | `hub` | Intégration Business | WhatsApp, Google Analytics, Search Console, formulaires — tout est connecté dès le lancement. (Decorative large hub icon in background at 20% opacity) |
 
-#### 3.3 Timeline — Votre site prêt en 7 jours
-- **H2**: Votre site prêt en 7 jours
+#### 3.3 Timeline — Votre site prêt en 14 jours
+- **H2**: Votre site prêt en 14 jours
 - **Subtitle**: Un processus clair, sans surprises.
 - **Layout**: 4 steps, horizontal on desktop, vertical on mobile. Connected by progress line.
 
@@ -465,7 +465,7 @@ Same 3-column layout as homepage but with full feature lists. No prices displaye
 
 | Card | Span | Style | Title | Content |
 |---|---|---|---|---|
-| Ultra Agile | 2×1 | White | Ultra Agile | Pas de réunions interminables, pas de process kafkaïens. Un interlocuteur unique, des décisions rapides, un site livré en 7 jours. |
+| Ultra Agile | 2×1 | White | Ultra Agile | Pas de réunions interminables, pas de process kafkaïens. Un interlocuteur unique, des décisions rapides, un site livré en 14 jours. |
 | Infrastructure Premium | 2×2 | Dark with bg image | Infrastructure Premium | Cloudflare Workers, SSL, CDN mondial. Les mêmes technologies que les leaders du web, accessibles aux PME marocaines. (Checklist: Cloudflare Workers, SSL + DDoS, CDN 300+ villes) |
 | Tarif Transparent | 1×1 | Green bg | Tarif Transparent | Devis clair et détaillé. Pas de frais cachés, pas de mauvaises surprises. |
 | 2-4 Semaines | 1×1 | Light | 2-4 Semaines | De la stratégie au lancement. Résultats SEO visibles dès le premier mois. |
@@ -488,55 +488,19 @@ Same 3-column layout as homepage but with full feature lists. No prices displaye
 **Sections:**
 
 #### 5.1 Hero
-- **Label**: CONTACT & SUPPORT
-- **H1**: `Parlons de votre croissance.`
-- **Subtitle**: Que vous soyez une PME ou un commerçant local au Maroc, notre équipe est prête à booster votre visibilité sur Google.
+(unchanged)
 
-#### 5.2 Contact Channels Layout (12-col grid)
+#### 5.2 À propos d'ATLASEO
+New section inserted after hero. Three blocks:
+- Block A: stacked logo at h-56, centered. Motto "Pensé local. Indexé global." in italic display font, on-surface-variant.
+- Block B: 7/5 grid. Left column — agency narrative (H2 "Qui sommes-nous ?", 2 paragraphs). Right column — glassmorphic founder card (fondateur.webp rounded 96px, label "FONDATEUR", name "Fahd D.", quote).
+- Block C: "Notre approche" — label-caps header, H2, subtitle, 3 equal cards (route / Parcours utilisateur, ads_click / Stratégie de conversion, palette / Discipline UX/UI).
 
-No contact form — all channels are direct links (Option A).
+#### 5.3 Expertise de proximité
+Moved up from bottom of page. Casablanca aerial photo + H3 "Expertise de proximité" + updated copy (audience-agnostic). No audience tags.
 
-**Left (7 cols) — Primary CTA Cards** (stacked):
-
-1. **WhatsApp CTA Card** (bg: `secondary-container`, large, prominent):
-   - Icon: WhatsApp SVG icon in dark circle (w-16 h-16)
-   - **H2**: Contactez-nous sur WhatsApp
-   - Copy: Pour une réponse instantanée, c'est le moyen le plus rapide de nous joindre.
-   - CTA (dark green, full-width): "Démarrer une conversation WhatsApp" → `https://wa.me/XXXXXXXXXXX` (placeholder)
-   - This is the primary conversion channel for Morocco
-
-2. **Email Card** (glass card):
-   - Icon: `mail`
-   - **H3**: Envoyez-nous un email
-   - Copy: Pour les demandes détaillées ou les documents à partager.
-   - Email link: support@atlaseo.ma → `mailto:support@atlaseo.ma`
-
-3. **Phone Card** (glass card):
-   - Icon: `call`
-   - **H3**: Appelez-nous
-   - Copy: Disponible du lundi au vendredi, 9h-18h.
-   - Phone link: +212 XXX-XXXXXX → `tel:+212XXXXXXXXX` (placeholder)
-
-**Right (5 cols) — Info Cards** (stacked):
-
-1. **Support Info Card** (glass card):
-   - Icon: `support_agent`
-   - **H4**: Support client
-   - Email: support@atlaseo.ma
-   - Highlighted block (green left border): ⭐ **Support prioritaire** — Réservé exclusivement aux clients du **Pack Croissance**. Réponse garantie en moins de 2 heures.
-
-2. **Infrastructure Badge** (glass card, compact):
-   - Icon: `verified_user`
-   - Text: Infrastructure Cloudflare
-   - Badge: UPTIME 99.9%
-
-#### 5.3 Location Context
-- **Layout**: 2 columns
-- **Left**: Photo of Casablanca cityscape (aerial, blue hour). Overlay badge: "Siège social — Casablanca, Maroc"
-- **Right**:
-  - **H3**: Expertise de proximité
-  - Copy: Nous comprenons les spécificités du marché marocain. Notre accompagnement en SEO local est conçu pour connecter les entreprises de Casablanca, Marrakech et Rabat avec leurs clients idéaux.
-  - Tags: PME, Commerces, Professions Libérales
+#### 5.4 Contact Channels
+Restructured layout: full-width WhatsApp card on top, 3-column grid below (Email, Phone, Support client). Infrastructure Cloudflare card removed. Support client card simplified (no highlight block, single body line).
 
 ---
 
@@ -770,6 +734,7 @@ Pure static site — no Worker entry point needed. Static assets served directly
 | Code/dev workspace | Accueil bento, Création Web | WebP, 800×400 | Environnement de développement web professionnel | Stock photo |
 | Analytics dashboard | Offres benchmark | WebP, 800×400 | Dashboard d'analyse de performance SEO | Screenshot or mock |
 | Casablanca aerial | Contact location | WebP, 800×400 | Vue aérienne de Casablanca au crépuscule | Stock photo |
+| Founder photo | Contact About section | WebP, 400×400 | Fahd D., fondateur d'ATLASEO | public/images/team/fondateur.webp |
 | dryousra.ma screenshot | Accueil portfolio | WebP, 800×600 | Capture d'écran du site dryousra.ma — médecine esthétique Casablanca | Screenshot of https://dryousra.ma homepage |
 | ATLASEO logo | Navbar, footer, OG | SVG | ATLASEO logo | Design (text-based logo from Hanken Grotesk bold) |
 | OG default image | All pages (fallback) | JPG 1200×630 | ATLASEO — Création de Site Web & SEO Local au Maroc | Branded graphic |
@@ -786,7 +751,7 @@ Per indexation rules, every page must have substantial content:
 | Offres | ~500 words | ✅ |
 | Création Web | ~500 words | ✅ |
 | SEO Local | ~550 words | ✅ |
-| Contact | ~350 words | ✅ |
+| Contact | ~650 words | ✅ |
 
 ---
 
