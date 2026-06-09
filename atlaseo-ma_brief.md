@@ -23,6 +23,7 @@
 > - 2026-06-05 — Enrichissement sémantique /creation-site-web : section "Pourquoi Cloudflare change tout" (3 cartes + bannière), section "Méthode ATLASEO" (3 piliers numérotés), FAQ x11 + FAQPage schema JSON-LD. Fix FAQ accordion arrow (JS toggle). Fix footer label "Visibilité Locale". Commit: feat: creation-site-web semantic enrichment.
 > - 2026-06-05 — Enrichissement sémantique /offres : section "Comprendre la tarification" (3 tiers marché web Maroc, 4 composantes devis), guide de décision 5 profils, section transparence "Ce qui n'est pas inclus" (6 items, icône close rouge), FAQ x11 + FAQPage schema JSON-LD. Suppression section Benchmark Maroc (redondante).
 > - 2026-06-07 — Homepage conversion phase 2 : FAQ accueil x10 + FAQPage schema (commit 4b8abba), trust strip card Dr Yousra El Khadri (CAS CLIENT badge, format_quote ornament, dryousra.ma link, no stars), sticky mobile bottom CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Branch feat/homepage-conversion mergée sur main et déployée.
+> - 2026-06-09 — Logo et favicon intégrés. 5 variantes PNG (transparent, rognées) dans `public/images/logos/`. Favicons (16/32/48/180/192/512 + .ico) dans `public/`. Navbar : `atlaseo-logo-horizontal.png` à `h-10`. Footer : `atlaseo-logo-stacked.png` à `h-16`. SchemaOrg Organization logo mis à jour. Commits : 889add9, b326c9e + fix crop.
 >
 > **Pending (next session):**
 > - [ ] Numéro de téléphone → remplacer +212 6XX XX XX XX partout

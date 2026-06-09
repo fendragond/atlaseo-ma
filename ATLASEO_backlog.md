@@ -191,6 +191,7 @@
 - [x] 2026-06-05 Fix footer label SEO Local → Visibilité Locale + FAQ accordion JS toggle fix (arrow icon, JS data-faq-item / data-faq-icon pattern)
 - [x] 2026-06-05 Enrichissement sémantique /offres complet : section "Comprendre la tarification" (3 tiers marché), guide de décision (5 profils), section transparence "Ce qui n'est pas inclus" (6 items icône close rouge), FAQ x11 + FAQPage schema. Suppression section Benchmark redondante. ~2000 mots ajoutés.
 - [x] 2026-06-07 — Homepage conversion : FAQ accueil x10 + FAQPage schema. Trust strip card Dr Yousra El Khadri (CAS CLIENT badge, citation, photo, lien dryousra.ma). Sticky mobile CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Commits 4b8abba + 5082c4b. Mergé sur main + déployé.
+- [x] 2026-06-09 — Intégration logo et favicon : 5 PNG rognés dans `public/images/logos/`, favicons dans `public/`, Navbar/Footer/SchemaOrg mis à jour. Commits : 889add9, b326c9e + fix crop.
 
 ---
 
