@@ -1,0 +1,646 @@
+---
+import MilledButton from './MilledButton.astro';
+import SectionHeader from './SectionHeader.astro';
+
+interface CollaborationPhase {
+	icon: string;
+	phase: string;
+	timing: string;
+	title: string;
+	body: string;
+	commitment: string;
+}
+
+interface Props {
+	phases: readonly CollaborationPhase[];
+}
+
+const { phases } = Astro.props;
+---
+
+<section data-animate class="bg-surface-container-low py-xl">
+	<div class="container-site flex flex-col gap-lg">
+		<SectionHeader
+			label="COLLABORATION"
+			title="Comment on travaille ensemble"
+			subtitle="Un parcours en trois temps, avec le même interlocuteur du premier échange à la 12ème facture du suivi mensuel."
+			labelClass="font-mono"
+		/>
+
+		<div
+			data-collaboration-stepper
+			class="cloud-shadow relative rounded-2xl border border-outline-variant/30 bg-white p-lg text-on-surface md:p-xl"
+		>
+			<div class="md:relative md:min-h-[380px]">
+				{
+					phases.map((phase, index) => (
+						<article
+							data-collab-panel
+							id={`collaboration-panel-${index}`}
+							role="tabpanel"
+							aria-labelledby={`collaboration-tab-${index}`}
+							aria-hidden={index === 0 ? 'false' : 'true'}
+							inert={index === 0 ? undefined : true}
+							class:list={[
+								'collab-phase-panel grid gap-lg pb-md md:absolute md:inset-0 md:grid md:grid-cols-12 md:items-center',
+								index !== 0 && 'is-mobile-hidden',
+								index === 0 && 'is-active',
+							]}
+						>
+							<div class="md:col-span-5">
+								<div class="mx-auto mb-md flex aspect-square w-full max-w-[180px] items-center justify-center rounded-xl bg-surface-container-low md:mb-0 md:max-w-[280px]">
+									{
+										index === 0 && (
+											<svg
+												viewBox="0 0 280 280"
+												class="phase-svg h-full w-full"
+												data-phase="1"
+												aria-hidden="true"
+												role="presentation"
+											>
+												<rect x="30" y="30" width="200" height="160" rx="8" stroke="#006d37" stroke-width="1.5" fill="none" opacity="0" class="fade-in-svg" style="--del: 0s; --target-opacity: 0.6" />
+												<line x1="30" y1="55" x2="230" y2="55" stroke="#006d37" stroke-width="1" opacity="0" class="fade-in-svg" style="--del: 0.1s; --target-opacity: 0.3" />
+												<circle cx="46" cy="43" r="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.15s; --target-opacity: 0.5" />
+												<circle cx="58" cy="43" r="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.2s; --target-opacity: 0.5" />
+												<circle cx="70" cy="43" r="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.25s; --target-opacity: 0.5" />
+												<rect x="45" y="68" width="80" height="8" rx="4" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.3s; --target-opacity: 0.35" />
+												<rect x="45" y="84" width="170" height="6" rx="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.4s; --target-opacity: 0.2" />
+												<rect x="45" y="96" width="170" height="6" rx="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.45s; --target-opacity: 0.2" />
+												<rect x="45" y="108" width="130" height="6" rx="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.5s; --target-opacity: 0.2" />
+												<rect x="45" y="124" width="80" height="50" rx="4" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.55s; --target-opacity: 0.15" />
+												<rect x="135" y="124" width="80" height="50" rx="4" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.6s; --target-opacity: 0.15" />
+												<circle cx="190" cy="200" r="35" stroke="#006d37" stroke-width="2" fill="none" class="draw-svg" style="--len: 220; --dur: 0.6s; --del: 0.8s" />
+												<line x1="215" y1="225" x2="245" y2="255" stroke="#006d37" stroke-width="2.5" stroke-linecap="round" class="draw-svg" style="--len: 43; --dur: 0.3s; --del: 1.2s" />
+												<circle cx="180" cy="192" r="2.5" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 1.4s; --target-opacity: 0.7" />
+												<circle cx="195" cy="205" r="2" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 1.5s; --target-opacity: 0.5" />
+												<circle cx="185" cy="210" r="1.5" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 1.55s; --target-opacity: 0.6" />
+											</svg>
+										)
+									}
+									{
+										index === 1 && (
+											<svg
+												viewBox="0 0 280 280"
+												class="phase-svg h-full w-full"
+												data-phase="2"
+												aria-hidden="true"
+												role="presentation"
+											>
+												<rect x="30" y="20" width="220" height="240" rx="8" stroke="#006d37" stroke-width="1.5" fill="none" class="draw-svg" style="--len: 920; --dur: 0.6s; --del: 0s" />
+												<line x1="30" y1="45" x2="250" y2="45" stroke="#006d37" stroke-width="1" opacity="0" class="fade-in-svg" style="--del: 0.4s; --target-opacity: 0.3" />
+												<circle cx="46" cy="33" r="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.45s; --target-opacity: 0.5" />
+												<circle cx="58" cy="33" r="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.5s; --target-opacity: 0.5" />
+												<circle cx="70" cy="33" r="3" fill="#006d37" opacity="0" class="fade-in-svg" style="--del: 0.55s; --target-opacity: 0.5" />
+												<rect x="42" y="52" width="196" height="12" rx="3" fill="#006d37" class="build-block" style="--i: 0" />
+												<rect x="42" y="72" width="196" height="55" rx="4" fill="#006d37" class="build-block" style="--i: 1" />
+												<rect x="42" y="136" width="120" height="8" rx="4" fill="#006d37" class="build-block" style="--i: 2" />
+												<rect x="42" y="152" width="196" height="5" rx="2.5" fill="#006d37" class="build-block" style="--i: 3" />
+												<rect x="42" y="162" width="196" height="5" rx="2.5" fill="#006d37" class="build-block" style="--i: 3" />
+												<rect x="42" y="172" width="140" height="5" rx="2.5" fill="#006d37" class="build-block" style="--i: 3" />
+												<rect x="42" y="186" width="93" height="40" rx="4" fill="#006d37" class="build-block" style="--i: 4" />
+												<rect x="145" y="186" width="93" height="40" rx="4" fill="#006d37" class="build-block" style="--i: 5" />
+												<rect x="90" y="234" width="100" height="16" rx="8" fill="#006d37" class="build-block" style="--i: 6" />
+											</svg>
+										)
+									}
+									{
+										index === 2 && (
+											<svg
+												viewBox="0 0 280 280"
+												class="phase-svg h-full w-full"
+												data-phase="3"
+												aria-hidden="true"
+												role="presentation"
+											>
+												<defs>
+													<linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+														<stop offset="0%" stop-color="#006d37" stop-opacity="0.25" />
+														<stop offset="100%" stop-color="#006d37" stop-opacity="0" />
+													</linearGradient>
+												</defs>
+												<path d="M 20 230 L 72 195 L 124 205 L 176 145 L 228 85 L 260 35" stroke="#006d37" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="chart-line" />
+												<path d="M 20 230 L 72 195 L 124 205 L 176 145 L 228 85 L 260 35 L 260 250 L 20 250 Z" fill="url(#areaGrad)" class="chart-area" />
+												<circle cx="20" cy="230" r="4" fill="#006d37" class="chart-dot" style="--d: 0" />
+												<circle cx="72" cy="195" r="4" fill="#006d37" class="chart-dot" style="--d: 1" />
+												<circle cx="124" cy="205" r="4" fill="#006d37" class="chart-dot" style="--d: 2" />
+												<circle cx="176" cy="145" r="4" fill="#006d37" class="chart-dot" style="--d: 3" />
+												<circle cx="228" cy="85" r="4" fill="#006d37" class="chart-dot" style="--d: 4" />
+												<circle cx="260" cy="35" r="4" fill="#006d37" class="chart-dot" style="--d: 5" />
+											</svg>
+										)
+									}
+								</div>
+							</div>
+
+							<div class="flex flex-col justify-center md:col-span-7">
+								<p class="font-mono text-label-caps font-medium uppercase tracking-[0.1em] text-on-surface-variant">
+									{phase.timing}
+								</p>
+								<h3 class="mt-sm font-display text-headline-lg-mobile text-on-surface md:text-headline-lg">
+									{phase.title}
+								</h3>
+								<p class="mt-md text-body-lg text-on-surface-variant">{phase.body}</p>
+								<div class="mt-md border-t border-outline-variant/15 pt-md">
+									<p class="text-body-md italic text-on-surface-variant">{phase.commitment}</p>
+								</div>
+								{
+									index === 2 && (
+										<MilledButton
+											href="/contact"
+											text="Démarrer mon projet"
+											icon="arrow_forward"
+											class="mt-md mb-sm w-full md:mb-0 md:w-fit"
+										/>
+									)
+								}
+							</div>
+						</article>
+					))
+				}
+			</div>
+
+			<div class="mt-lg">
+				<div class="mb-md h-1 overflow-hidden rounded-full bg-surface-container" aria-hidden="true">
+					<div data-collab-progress-fill class="h-full w-0 rounded-full bg-secondary" />
+				</div>
+				<div role="tablist" aria-label="Phases de collaboration" class="flex w-full items-start overflow-hidden px-sm">
+					{
+						phases.map((phase, index) => (
+							<>
+								<div class="flex w-[80px] shrink-0 flex-col items-center text-center md:w-28">
+									<button
+										id={`collaboration-tab-${index}`}
+										type="button"
+										role="tab"
+										aria-selected={index === 0 ? 'true' : 'false'}
+										aria-controls={`collaboration-panel-${index}`}
+										aria-label={`Phase ${index + 1}: ${phase.title}`}
+										tabindex={index === 0 ? 0 : -1}
+										data-collab-tab={index}
+										class:list={['collab-step-tab', index === 0 ? 'is-active' : 'is-future']}
+									>
+										<svg
+											data-collab-ring
+											class="collab-progress-ring absolute inset-0"
+											viewBox="0 0 44 44"
+											aria-hidden="true"
+										>
+											<circle
+												data-collab-ring-circle
+												cx="22"
+												cy="22"
+												r="20"
+												fill="none"
+												stroke="#006d37"
+												stroke-width="2"
+											/>
+										</svg>
+										<span
+											data-collab-icon
+											data-collab-phase-icon={phase.icon}
+											class="material-symbols-outlined flex items-center justify-center leading-none"
+											aria-hidden="true"
+										>
+											{phase.icon}
+										</span>
+									</button>
+									<span class="mx-auto mt-xs max-w-[80px] text-center text-[11px] leading-tight text-on-surface-variant">
+										{phase.title}
+									</span>
+								</div>
+								{
+									index < phases.length - 1 && (
+										<div
+											data-collab-segment={index}
+											class="collab-step-segment mx-xs mt-4 min-w-0 flex-1 border-t-2 md:mx-sm md:mt-5"
+											aria-hidden="true"
+										/>
+									)
+								}
+							</>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style is:global>
+	.collab-phase-panel {
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(0.75rem);
+		transition:
+			opacity 500ms ease-out,
+			transform 500ms ease-out;
+		will-change: opacity, transform;
+	}
+
+	.collab-phase-panel.is-mobile-hidden {
+		display: none;
+	}
+
+	.collab-phase-panel.is-active {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateY(0);
+	}
+
+	@media (min-width: 768px) {
+		.collab-phase-panel.is-mobile-hidden {
+			display: grid;
+		}
+	}
+
+	.collab-step-tab {
+		position: relative;
+		display: inline-flex;
+		height: 2.25rem;
+		width: 2.25rem;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		border-radius: 9999px;
+		border: 1px solid #c4c6cc;
+		background: #eceef0;
+		color: #44474c;
+		transition:
+			box-shadow 200ms ease-out,
+			background-color 200ms ease-out,
+			border-color 200ms ease-out,
+			color 200ms ease-out,
+			transform 200ms ease-out;
+	}
+
+	.collab-step-tab:hover,
+	.collab-step-tab:focus-visible {
+		box-shadow: 0 0 0 2px rgb(0 109 55 / 0.12);
+		outline: none;
+		transform: scale(1.05);
+	}
+
+	.collab-step-tab.is-future {
+		animation: hintPulse 4s ease-in-out infinite;
+	}
+
+	.collab-step-tab.is-future:hover,
+	.collab-step-tab.is-future:focus-visible {
+		border-color: #74777d;
+		background: #e6e8ea;
+		animation: none;
+	}
+
+	.collab-step-tab.is-active {
+		height: 2.5rem;
+		width: 2.5rem;
+		border-color: transparent;
+		background: #006d37;
+		color: #ffffff;
+		box-shadow: 0 0 16px rgb(0 109 55 / 0.2);
+	}
+
+	.collab-step-tab.is-complete {
+		border-color: transparent;
+		background: rgb(0 109 55 / 0.8);
+		color: #ffffff;
+	}
+
+	.collab-step-tab [data-collab-icon] {
+		height: 18px;
+		width: 18px;
+		font-size: 18px;
+		line-height: 1;
+	}
+
+	.collab-step-tab.is-active [data-collab-icon] {
+		height: 1.25rem;
+		width: 1.25rem;
+		font-size: 20px;
+	}
+
+	.collab-progress-ring {
+		display: none;
+		transform: rotate(-90deg);
+	}
+
+	.collab-step-tab.is-active .collab-progress-ring {
+		display: block;
+	}
+
+	.collab-step-segment {
+		border-color: #c4c6cc;
+		border-style: dashed;
+	}
+
+	.collab-step-segment.is-complete {
+		border-color: #006d37;
+		border-style: solid;
+	}
+
+	.fade-in-svg {
+		opacity: 0;
+		animation: svgFadeIn 0.4s ease-out var(--del, 0s) forwards;
+	}
+
+	.draw-svg {
+		stroke-dasharray: var(--len);
+		stroke-dashoffset: var(--len);
+		animation: drawSvg var(--dur, 0.6s) ease-out var(--del, 0s) forwards;
+	}
+
+	.build-block {
+		opacity: 0;
+		transform: translateY(6px);
+		transform-box: fill-box;
+		transform-origin: center;
+		animation: buildIn 0.35s ease-out calc(0.6s + var(--i) * 0.18s) forwards;
+	}
+
+	.chart-line {
+		stroke-dasharray: 400;
+		stroke-dashoffset: 400;
+		animation: drawLine 1.2s ease-out forwards;
+	}
+
+	.chart-area {
+		opacity: 0;
+		animation: collabFadeIn 0.4s ease-out 0.8s forwards;
+	}
+
+	.chart-dot {
+		opacity: 0;
+		animation: collabFadeIn 0.2s ease-out calc(0.3s + var(--d) * 0.15s) forwards;
+	}
+
+	@keyframes svgFadeIn {
+		to {
+			opacity: var(--target-opacity, 0.6);
+		}
+	}
+
+	@keyframes drawSvg {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	@keyframes buildIn {
+		to {
+			opacity: 0.45;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes hintPulse {
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.1);
+		}
+	}
+
+	@keyframes drawLine {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	@keyframes collabFadeIn {
+		to {
+			opacity: 1;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.collab-phase-panel,
+		.collab-step-tab.is-future,
+		.fade-in-svg,
+		.draw-svg,
+		.build-block,
+		.chart-line,
+		.chart-area,
+		.chart-dot {
+			animation: none !important;
+			transition: none !important;
+		}
+
+		.draw-svg,
+		.chart-line {
+			stroke-dashoffset: 0;
+		}
+
+		.fade-in-svg {
+			opacity: var(--target-opacity, 0.6);
+		}
+
+		.build-block {
+			opacity: 0.45;
+			transform: translateY(0);
+		}
+
+		.chart-area,
+		.chart-dot {
+			opacity: 1;
+		}
+	}
+</style>
+
+<script>
+	const collaborationSteppers = document.querySelectorAll('[data-collaboration-stepper]');
+
+	collaborationSteppers.forEach((stepper) => {
+		const duration = 5000;
+		const circumference = 125.66;
+		const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const panels = [...stepper.querySelectorAll('[data-collab-panel]')] as HTMLElement[];
+		const tabs = [...stepper.querySelectorAll('[data-collab-tab]')] as HTMLButtonElement[];
+		const segments = [...stepper.querySelectorAll('[data-collab-segment]')] as HTMLElement[];
+		const progressFill = stepper.querySelector('[data-collab-progress-fill]') as HTMLElement | null;
+		const ringCircles = [
+			...stepper.querySelectorAll('[data-collab-ring-circle]'),
+		] as SVGCircleElement[];
+		let currentPhase = 0;
+		let animationFrame = 0;
+		let timerStart = 0;
+		let resizeFrame = 0;
+		const panelTransition = 'opacity 500ms ease-out, transform 500ms ease-out';
+		const isMobile = () => window.innerWidth < 768;
+
+		ringCircles.forEach((circle) => {
+			circle.setAttribute('stroke-dasharray', String(circumference));
+			circle.setAttribute('stroke-dashoffset', reduceMotion ? '0' : String(circumference));
+		});
+
+		const updateRing = (progress: number) => {
+			const offset = circumference * (1 - progress);
+			ringCircles.forEach((circle) => {
+				circle.setAttribute('stroke-dashoffset', String(offset));
+			});
+			if (progressFill) progressFill.style.width = `${progress * 100}%`;
+		};
+
+		const restartSvgAnimation = (index: number) => {
+			if (reduceMotion) return;
+
+			const svg = panels[index]?.querySelector('.phase-svg');
+			if (!svg) return;
+
+			const clone = svg.cloneNode(true);
+			svg.replaceWith(clone);
+		};
+
+		const updateLayout = () => {
+			const mobile = isMobile();
+
+			panels.forEach((panel) => {
+				if (mobile) {
+					panel.style.position = 'static';
+					panel.style.inset = '';
+					panel.style.transition = 'none';
+					return;
+				}
+
+				panel.style.position = 'absolute';
+				panel.style.inset = '0';
+				panel.style.transition = panelTransition;
+			});
+		};
+
+		const updateControls = () => {
+			tabs.forEach((tab, index) => {
+				const isActive = index === currentPhase;
+				const isComplete = index < currentPhase;
+				const icon = tab.querySelector('[data-collab-icon]');
+
+				tab.classList.toggle('is-active', isActive);
+				tab.classList.toggle('is-complete', isComplete);
+				tab.classList.toggle('is-future', !isActive && !isComplete);
+				tab.setAttribute('aria-selected', String(isActive));
+				tab.setAttribute('tabindex', isActive ? '0' : '-1');
+				if (icon) {
+					icon.textContent = isComplete
+						? 'check'
+						: icon.getAttribute('data-collab-phase-icon') || '';
+				}
+			});
+
+			segments.forEach((segment, index) => {
+				segment.classList.toggle('is-complete', index < currentPhase);
+			});
+		};
+
+		const setPhase = (index: number, animate = true) => {
+			if (index < 0 || index >= panels.length) return;
+
+			currentPhase = index;
+			const mobile = isMobile();
+
+			panels.forEach((panel, panelIndex) => {
+				const isActive = panelIndex === index;
+				panel.classList.toggle('is-active', isActive);
+				panel.classList.toggle('is-mobile-hidden', mobile && !isActive);
+				panel.setAttribute('aria-hidden', String(!isActive));
+				panel.inert = !isActive;
+
+				if (mobile) {
+					panel.style.opacity = isActive ? '1' : '0';
+					panel.style.transform = isActive ? 'translateY(0)' : 'translateY(0.75rem)';
+					panel.style.pointerEvents = isActive ? 'auto' : 'none';
+					return;
+				}
+
+				panel.style.opacity = isActive ? '1' : '0';
+				panel.style.transform = isActive ? 'translateY(0)' : 'translateY(0.75rem)';
+				panel.style.pointerEvents = isActive ? 'auto' : 'none';
+			});
+
+			updateControls();
+			updateRing(reduceMotion ? 1 : 0);
+			if (animate) restartSvgAnimation(index);
+		};
+
+		const stopTimer = () => {
+			window.cancelAnimationFrame(animationFrame);
+			animationFrame = 0;
+		};
+
+		const tick = (now: number) => {
+			const elapsed = now - timerStart;
+			const progress = Math.min(elapsed / duration, 1);
+			updateRing(progress);
+
+			if (progress >= 1) {
+				setPhase((currentPhase + 1) % panels.length);
+				startTimer();
+				return;
+			}
+
+			animationFrame = window.requestAnimationFrame(tick);
+		};
+
+		function startTimer() {
+			if (reduceMotion) return;
+
+			stopTimer();
+			timerStart = performance.now();
+			updateRing(0);
+			animationFrame = window.requestAnimationFrame(tick);
+		}
+
+		const resetTimer = () => {
+			startTimer();
+		};
+
+		tabs.forEach((tab, index) => {
+			tab.addEventListener('click', () => {
+				setPhase(index);
+				resetTimer();
+			});
+
+			tab.addEventListener('keydown', (event) => {
+				let nextIndex: number | null = null;
+
+				switch (event.key) {
+					case 'ArrowRight':
+					case 'ArrowDown':
+						nextIndex = (index + 1) % tabs.length;
+						break;
+					case 'ArrowLeft':
+					case 'ArrowUp':
+						nextIndex = (index - 1 + tabs.length) % tabs.length;
+						break;
+					case 'Home':
+						nextIndex = 0;
+						break;
+					case 'End':
+						nextIndex = tabs.length - 1;
+						break;
+					default:
+						break;
+				}
+
+				if (nextIndex === null) return;
+
+				event.preventDefault();
+				tabs[nextIndex]?.focus();
+				setPhase(nextIndex);
+				resetTimer();
+			});
+		});
+
+		window.addEventListener('resize', () => {
+			window.cancelAnimationFrame(resizeFrame);
+			resizeFrame = window.requestAnimationFrame(() => {
+				updateLayout();
+				setPhase(currentPhase, false);
+			});
+		});
+
+		updateLayout();
+		setPhase(0, false);
+		startTimer();
+	});
+</script>

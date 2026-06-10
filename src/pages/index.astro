@@ -4,6 +4,7 @@ import MilledButton from '../components/MilledButton.astro';
 import OutlineButton from '../components/OutlineButton.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import BentoCard from '../components/BentoCard.astro';
+import CollaborationStepper from '../components/CollaborationStepper.astro';
 import PackCard from '../components/PackCard.astro';
 import GlassCard from '../components/GlassCard.astro';
 import StickyMobileCTA from '../components/StickyMobileCTA.astro';
@@ -28,6 +29,33 @@ const localChecks = [
 	{
 		title: 'Référencement Géolocalisé',
 		desc: 'Ciblage de mots-clés locaux (ex: "dentiste Casablanca", "avocat Rabat") pour attirer les clients de votre zone.',
+	},
+];
+
+const collaborationPhases = [
+	{
+		icon: 'explore',
+		phase: '01',
+		timing: 'AVANT LE DEVIS',
+		title: 'Comprendre',
+		body: "Audit de ton marché, analyse de tes concurrents directs, brief approfondi sur tes objectifs. On creuse jusqu'à savoir exactement qui tu vises et comment te différencier.",
+		commitment: 'Tu parles directement au fondateur, dès le premier échange.',
+	},
+	{
+		icon: 'architecture',
+		phase: '02',
+		timing: '2 À 3 SEMAINES',
+		title: 'Construire',
+		body: "Maquette validée avant la première ligne de code, design responsive sur-mesure, développement Astro + Cloudflare, optimisation SEO intégrée dès le départ. Tu vois chaque étape avancer.",
+		commitment: "Accès permanent à l'avancement, jamais de tunnel silencieux.",
+	},
+	{
+		icon: 'trending_up',
+		phase: '03',
+		timing: 'APRÈS LA MISE EN LIGNE',
+		title: 'Faire grandir',
+		body: "SEO continu, gestion Google Business Profile, contenu éditorial mensuel, suivi des positions, rapport clair. Ton site devient un actif qui travaille pour toi mois après mois.",
+		commitment: 'Le même interlocuteur, du devis à la 12ème facture du Pack Croissance.',
 	},
 ];
 
@@ -414,7 +442,10 @@ const faqPageSchema = {
 		</div>
 	</section>
 
-	<!-- 1.5 Pricing Preview -->
+	<!-- 1.5 Collaboration -->
+	<CollaborationStepper phases={collaborationPhases} />
+
+	<!-- 1.6 Pricing Preview -->
 	<section data-animate class="py-xl">
 		<div class="container-site flex flex-col gap-xl">
 			<SectionHeader
@@ -427,7 +458,7 @@ const faqPageSchema = {
 		</div>
 	</section>
 
-	<!-- 1.6 Portfolio -->
+	<!-- 1.7 Portfolio -->
 	<section data-animate class="bg-surface-container-low py-xl">
 		<div class="container-site flex flex-col gap-xl">
 			<SectionHeader title="Nos Réalisations" />
@@ -484,7 +515,7 @@ const faqPageSchema = {
 		</div>
 	</section>
 
-	<!-- 1.7 FAQ -->
+	<!-- 1.8 FAQ -->
 	<section id="faq" data-animate class="bg-surface-container-low py-xl">
 		<div class="mx-auto flex w-full max-w-container flex-col gap-xl px-gutter max-md:px-4">
 			<SectionHeader

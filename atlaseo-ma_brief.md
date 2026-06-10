@@ -10,7 +10,7 @@
 > **Purpose**: Single source of truth for building ATLASEO.ma in Astro. Cursor works from this file exclusively — no re-deriving decisions.
 > **Generated from**: Stitch mockup (5 pages + design system) + project context document.
 > **Created**: 2026-05-17
-> **Last updated**: 2026-06-09 — v2.1
+> **Last updated**: 2026-06-10 — v2.2
 >
 > **Session log:**
 > - 2026-05-17 — Brief generated from Stitch mockup.
@@ -25,6 +25,7 @@
 > - 2026-06-07 — Homepage conversion phase 2 : FAQ accueil x10 + FAQPage schema (commit 4b8abba), trust strip card Dr Yousra El Khadri (CAS CLIENT badge, format_quote ornament, dryousra.ma link, no stars), sticky mobile bottom CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Branch feat/homepage-conversion mergée sur main et déployée.
 > - 2026-06-09 — Logo et favicon intégrés. 5 variantes PNG (transparent, rognées) dans `public/images/logos/`. Favicons (16/32/48/180/192/512 + .ico) dans `public/`. Navbar : `atlaseo-logo-horizontal.png` à `h-10`. Footer : `atlaseo-logo-stacked.png` à `h-16`. SchemaOrg Organization logo mis à jour. Commits : 889add9, b326c9e + fix crop.
 > - 2026-06-09 — Contact page enrichment : nouvelle section "À propos d'ATLASEO" (logo h-56 + motto "Pensé local. Indexé global.", narrative agence, carte fondateur Fahd D. + fondateur.webp, 3 piliers Notre approche). Reorder sections : About → Expertise de proximité → Contact Channels. Contact Channels restructuré en full-width WhatsApp + grille 3 colonnes (Email, Phone, Support client). Carte Infrastructure Cloudflare supprimée. Support client simplifié. Tags audience (PME, Commerces, Professions Libérales) supprimés. Copy "Expertise de proximité" élargie.
+> - 2026-06-10 — Homepage collaboration stepper : nouvelle section interactive "Comment on travaille ensemble" entre Stratégie Data et Pricing Preview. Carte blanche avec stepper 3 phases (Comprendre / Construire / Faire grandir), SVG animés par phase (loupe + site, wireframe qui se construit, graphe ascendant), barre de progression avec auto-advance 5s, progress ring, nœuds cliquables avec icônes Material Symbols, crossfade desktop / show-hide mobile. Composant : `src/components/CollaborationStepper.astro`.
 >
 > **Pending (next session):**
 > - [ ] Achat domaine atlaseo.ma — en attente de validation ANRT
@@ -258,6 +259,15 @@ Create these as reusable `.astro` components:
   - Suivi — "Monitoring mensuel de vos positions et performances"
   - Rapports — "Reporting clair et actionnable chaque mois"
 - **Right panel**: Simulated data table (skeleton/decorative) suggesting keyword rankings, with a green CTA block at bottom: "Demandez votre audit gratuit" → /contact
+
+#### 1.4b Comment on travaille ensemble (Collaboration Stepper)
+- **Background**: `surface-container-low`
+- **Label**: COLLABORATION
+- **H2**: Comment on travaille ensemble
+- **Subtitle**: Un parcours en trois temps, avec le même interlocuteur du premier échange à la 12ème facture du suivi mensuel.
+- **Component**: `CollaborationStepper.astro` — interactive 3-phase stepper
+- **Layout**: White card (`cloud-shadow`), 2 columns desktop (SVG left + content right), single column mobile. Progress bar with 3 clickable nodes at bottom. Auto-advance every 5s.
+- **Phases**: 01 Comprendre (AVANT LE DEVIS) → 02 Construire (2 À 3 SEMAINES) → 03 Faire grandir (APRÈS LA MISE EN LIGNE, includes CTA → /contact)
 
 #### 1.5 Pricing Preview
 - **H2**: Des Offres Claires, Sans Surprises

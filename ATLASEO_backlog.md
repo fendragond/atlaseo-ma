@@ -193,6 +193,7 @@
 - [x] 2026-06-07 — Homepage conversion : FAQ accueil x10 + FAQPage schema. Trust strip card Dr Yousra El Khadri (CAS CLIENT badge, citation, photo, lien dryousra.ma). Sticky mobile CTA bar (WhatsApp + Devis gratuit, scroll-triggered, md:hidden). Commits 4b8abba + 5082c4b. Mergé sur main + déployé.
 - [x] 2026-06-09 — Intégration logo et favicon : 5 PNG rognés dans `public/images/logos/`, favicons dans `public/`, Navbar/Footer/SchemaOrg mis à jour. Commits : 889add9, b326c9e + fix crop.
 - [x] 2026-06-09 — Enrichissement /contact : section About ATLASEO (logo h-56, motto, narrative, carte fondateur Fahd D., 3 piliers approche produit). Reorder (About → Expertise de proximité → Channels). Contact Channels restructuré (full-width WhatsApp + grille 3 cols). Infrastructure card supprimée. Support client simplifié. Tags audience supprimés.
+- [x] 2026-06-10 — Homepage collaboration stepper : section interactive "Comment on travaille ensemble" (3 phases, SVG animés, auto-advance, progress bar, crossfade desktop, responsive mobile). Composant CollaborationStepper.astro. Déployé.
 
 ---
 
