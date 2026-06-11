@@ -25,3 +25,11 @@ pnpm-debug.log*
 # local tooling
 .wrangler/
 .vscode/
+
+# Heavy source files in assets/ (raw designs, videos)
+assets/**/*.psd
+assets/**/*.ai
+assets/**/*.fig
+assets/**/*.mp4
+assets/**/*.mov
+assets/**/*.zip
