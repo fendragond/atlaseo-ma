@@ -173,6 +173,14 @@ Dr Yousra est un actif stratégique sous-exploité. Elle représente :
 
 Cette page est le **levier le plus puissant à court terme** que possède ATLASEO. Plus puissant qu'une page géolocalisée. À prioriser au mois 2-3.
 
+### Le deuxième canal asymétrique : le réseau personnel founder
+
+Au-delà de Dr Yousra, qui ouvre la verticale médicale via son audience Instagram, le **réseau personnel direct du founder** s'est révélé être un second canal d'acquisition asymétrique. Le premier client BTP signé (ODBM, été 2026) est arrivé par cette voie : un ami du founder dirigeant une PME du gros œuvre, contacté en WhatsApp, converti en moins de deux semaines via un benchmark sectoriel ciblé et un deck de proposition adapté à son métier.
+
+Ce canal est complémentaire de celui de Dr Yousra, pas concurrent. Dr Yousra concentre l'effet vers la médecine esthétique. Le réseau personnel diversifie les verticales, selon qui le founder connaît réellement (BTP, juridique, hôtellerie, services, etc.). Chaque relation activée est un appel d'offre informel à taux de conversion élevé, parce qu'elle court-circuite la phase de mise en confiance qui plombe les démarches commerciales classiques au Maroc.
+
+**Tactique opérationnelle** : maintenir une **liste vivante de 20 à 30 contacts** susceptibles de devenir clients ou de référencer des clients (camarades de promo, anciens collègues, relations familiales, connaissances professionnelles). Marquer pour chacun : secteur, taille d'entreprise, qualité de la relation, dernière interaction. À partir de cette liste, déclencher **2 à 3 actions d'outreach par mois** — un message WhatsApp ciblé, un café partagé, le partage d'une publication LinkedIn pertinente. Ce travail ne se substitue pas au SEO/GEO long terme, il en accélère les premiers résultats commerciaux pendant la phase 1-12 mois où l'autorité du domaine se construit.
+
 ### 3.4 Ce qu'ATLASEO N'EST PAS
 
 L'anti-positionnement est aussi important que le positionnement. ATLASEO assume frontalement :

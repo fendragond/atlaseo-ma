@@ -7,7 +7,7 @@
 >
 > **Hierarchy**: Strategy is the source of truth for *what* and *why*. Context is the source of truth for *how*. Brief is the source of truth for *this specific project*. When in doubt, strategy wins.
 >
-> **Last updated**: 2026-05-25 — v2.0 (cleaned up after strategy split — removed business/positioning content, kept technical/methodological only)
+> **Last updated**: 2026-06-15 — v2.1 (doc review session integrating learnings from atlaseo.ma build and pre-ODBM scoping: form backend pattern, staging URL convention, Cursor prompt rules, commit/deploy sequence, starter components from atlaseo.ma, default design tokens with per-project overrides, Lighthouse pre-DNS audit)
 
 ---
 
@@ -40,6 +40,32 @@
 - **Option B** — Worker contact form: POST request → validate → send email via Resend/MailChannels. For corporate clients.
 - **Option C** — Both: form + floating WhatsApp button. Best for Moroccan market conversion.
 - Template ships with both patterns as toggleable components. Decided at project setup, not rebuild.
+
+### Form-Backed Submissions (forms with attachments or sensitive data)
+
+The default for client sites remains Option A (pure static + WhatsApp/mailto). When a project requires file uploads (CVs, documents) **or** the submission of personal data (job applications, leads with PII), the pattern is:
+
+**Frontend form → Worker route (e.g. `/api/candidature`) → Resend API → recipient mailbox** with the uploaded file forwarded as an email attachment.
+
+**Resend** is chosen over MailChannels for better developer experience, reliable deliverability, and a free tier sufficient for sub-3000 sends/month per client.
+
+**Mandatory components for any such form:**
+- Honeypot field (anti-spam, invisible to humans)
+- Cloudflare rate limiting at the Worker level
+- Explicit CNDP/RGPD consent checkbox, blocking submission if unchecked
+- Server-side validation of file type (PDF/DOC/DOCX only by default) and size (max 5MB by default)
+
+**Optional:** archive uploads to Cloudflare R2 if the client requests retention.
+
+> **Status:** Principles validated. Implementation snippet, exact env vars, and concrete schema will be added to this subsection after the first production validation on the ODBM project.
+
+### Staging URL pattern (pre-domain QA)
+
+Every Cloudflare Worker exposes a permanent staging URL of the form `[project-name].fahd-d-d01.workers.dev`. This URL is the canonical staging environment used for: client QA, Lighthouse audits, screenshot capture, and any pre-launch verification.
+
+**Critical implication:** a project can be fully built, QA'd, and validated by the client **before** the production domain is acquired or pointed. This decouples build velocity from domain acquisition delays (e.g. ANRT validation for `.ma` domains can take several weeks).
+
+Once the production domain is configured, the staging URL remains active and can be used for future iterations and A/B testing.
 
 ### No Database
 - Sites are content sites — no user data, no inventory, no real-time needs
@@ -104,6 +130,15 @@
 - Build prompt templates in Claude Pro Projects — one Project per client
 - Starter template reduces Cursor usage ~60% vs building from scratch
 
+### Cursor prompt conventions
+
+- **Language:** all Cursor prompts are written in English, regardless of the editorial content language. French content goes inside the prompt as quoted strings or instructions.
+- **Format:** prompts are formatted as **plain text inside a code block** (triple backticks with no language tag), never inside blockquotes — this ensures the copy button appears reliably in the Claude UI.
+- **Intent-based:** prompts describe **what** to build and **why**, never **what code** to write. Cursor is the one writing code. Embedding actual code in a prompt defeats the workflow.
+- **One concern per prompt:** prompts are split into logical chunks — one prompt equals one component, one page, or one feature. Avoid omnibus prompts that bundle unrelated concerns.
+- **No git/deploy steps inside prompts:** git commit, push, build, and deploy are never inside Cursor prompts. They are separate manual actions performed by the founder after `npm run dev` validation passes.
+- **Content production:** Claude generates final editorial content (copy, JSON, schema). Cursor only places it. This prevents Cursor from rewriting validated French copy into mediocre output.
+
 ### Per-Project Flow
 1. **Discovery** — client questionnaire → define pages, CTAs, content needs, SEO targets
 2. **Brief** — produce `<client>_brief.md` in Claude Pro (content, structure, SEO, component decisions)
@@ -120,6 +155,23 @@
 - `npm run dev` — local dev server only. Serves directly from `src/`. Changes appear instantly but this has nothing to do with production.
 - `npm run build` — compiles everything into `dist/`. This is what Cloudflare gets.
 - `npx wrangler deploy` — pushes `dist/` to Cloudflare Workers. Never skip the build before this.
+
+**End-to-end commit/deploy sequence**
+
+The canonical workflow from validated work to live production:
+
+1. **Validate locally** — `npm run dev`, visual + functional check on `localhost:4321`
+2. **Single commit** — one commit per page or feature unit (never one commit per micro-change)
+3. **Push** — `git push` to `origin main`
+4. **Build** — `npm run build` (compiles `src/` into `dist/`)
+5. **Deploy** — `npx wrangler deploy` (pushes `dist/` to Cloudflare)
+
+**Cross-reference with existing Windows/PowerShell notes:**
+- All five steps run on **separate lines** — never chained with `&&`
+- Use `2>$null` instead of `2>/dev/null` where redirection is needed
+- Prefer `git add .` over individual path specification for staging
+
+**Until the GitHub Action is set up post-domain, steps 4 and 5 are manual.** After the Action is configured, step 3 alone triggers steps 4 and 5 automatically on every push to `main`.
 
 **Deployment process**
 
@@ -171,6 +223,41 @@ After domain is configured:
 - `PROCESS.md` — delivery checklist (see §7)
 - `brief.md` — per-project content brief (not committed to starter)
 
+### Reusable components inherited from atlaseo.ma
+
+The atlaseo.ma build is the source for two production-tested components promoted to the starter:
+
+**FAQ Accordion**
+A pattern using JS toggle via `data-faq-item` and `data-faq-icon` attributes. Includes automatic `FAQPage` JSON-LD schema generation from the same source data. Arrow icon rotates 180° on open. Single-open or multi-open mode togglable via prop. Mobile-friendly tap targets.
+
+**Sticky Mobile CTA Bar**
+A fixed bottom bar visible only on mobile (`md:hidden`), scroll-triggered visibility (appears after 30% scroll, hides on scroll-up). Contains WhatsApp + primary CTA buttons side by side. Uses Tailwind `translate-y` utility classes for show/hide animation — no custom CSS conflict with Tailwind reset (lesson learned from atlaseo.ma debug session).
+
+Both components are ready to be cloned into any new project. Client-specific copy, links, and color overrides are the only customization needed at instantiation.
+
+**Components NOT promoted to the starter (remain atlaseo.ma-specific):**
+- `CollaborationStepper` — too tied to ATLASEO's 3-pillar narrative
+- Trust Strip card — too tied to the Dr Yousra cas client format
+
+These can be re-promoted later if a second project genuinely needs them.
+
+### Default design tokens (overridable per project)
+
+The starter ships with a **Material Design 3 token system** in `tailwind.config.mjs` covering:
+- **Surface scale** — `surface-container-lowest` through `surface-container-highest`
+- **Color roles** — `primary`, `secondary`, `on-surface`, `on-surface-variant`
+- **Outline scale** — `outline`, `outline-variant`
+- **Semantic** — `error`, plus context-specific containers
+
+**Convention:** the token **names** are constant across all projects (never renamed). The token **values** (actual hex colors) are project-specific and overridden per client based on brand, logo, and message.
+
+**Same logic applies to typography:**
+The starter ships with Hanken Grotesk (display) + Inter (body) + JetBrains Mono (labels), loaded via `@fontsource` self-hosting, as **default**. Per-project, this default can and should be reviewed and overridden when the client's brand requires a different visual register.
+
+**Concrete example:** the ODBM project (BTP / construction sector) will likely move away from Hanken Grotesk's premium-tech feel toward a more industrial/architectural typeface like **IBM Plex Sans**, **Archivo**, or **Space Grotesk**, paired with a palette built around concrete grays, sand beige, and a safety-orange accent — radically different from ATLASEO's own navy/green identity.
+
+**The starter does not impose visual identity. It imposes the token architecture.**
+
 ---
 
 ## 6. Reference Site — dryousra.ma
@@ -196,6 +283,7 @@ After domain is configured:
 - [ ] Sitemap generated — only indexable URLs
 - [ ] Internal links verified — no orphan pages, no broken links
 - [ ] Lighthouse audit: all pages ≥90 mobile, ≥95 desktop on all 4 categories
+- [ ] Lighthouse audit run on the **staging URL** (`[project].fahd-d-d01.workers.dev`) BEFORE custom domain DNS configuration — confirms performance, SEO, accessibility, and best practices are all production-grade before going live
 - [ ] Mobile responsive tested on real devices
 - [ ] WhatsApp link tested (opens correct conversation)
 - [ ] Click-to-call link tested on mobile
