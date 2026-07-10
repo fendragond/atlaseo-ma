@@ -26,6 +26,7 @@ const schema = {
 	url,
 	logo,
 	description,
+	telephone: SITE.phoneTel,
 	address: {
 		'@type': 'PostalAddress',
 		addressLocality: 'Casablanca',
@@ -37,7 +38,7 @@ const schema = {
 		email: SITE.email,
 		availableLanguage: 'French',
 	},
-	sameAs: [SITE.linkedin, SITE.whatsapp],
+	sameAs: [SITE.linkedin, SITE.instagram],
 };
 
 const localBusinessSchema = {
@@ -45,7 +46,7 @@ const localBusinessSchema = {
 	'@type': 'LocalBusiness',
 	name: 'ATLASEO',
 	url: 'https://atlaseo.ma',
-	telephone: '+212 6XX XX XX XX',
+	telephone: SITE.phoneTel,
 	email: 'contact@atlaseo.ma',
 	address: {
 		'@type': 'PostalAddress',
@@ -60,10 +61,7 @@ const localBusinessSchema = {
 	],
 	priceRange: '4000-9500 MAD',
 	image: 'https://atlaseo.ma/logo.svg',
-	sameAs: [
-		'https://www.linkedin.com/company/atlaseo',
-		'https://www.instagram.com/atlaseo.ma',
-	],
+	sameAs: [SITE.linkedin, SITE.instagram],
 };
 ---
 

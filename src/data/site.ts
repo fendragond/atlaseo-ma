@@ -2,12 +2,12 @@ export const SITE = {
 	name: 'ATLASEO',
 	url: 'https://atlaseo.ma',
 	email: 'contact@atlaseo.ma',
-	phone: '+212 6 56 76 97 38',
-	phoneTel: '+212656769738',
-	whatsapp: 'https://wa.me/212656769738',
-	whatsappNumber: '212656769738',
+	phone: '+212 7 00 50 84 45',
+	phoneTel: '+212700508445',
+	whatsapp: 'https://wa.me/212700508445',
+	whatsappNumber: '212700508445',
 	linkedin: 'https://www.linkedin.com/company/atlaseo',
-	instagram: 'https://www.instagram.com/atlaseo',
+	instagram: 'https://www.instagram.com/atlaseo.ma',
 	tagline:
 		'Agence de création de sites web et SEO local à Casablanca, Maroc.',
 	copyright:

@@ -177,7 +177,7 @@ Create these as reusable `.astro` components:
 | `SectionHeader.astro` | `src/components/SectionHeader.astro` | Props: `label` (optional, green mono-caps), `title`, `subtitle` (optional). Centered or left-aligned via prop. |
 | `MilledButton.astro` | `src/components/MilledButton.astro` | Green gradient CTA button. Props: `href`, `text`, `icon` (optional Material Symbols name), `size` (sm/md/lg). |
 | `OutlineButton.astro` | `src/components/OutlineButton.astro` | White/transparent with border. Props: `href`, `text`. |
-| `WhatsAppFab.astro` | `src/components/contact/WhatsAppFab.astro` | Floating green circle, bottom-right, WhatsApp SVG icon. `href` = WhatsApp link (placeholder: `https://wa.me/XXXXXXXXXXX`). Present on all pages. |
+| `WhatsAppFab.astro` | `src/components/contact/WhatsAppFab.astro` | Floating green circle, bottom-right, WhatsApp SVG icon. `href` = WhatsApp link (placeholder: `https://wa.me/212700508445`). Present on all pages. |
 | `SchemaOrg.astro` | `src/components/seo/SchemaOrg.astro` | JSON-LD. Type: `Organization` for ATLASEO. Props for business name, address, phone, url, logo, etc. |
 | `GlassCard.astro` | `src/components/GlassCard.astro` | Wrapper with glassmorphism styles. |
 | `BentoCard.astro` | `src/components/BentoCard.astro` | Props: `span` (1 or 2), `dark` (boolean), `icon`, `title`. |
@@ -565,12 +565,12 @@ https://atlaseo.ma/contact
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "email": "support@atlaseo.ma",
+    "email": "contact@atlaseo.ma",
     "availableLanguage": "French"
   },
   "sameAs": [
     "https://www.linkedin.com/company/atlaseo",
-    "https://wa.me/XXXXXXXXXXX"
+    "https://www.instagram.com/atlaseo.ma"
   ]
 }
 ```

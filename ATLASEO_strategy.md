@@ -348,7 +348,7 @@ Ces règles sont reprises du `ATLASEO_context.md` §10 et restent applicables. E
 GBP est central, pas accessoire. Inclus dans Visibilité et Croissance. Pour ATLASEO elle-même :
 
 - Créer la fiche GBP ATLASEO dès le lancement du domaine final
-- NAP cohérent partout : `ATLASEO — Casablanca, Maroc — +212 6XX XX XX XX`
+- NAP cohérent partout : `ATLASEO — Casablanca, Maroc — +212 7 00 50 84 45`
 - Photos : interface du site, screenshots dashboard, photos professionnelles fondateur
 - Catégorie principale : "Concepteur de sites web" + catégories secondaires "Agence de marketing", "Spécialiste du référencement"
 - Mise à jour mensuelle : un post GBP par mois (mini-article ou annonce)
@@ -392,14 +392,14 @@ Pour les clients (Pack Visibilité et Croissance) : même méthode appliquée. G
 
 Listé par ordre de priorité, gain effort-bénéfice maximal :
 
-1. **Ajouter numéro de téléphone partout** : header, footer, schema, meta descriptions. Format : `+212 6XX XX XX XX` ou format local `06 XX XX XX XX` selon préférence.
+1. **Ajouter numéro de téléphone partout** : header, footer, schema, meta descriptions. Format : `+212 7 00 50 84 45` ou format local `07 00 50 84 45` selon préférence.
 
 2. **Refaire les meta descriptions avec ☎️** :
-   - Accueil : `Création de sites web premium + SEO local à Casablanca, Rabat, Marrakech. Cloudflare, Lighthouse 99/100, livraison 7 jours ☎️ +212 6XX XX XX XX`
-   - /creation-site-web : `Site web professionnel sur Astro + Cloudflare. Design sur-mesure, mobile-first, Lighthouse 99/100, livraison 7 jours au Maroc ☎️ +212 6XX XX XX XX`
-   - /seo-local : `SEO local Maroc : Casablanca, Rabat, Marrakech. Google Business Profile + avis clients + suivi mensuel. Résultats 2-4 semaines ☎️ +212 6XX XX XX XX`
-   - /offres : `3 packs création site web au Maroc : Starter 4000 MAD, Visibilité 7000 MAD, Croissance 9500 MAD + suivi mensuel ☎️ +212 6XX XX XX XX`
-   - /contact : `Contactez ATLASEO. Devis personnalisé gratuit sous 24h. WhatsApp disponible pour réponse instantanée ☎️ +212 6XX XX XX XX`
+   - Accueil : `Création de sites web premium + SEO local à Casablanca, Rabat, Marrakech. Cloudflare, Lighthouse 99/100, livraison 7 jours ☎️ +212 7 00 50 84 45`
+   - /creation-site-web : `Site web professionnel sur Astro + Cloudflare. Design sur-mesure, mobile-first, Lighthouse 99/100, livraison 7 jours au Maroc ☎️ +212 7 00 50 84 45`
+   - /seo-local : `SEO local Maroc : Casablanca, Rabat, Marrakech. Google Business Profile + avis clients + suivi mensuel. Résultats 2-4 semaines ☎️ +212 7 00 50 84 45`
+   - /offres : `3 packs création site web au Maroc : Starter 4000 MAD, Visibilité 7000 MAD, Croissance 9500 MAD + suivi mensuel ☎️ +212 7 00 50 84 45`
+   - /contact : `Contactez ATLASEO. Devis personnalisé gratuit sous 24h. WhatsApp disponible pour réponse instantanée ☎️ +212 7 00 50 84 45`
 
 3. **Ajouter schema LocalBusiness** en complément de Organization. ATLASEO est basée à Casablanca, c'est gratuit comme signal.
 
@@ -804,7 +804,7 @@ Ces données nourrissent le portfolio (études de cas) et permettent de calibrer
 
 **Template de meta description avec ☎️** :
 ```
-[Argument valeur principal en 80 chars]. [Différenciateurs en 40 chars] ☎️ +212 6XX XX XX XX
+[Argument valeur principal en 80 chars]. [Différenciateurs en 40 chars] ☎️ +212 7 00 50 84 45
 ```
 
 **Template JSON-LD LocalBusiness pour ATLASEO** :
@@ -814,7 +814,7 @@ Ces données nourrissent le portfolio (études de cas) et permettent de calibrer
   "@type": "LocalBusiness",
   "name": "ATLASEO",
   "url": "https://atlaseo.ma",
-  "telephone": "+212-6XX-XX-XX-XX",
+  "telephone": "+212700508445",
   "email": "contact@atlaseo.ma",
   "address": {
     "@type": "PostalAddress",

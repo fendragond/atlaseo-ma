@@ -163,7 +163,7 @@ Create these as reusable `.astro` components:
 | `SectionHeader.astro` | `src/components/SectionHeader.astro` | Props: `label` (optional, green mono-caps), `title`, `subtitle` (optional). Centered or left-aligned via prop. |
 | `MilledButton.astro` | `src/components/MilledButton.astro` | Green gradient CTA button. Props: `href`, `text`, `icon` (optional Material Symbols name), `size` (sm/md/lg). |
 | `OutlineButton.astro` | `src/components/OutlineButton.astro` | White/transparent with border. Props: `href`, `text`. |
-| `WhatsAppFab.astro` | `src/components/contact/WhatsAppFab.astro` | Floating green circle, bottom-right, WhatsApp SVG icon. `href` = WhatsApp link (placeholder: `https://wa.me/XXXXXXXXXXX`). Present on all pages. |
+| `WhatsAppFab.astro` | `src/components/contact/WhatsAppFab.astro` | Floating green circle, bottom-right, WhatsApp SVG icon. `href` = WhatsApp link (placeholder: `https://wa.me/212700508445`). Present on all pages. |
 | `SchemaOrg.astro` | `src/components/seo/SchemaOrg.astro` | JSON-LD. Type: `Organization` for ATLASEO. Props for business name, address, phone, url, logo, etc. |
 | `GlassCard.astro` | `src/components/GlassCard.astro` | Wrapper with glassmorphism styles. |
 | `BentoCard.astro` | `src/components/BentoCard.astro` | Props: `span` (1 or 2), `dark` (boolean), `icon`, `title`. |
@@ -489,14 +489,14 @@ No contact form — all channels are direct links (Option A).
    - Icon: WhatsApp SVG icon in dark circle (w-16 h-16)
    - **H2**: Contactez-nous sur WhatsApp
    - Copy: Pour une réponse instantanée, c'est le moyen le plus rapide de nous joindre.
-   - CTA (dark green, full-width): "Démarrer une conversation WhatsApp" → `https://wa.me/XXXXXXXXXXX` (placeholder)
+   - CTA (dark green, full-width): "Démarrer une conversation WhatsApp" → `https://wa.me/212700508445` (placeholder)
    - This is the primary conversion channel for Morocco
 
 2. **Email Card** (glass card):
    - Icon: `mail`
    - **H3**: Envoyez-nous un email
    - Copy: Pour les demandes détaillées ou les documents à partager.
-   - Email link: support@atlaseo.ma → `mailto:support@atlaseo.ma`
+   - Email link: contact@atlaseo.ma → `mailto:contact@atlaseo.ma`
 
 3. **Phone Card** (glass card):
    - Icon: `call`
@@ -509,7 +509,7 @@ No contact form — all channels are direct links (Option A).
 1. **Support Info Card** (glass card):
    - Icon: `support_agent`
    - **H4**: Support client
-   - Email: support@atlaseo.ma
+   - Email: contact@atlaseo.ma
    - Highlighted block (green left border): ⭐ **Support prioritaire** — Réservé exclusivement aux clients du **Pack Croissance**. Réponse garantie en moins de 2 heures.
 
 2. **Infrastructure Badge** (glass card, compact):
@@ -578,12 +578,12 @@ https://atlaseo.ma/contact
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer service",
-    "email": "support@atlaseo.ma",
+    "email": "contact@atlaseo.ma",
     "availableLanguage": "French"
   },
   "sameAs": [
     "https://www.linkedin.com/company/atlaseo",
-    "https://wa.me/XXXXXXXXXXX"
+    "https://www.instagram.com/atlaseo.ma"
   ]
 }
 ```
