@@ -37,8 +37,8 @@
 
 ### Lancement officiel atlaseo.ma
 
-- [ ] **[S]** 📍 Achat domaine atlaseo.ma — date cible : **fin mai 2026** — 🔗 brief Pending
-- [ ] **[S]** 📍 Custom domain Cloudflare + redirect www → non-www — dépend : achat domaine — 🔗 brief Pending
+- [x] **[S]** 📍 Achat domaine atlaseo.ma — date cible : **fin mai 2026** — 🔗 brief Pending — 2026-07-10
+- [x] **[S]** 📍 Custom domain Cloudflare + redirect www → non-www — dépend : achat domaine — 🔗 brief Pending — 2026-07-10
 - [ ] **[XS]** GSC verify (DNS TXT via Cloudflare) — dépend : custom domain — 🔗 strategy §7 Phase 0
 - [ ] **[XS]** Soumission sitemap GSC — dépend : GSC verify — 🔗 strategy §7 Phase 0
 - [ ] **[S]** GA4 property + tracking code vérifié — date cible : **j+2 après lancement** — 🔗 brief Pending
@@ -46,6 +46,15 @@
 - [ ] **[M]** GBP ATLASEO créé + lien site + photos + catégories — date cible : **j+3 après lancement** — 🔗 strategy §5.5
 - [ ] **[S]** Lighthouse production sur URL réelle (atlaseo.ma) — dépend : custom domain — 🔗 brief Pending
 - [ ] **[M]** LCP mobile <2.5s (preload image hero mobile) — actuellement 3.2s — 🔗 brief Pending
+- [x] **[S]** Coordonnées réelles intégrées (contact@atlaseo.ma, +212 7 00 50 84 45, WhatsApp) — 2026-07-10
+- [x] **[S]** Profils sociaux officiels dans sameAs et footer (LinkedIn, Instagram) — 2026-07-10
+
+### Email (séance dédiée)
+
+- [ ] **[M]** Forwarder cPanel contact@ et info@ → Gmail
+- [ ] **[M]** Configuration Gmail "send-as" via SMTP mail.atlaseo.ma:465
+- [ ] **[S]** Vérification SPF/DKIM/DMARC (test "Afficher l'original" dans Gmail — 3 PASS attendus)
+- [ ] **[XS]** Vérifier les records MX dans Cloudflare DNS (supprimés lors du nettoyage de zone)
 
 ### Quick wins SEO (avant ou juste après lancement)
 
@@ -86,10 +95,11 @@
 ### Premier sprint commercial
 
 - [ ] **[S]** 💰 LinkedIn personnel mis à jour avec lien atlaseo.ma + bio orientée ATLASEO — date cible : **juin 2026**
-- [ ] **[S]** 💰 Page entreprise LinkedIn ATLASEO créée
+- [x] **[S]** 💰 Page entreprise LinkedIn ATLASEO créée — 2026-07-10
 - [ ] **[M]** 💰 Inscription Pages Jaunes Maroc, Sortlist, Companeo.ma, Maroc Annonces — 🔗 strategy §6.3 mois 1-3
-- [ ] **[S]** Compte Instagram ATLASEO créé (lien dans Schema sameAs)
+- [x] **[S]** Compte Instagram ATLASEO créé (lien dans Schema sameAs) — 2026-07-10
 - [ ] **[M]** 💰 Pitch deck commercial v1 (à partir du PPT pricing existant + slides ajoutées)
+- [ ] **[M]** GitHub Action auto-deploy sur push to main — dépend : domaine configuré ✅ — 🔗 ATLASEO_context.md §4
 
 ### Expansion géolocalisée — Phase 3 (septembre 2026)
 
@@ -194,6 +204,11 @@
 - [x] 2026-06-09 — Intégration logo et favicon : 5 PNG rognés dans `public/images/logos/`, favicons dans `public/`, Navbar/Footer/SchemaOrg mis à jour. Commits : 889add9, b326c9e + fix crop.
 - [x] 2026-06-09 — Enrichissement /contact : section About ATLASEO (logo h-56, motto, narrative, carte fondateur Fahd D., 3 piliers approche produit). Reorder (About → Expertise de proximité → Channels). Contact Channels restructuré (full-width WhatsApp + grille 3 cols). Infrastructure card supprimée. Support client simplifié. Tags audience supprimés.
 - [x] 2026-06-10 — Homepage collaboration stepper : section interactive "Comment on travaille ensemble" (3 phases, SVG animés, auto-advance, progress bar, crossfade desktop, responsive mobile). Composant CollaborationStepper.astro. Déployé.
+
+### Juillet 2026
+
+- [x] 2026-07-10 Domaine atlaseo.ma activé. Zone DNS nettoyée, custom domain sur Worker, redirect www → apex (301, un seul saut), Always Use HTTPS. Site live sur https://atlaseo.ma.
+- [x] 2026-07-10 Coordonnées réelles : contact@atlaseo.ma, +212 7 00 50 84 45, WhatsApp wa.me/212700508445. Profils sociaux LinkedIn + Instagram dans sameAs et footer.
 
 ---
 

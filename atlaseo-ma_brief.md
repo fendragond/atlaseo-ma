@@ -10,7 +10,7 @@
 > **Purpose**: Single source of truth for building ATLASEO.ma in Astro. Cursor works from this file exclusively — no re-deriving decisions.
 > **Generated from**: Stitch mockup (5 pages + design system) + project context document.
 > **Created**: 2026-05-17
-> **Last updated**: 2026-06-10 — v2.2
+> **Last updated**: 2026-07-10 — v2.2
 >
 > **Session log:**
 > - 2026-05-17 — Brief generated from Stitch mockup.
@@ -26,15 +26,18 @@
 > - 2026-06-09 — Logo et favicon intégrés. 5 variantes PNG (transparent, rognées) dans `public/images/logos/`. Favicons (16/32/48/180/192/512 + .ico) dans `public/`. Navbar : `atlaseo-logo-horizontal.png` à `h-10`. Footer : `atlaseo-logo-stacked.png` à `h-16`. SchemaOrg Organization logo mis à jour. Commits : 889add9, b326c9e + fix crop.
 > - 2026-06-09 — Contact page enrichment : nouvelle section "À propos d'ATLASEO" (logo h-56 + motto "Pensé local. Indexé global.", narrative agence, carte fondateur Fahd D. + fondateur.webp, 3 piliers Notre approche). Reorder sections : About → Expertise de proximité → Contact Channels. Contact Channels restructuré en full-width WhatsApp + grille 3 colonnes (Email, Phone, Support client). Carte Infrastructure Cloudflare supprimée. Support client simplifié. Tags audience (PME, Commerces, Professions Libérales) supprimés. Copy "Expertise de proximité" élargie.
 > - 2026-06-10 — Homepage collaboration stepper : nouvelle section interactive "Comment on travaille ensemble" entre Stratégie Data et Pricing Preview. Carte blanche avec stepper 3 phases (Comprendre / Construire / Faire grandir), SVG animés par phase (loupe + site, wireframe qui se construit, graphe ascendant), barre de progression avec auto-advance 5s, progress ring, nœuds cliquables avec icônes Material Symbols, crossfade desktop / show-hide mobile. Composant : `src/components/CollaborationStepper.astro`.
+> - 2026-07-10 — Domaine atlaseo.ma activé sur Cloudflare. Zone DNS nettoyée (suppression des records cPanel du registrar). Custom domain sur le Worker atlaseo-ma. Redirect www → apex (Custom filter expression, http.host eq "www.atlaseo.ma", 301). Always Use HTTPS activé. Vérifié : https://atlaseo.ma répond 200 sans saut, https://www.atlaseo.ma un seul 301. Site live en production.
+> - 2026-07-10 — Coordonnées réelles intégrées : contact@atlaseo.ma (remplace support@atlaseo.ma partout), téléphone +212 7 00 50 84 45 (affichage, tel:, JSON-LD), WhatsApp https://wa.me/212700508445. Profils sociaux officiels dans sameAs et footer : LinkedIn /company/atlaseo, Instagram /atlaseo.ma.
 >
 > **Pending (next session):**
-> - [ ] Achat domaine atlaseo.ma — en attente de validation ANRT
-> - [ ] Custom domain Cloudflare + redirect www → non-www
-> - [ ] Lighthouse production sur URL réelle (atlaseo.ma)
-> - [ ] Google Search Console : verify + sitemap submit
-> - [ ] Google Business Profile création + lien site
+> - [ ] Lighthouse production sur URL réelle (https://atlaseo.ma)
+> - [ ] LCP mobile (3.2s → objectif <2.5s) — preload image hero mobile
+> - [ ] Google Search Console : verify DNS TXT + soumission sitemap + URL Inspection sur les 5 pages
 > - [ ] GA4 property + tracking code vérifié
-> - [ ] LCP mobile (3.2s → objectif <2.5s)
+> - [ ] Cloudflare Web Analytics activé
+> - [ ] Google Business Profile création + lien site
+> - [ ] Email : forwarder cPanel → Gmail + configuration send-as (séance dédiée)
+> - [ ] GitHub Action auto-deploy sur push to main (le domaine est maintenant configuré)
 
 ## 1. Site Overview
 
@@ -557,6 +560,7 @@ https://atlaseo.ma/contact
   "url": "https://atlaseo.ma",
   "logo": "https://atlaseo.ma/logo.svg",
   "description": "Agence de création de sites web et SEO local à Casablanca, Maroc.",
+  "telephone": "+212700508445",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Casablanca",
