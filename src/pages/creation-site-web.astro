@@ -186,7 +186,7 @@ const breadcrumbSchema = {
 					<span class="icon-scale-wrap">
 						<span class="material-symbols-outlined text-secondary">speed</span>
 					</span>
-					<span class="font-display text-xl font-bold" data-count="99" data-count-suffix="/100">0/100</span>
+					<span class="font-display text-xl font-bold" data-count="99" data-count-suffix="/100">99/100</span>
 				</GlassCard>
 			</div>
 		</div>
@@ -650,7 +650,7 @@ const breadcrumbSchema = {
 											data-count={stat.count}
 											data-count-suffix={stat.suffix}
 										>
-											0{stat.suffix}
+											{stat.count}{stat.suffix}
 										</span>
 									) : (
 										stat.text

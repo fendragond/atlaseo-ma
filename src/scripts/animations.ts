@@ -95,6 +95,7 @@ export function initCountUp(): void {
 				if (reduced) {
 					el.textContent = formatCountDisplay(target, prefix, suffix, decimals);
 				} else {
+					el.textContent = formatCountDisplay(0, prefix, suffix, decimals);
 					countUp(el, target, COUNT_DURATION, { prefix, suffix, decimals });
 				}
 
@@ -126,11 +127,6 @@ export function initCountUp(): void {
 	);
 
 	elements.forEach((el) => {
-		if (!reduced) {
-			const prefix = el.dataset.countPrefix ?? '';
-			const suffix = el.dataset.countSuffix ?? '';
-			el.textContent = formatCountDisplay(0, prefix, suffix, 0);
-		}
 		observer.observe(el);
 	});
 }
