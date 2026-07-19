@@ -39,13 +39,13 @@
 
 - [x] **[S]** 📍 Achat domaine atlaseo.ma — date cible : **fin mai 2026** — 🔗 brief Pending — 2026-07-10
 - [x] **[S]** 📍 Custom domain Cloudflare + redirect www → non-www — dépend : achat domaine — 🔗 brief Pending — 2026-07-10
-- [ ] **[XS]** GSC verify (DNS TXT via Cloudflare) — dépend : custom domain — 🔗 strategy §7 Phase 0
-- [ ] **[XS]** Soumission sitemap GSC — dépend : GSC verify — 🔗 strategy §7 Phase 0
+- [x] **[XS]** GSC verify (DNS TXT via Cloudflare) — dépend : custom domain — 🔗 strategy §7 Phase 0 — 2026-07-19
+- [x] **[XS]** Soumission sitemap GSC — dépend : GSC verify — 🔗 strategy §7 Phase 0 — 2026-07-19
 - [ ] **[S]** GA4 property + tracking code vérifié — date cible : **j+2 après lancement** — 🔗 brief Pending
 - [ ] **[XS]** Cloudflare Web Analytics activé — date cible : **j+2 après lancement** — 🔗 strategy §8.5
 - [ ] **[M]** GBP ATLASEO créé + lien site + photos + catégories — date cible : **j+3 après lancement** — 🔗 strategy §5.5
-- [ ] **[S]** Lighthouse production sur URL réelle (atlaseo.ma) — dépend : custom domain — 🔗 brief Pending
-- [ ] **[M]** LCP mobile <2.5s (preload image hero mobile) — actuellement 3.2s — 🔗 brief Pending
+- [x] **[S]** Lighthouse production sur URL réelle (atlaseo.ma) — dépend : custom domain — 🔗 brief Pending — 2026-07-19
+- [x] **[M]** LCP mobile <2.5s (preload image hero mobile) — achieved: 1.8s, Perf 99/100 — 🔗 brief Pending — 2026-07-19
 - [x] **[S]** Coordonnées réelles intégrées (contact@atlaseo.ma, +212 7 00 50 84 45, WhatsApp) — 2026-07-10
 - [x] **[S]** Profils sociaux officiels dans sameAs et footer (LinkedIn, Instagram) — 2026-07-10
 
@@ -66,12 +66,12 @@
 - [x] Section "Pourquoi pas un site low-cost ?" sur /creation-site-web — 2026-06-03
 - [x] Update numéro de téléphone — 2026-06-03
 
-### Suivi indexation (récurrent juin 2026)
+### Suivi indexation (récurrent)
 
-- [ ] **[XS]** Vérification GSC à j+7 après lancement
-- [ ] **[XS]** Vérification GSC à j+14
-- [ ] **[XS]** Vérification GSC à j+21
-- [ ] **[XS]** Vérification GSC à j+30 — objectif : 5/5 pages indexées, zéro "Détectée — non indexée"
+- [ ] **[XS]** Vérification GSC à j+7 — **2026-07-26**
+- [ ] **[XS]** Vérification GSC à j+14 — **2026-08-02**
+- [ ] **[XS]** Vérification GSC à j+21 — **2026-08-09**
+- [ ] **[XS]** Vérification GSC à j+30 — **2026-08-18** — objectif : 5/5 pages indexées, zéro "Détectée — non indexée"
 
 ---
 
@@ -173,7 +173,10 @@
 
 > Toutes les idées et tâches qui apparaissent en cours de session vont d'abord ici. Tu les classes dans Haute / Moyenne / Basse lors de la revue mensuelle.
 
-- (vide pour l'instant)
+- [ ] **[S]** Ajouter ICE aux mentions légales quand disponible (E-E-A-T + conformité)
+- [ ] **[M]** 📍 Transfert domaine atlaseo.ma Heberjahiz → Nindohost (code EPP, déverrouillage, vérifier NS Cloudflare post-transfert)
+- [ ] **[M]** 📍 Email : activer Cloudflare Email Routing (MX auto) + Resend (domaine vérifié, send-as Gmail) — email unique contact@atlaseo.ma, abandon mailboxes Heberjahiz
+- [ ] **[XS]** Icône/description GSC : vérifier "Pages découvertes" du sitemap sous 48-72h (actuellement 0, normal)
 
 ---
 
@@ -209,6 +212,7 @@
 
 - [x] 2026-07-10 Domaine atlaseo.ma activé. Zone DNS nettoyée, custom domain sur Worker, redirect www → apex (301, un seul saut), Always Use HTTPS. Site live sur https://atlaseo.ma.
 - [x] 2026-07-10 Coordonnées réelles : contact@atlaseo.ma, +212 7 00 50 84 45, WhatsApp wa.me/212700508445. Profils sociaux LinkedIn + Instagram dans sameAs et footer.
+- [x] 2026-07-18/19 — Session performance + GSC : Perf 73→99, LCP 4.8→1.8s (subset Material Symbols self-hosted, images, compteurs statiques, commit 42b2a79). Pages légales créées (noindex). Meta /creation-site-web 7→14j. GSC vérifié + sitemap soumis + 5 demandes d'indexation. Footer rework (Société/Services + hover social).
 
 ---
 

@@ -10,7 +10,7 @@
 > **Purpose**: Single source of truth for building ATLASEO.ma in Astro. Cursor works from this file exclusively — no re-deriving decisions.
 > **Generated from**: Stitch mockup (5 pages + design system) + project context document.
 > **Created**: 2026-05-17
-> **Last updated**: 2026-07-10 — v2.2
+> **Last updated**: 2026-07-19 — v2.2
 >
 > **Session log:**
 > - 2026-05-17 — Brief generated from Stitch mockup.
@@ -28,11 +28,12 @@
 > - 2026-06-10 — Homepage collaboration stepper : nouvelle section interactive "Comment on travaille ensemble" entre Stratégie Data et Pricing Preview. Carte blanche avec stepper 3 phases (Comprendre / Construire / Faire grandir), SVG animés par phase (loupe + site, wireframe qui se construit, graphe ascendant), barre de progression avec auto-advance 5s, progress ring, nœuds cliquables avec icônes Material Symbols, crossfade desktop / show-hide mobile. Composant : `src/components/CollaborationStepper.astro`.
 > - 2026-07-10 — Domaine atlaseo.ma activé sur Cloudflare. Zone DNS nettoyée (suppression des records cPanel du registrar). Custom domain sur le Worker atlaseo-ma. Redirect www → apex (Custom filter expression, http.host eq "www.atlaseo.ma", 301). Always Use HTTPS activé. Vérifié : https://atlaseo.ma répond 200 sans saut, https://www.atlaseo.ma un seul 301. Site live en production.
 > - 2026-07-10 — Coordonnées réelles intégrées : contact@atlaseo.ma (remplace support@atlaseo.ma partout), téléphone +212 7 00 50 84 45 (affichage, tel:, JSON-LD), WhatsApp https://wa.me/212700508445. Profils sociaux officiels dans sameAs et footer : LinkedIn /company/atlaseo, Instagram /atlaseo.ma.
+> - 2026-07-18/19 — Performance production : audit PSI mobile (Perf 73, FCP 4.1s, LCP 4.8s), diagnostic render-blocking Material Symbols CDN (780ms + 213KB). Fix : subset Material Symbols self-hosted, images redimensionnées (dev-setup, logos, hero-mobile, portrait), compteurs animés avec valeurs finales en HTML statique (commit 42b2a79). Résultat : Perf 99/100, LCP 1.8s, FCP 1.5s. Pages légales créées (/mentions-legales, /confidentialite, noindex, hors sitemap) — jamais commitées auparavant, contenu rédigé (éditeur Fahd Daoudi, auto-entrepreneur, Casablanca). Fix meta description /creation-site-web (7 → 14 jours). GSC : propriété domaine vérifiée (DNS TXT), sitemap-index.xml soumis (5 URLs validées), erreur de redirection transitoire diagnostiquée via Test en ligne, 5 demandes d'indexation envoyées après tests live verts. Footer : section Société déplacée sous le bloc brand, Services repositionné, effet lift + vert au hover sur les icônes et liens sociaux.
 >
 > **Pending (next session):**
-> - [ ] Lighthouse production sur URL réelle (https://atlaseo.ma)
-> - [ ] LCP mobile (3.2s → objectif <2.5s) — preload image hero mobile
-> - [ ] Google Search Console : verify DNS TXT + soumission sitemap + URL Inspection sur les 5 pages
+> - [x] Lighthouse production sur URL réelle (https://atlaseo.ma)
+> - [x] LCP mobile (3.2s → objectif <2.5s) — preload image hero mobile
+> - [x] Google Search Console : verify DNS TXT + soumission sitemap + URL Inspection sur les 5 pages
 > - [ ] GA4 property + tracking code vérifié
 > - [ ] Cloudflare Web Analytics activé
 > - [ ] Google Business Profile création + lien site
