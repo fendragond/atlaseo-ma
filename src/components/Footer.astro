@@ -34,11 +34,32 @@ const socialLinks = [
 						))
 					}
 				</div>
+
+				<div class="mt-md">
+					<h3 class="label-caps mb-sm text-on-surface">Société</h3>
+					<ul class="flex flex-col gap-xs">
+						{
+							FOOTER_COMPANY.map(({ href, label }) => (
+								<li>
+									<a
+										href={href}
+										class="inline-flex min-h-11 items-center text-sm text-on-surface-variant transition-colors duration-200 hover:text-on-surface"
+									>
+										{label}
+									</a>
+								</li>
+							))
+						}
+					</ul>
+					<p class="mt-sm text-sm text-on-surface-variant/80">
+						Site conforme CNDP — protection des données personnelles.
+					</p>
+				</div>
 			</div>
 
 			<div>
 				<h3 class="label-caps mb-sm text-on-surface">Pages</h3>
-				<ul class="mb-md flex flex-col gap-xs">
+				<ul class="flex flex-col gap-xs">
 					{
 						FOOTER_PAGES.map(({ href, label }) => (
 							<li>
@@ -52,6 +73,9 @@ const socialLinks = [
 						))
 					}
 				</ul>
+			</div>
+
+			<div>
 				<h3 class="label-caps mb-sm text-on-surface">Services</h3>
 				<ul class="flex flex-col gap-xs">
 					{
@@ -67,27 +91,6 @@ const socialLinks = [
 						))
 					}
 				</ul>
-			</div>
-
-			<div>
-				<h3 class="label-caps mb-sm text-on-surface">Société</h3>
-				<ul class="flex flex-col gap-xs">
-					{
-						FOOTER_COMPANY.map(({ href, label }) => (
-							<li>
-								<a
-									href={href}
-									class="inline-flex min-h-11 items-center text-sm text-on-surface-variant transition-colors duration-200 hover:text-on-surface"
-								>
-									{label}
-								</a>
-							</li>
-						))
-					}
-				</ul>
-				<p class="mt-sm text-sm text-on-surface-variant/80">
-					Site conforme CNDP — protection des données personnelles.
-				</p>
 			</div>
 
 			<div>

@@ -228,3 +228,26 @@
 		@apply hover:border-secondary hover:shadow-xl;
 	}
 }
+
+/* Unlayered so hover color wins over text-* utilities */
+.social-link-hover {
+	color: theme('colors.on-surface-variant');
+	transition:
+		color 180ms ease,
+		transform 180ms ease;
+}
+
+.social-link-hover:hover {
+	color: #006d37;
+	transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.social-link-hover {
+		transition: color 180ms ease;
+	}
+
+	.social-link-hover:hover {
+		transform: none;
+	}
+}
