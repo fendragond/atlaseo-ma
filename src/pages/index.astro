@@ -66,6 +66,13 @@ const portfolioHighlights = [
 	'Meta descriptions et balises titre optimisées SEO',
 ];
 
+const portfolioOdbmHighlights = [
+	"Espace carrières intégré : publication d'offres d'emploi et candidatures en ligne",
+	"Vidéos immersives de chantiers et interviews d'équipes",
+	'Téléchargement direct de la politique qualité (certification ISO 9001)',
+	'Architecture SEO et performance Cloudflare pour une visibilité nationale',
+];
+
 const homeFaqs = [
 	{
 		question: 'Combien coûte un site web professionnel chez ATLASEO ?',
@@ -506,54 +513,160 @@ const faqPageSchema = {
 	<section data-animate class="bg-surface-container-low py-xl">
 		<div class="container-site flex flex-col gap-xl">
 			<SectionHeader title="Nos Réalisations" />
-			<div class="grid grid-cols-1 items-center gap-xl lg:grid-cols-2">
+			<div class="flex flex-col gap-md">
 				<div
-					data-animate
-					class="overflow-hidden rounded-xl border border-outline-variant/30 cloud-shadow transition-all duration-200 ease-out hover:border-primary"
+					id="portfolio-carousel"
+					role="region"
+					aria-roledescription="carousel"
+					aria-label="Nos réalisations"
+					tabindex="0"
+					class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 				>
-					<img
-						src="/images/portfolio-dryousra.webp"
-						alt="Site web dryousra.ma — médecine esthétique Casablanca, réalisation ATLASEO agence web Maroc"
-						width="1600"
-						height="900"
-						class="w-full"
-						loading="lazy"
-					/>
-				</div>
-				<div data-animate class="flex min-w-0 flex-1 flex-col gap-md">
-					<div>
-						<p class="label-caps text-secondary">Client</p>
-						<h3 class="font-display text-headline-md font-semibold text-on-surface">
-							Dr Yousra — Médecine Esthétique, Casablanca
-						</h3>
-					</div>
-					<p class="text-body-md text-on-surface-variant">
-						<strong class="text-on-surface">Résultat :</strong> Site vitrine complet avec 20+ pages de
-						services spécialisés. Intégration WhatsApp et click-to-call comme canaux de conversion
-						principaux.
-					</p>
-					<ul class="flex flex-col gap-sm">
-						{
-							portfolioHighlights.map((item) => (
-								<li class="card-icon-interactive flex items-start gap-2 text-body-md text-on-surface-variant">
-									<span class="icon-scale-wrap">
-										<span class="material-symbols-outlined text-secondary transition-transform duration-300">
-											check_circle
-										</span>
-									</span>
-									{item}
-								</li>
-							))
-						}
-					</ul>
-					<a
-						href="https://dryousra.ma"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="outline-button w-fit px-6 py-3"
+					<div
+						class="grid w-full shrink-0 grow-0 basis-full snap-start grid-cols-1 items-center gap-xl lg:grid-cols-2"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="1 sur 2 : Dr Yousra"
 					>
-						Voir le site dryousra.ma
-					</a>
+						<div
+							data-animate
+							class="overflow-hidden rounded-xl border border-outline-variant/30 cloud-shadow transition-all duration-200 ease-out hover:border-primary"
+						>
+							<img
+								src="/images/portfolio-dryousra.webp"
+								alt="Site web dryousra.ma — médecine esthétique Casablanca, réalisation ATLASEO agence web Maroc"
+								width="1600"
+								height="900"
+								class="w-full"
+								loading="lazy"
+							/>
+						</div>
+						<div data-animate class="flex min-w-0 flex-1 flex-col gap-md">
+							<div>
+								<p class="label-caps text-secondary">Client</p>
+								<h3 class="font-display text-headline-md font-semibold text-on-surface">
+									Dr Yousra — Médecine Esthétique, Casablanca
+								</h3>
+							</div>
+							<p class="text-body-md text-on-surface-variant">
+								<strong class="text-on-surface">Résultat :</strong> Site vitrine complet avec 20+ pages de
+								services spécialisés. Intégration WhatsApp et click-to-call comme canaux de conversion
+								principaux.
+							</p>
+							<ul class="flex flex-col gap-sm">
+								{
+									portfolioHighlights.map((item) => (
+										<li class="card-icon-interactive flex items-start gap-2 text-body-md text-on-surface-variant">
+											<span class="icon-scale-wrap">
+												<span class="material-symbols-outlined text-secondary transition-transform duration-300">
+													check_circle
+												</span>
+											</span>
+											{item}
+										</li>
+									))
+								}
+							</ul>
+							<a
+								href="https://dryousra.ma"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="outline-button w-fit px-6 py-3"
+							>
+								Voir le site dryousra.ma
+							</a>
+						</div>
+					</div>
+					<div
+						class="grid w-full shrink-0 grow-0 basis-full snap-start grid-cols-1 items-center gap-xl lg:grid-cols-2"
+						role="group"
+						aria-roledescription="slide"
+						aria-label="2 sur 2 : ODBM"
+					>
+						<div
+							data-animate
+							class="overflow-hidden rounded-xl border border-outline-variant/30 cloud-shadow transition-all duration-200 ease-out hover:border-primary"
+						>
+							<img
+								src="/images/portfolio-odbm.webp"
+								alt="Site web entrepriseodbm.ma — ODBM entreprise BTP gros œuvre et génie civil au Maroc, réalisation ATLASEO agence web"
+								width="1600"
+								height="900"
+								class="w-full"
+								loading="lazy"
+							/>
+						</div>
+						<div data-animate class="flex min-w-0 flex-1 flex-col gap-md">
+							<div>
+								<p class="label-caps text-secondary">Client</p>
+								<h3 class="font-display text-headline-md font-semibold text-on-surface">
+									ODBM — L'Omnium des Bâtisseurs Marocains
+								</h3>
+							</div>
+							<p class="text-body-md text-on-surface-variant">
+								<strong class="text-on-surface">Résultat :</strong> Site vitrine BTP complet avec espace
+								carrières fonctionnel, contenus vidéo de chantiers, et documentation qualité
+								téléchargeable. Une plateforme de crédibilité pour une entreprise certifiée présente sur
+								les grands chantiers du Maroc.
+							</p>
+							<ul class="flex flex-col gap-sm">
+								{
+									portfolioOdbmHighlights.map((item) => (
+										<li class="card-icon-interactive flex items-start gap-2 text-body-md text-on-surface-variant">
+											<span class="icon-scale-wrap">
+												<span class="material-symbols-outlined text-secondary transition-transform duration-300">
+													check_circle
+												</span>
+											</span>
+											{item}
+										</li>
+									))
+								}
+							</ul>
+							<a
+								href="https://entrepriseodbm.ma"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="outline-button w-fit px-6 py-3"
+							>
+								Voir le site entrepriseodbm.ma
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="flex items-center justify-center gap-md">
+					<button
+						type="button"
+						data-portfolio-prev
+						aria-label="Réalisation précédente"
+						class="inline-flex h-10 w-10 items-center justify-center rounded-full text-on-surface-variant transition-colors duration-200 hover:bg-surface-container hover:text-secondary"
+					>
+						<span class="material-symbols-outlined text-2xl" aria-hidden="true">chevron_left</span>
+					</button>
+					<div class="flex items-center gap-2" aria-label="Navigation des réalisations">
+						<button
+							type="button"
+							data-portfolio-dot
+							aria-label="Aller à la réalisation Dr Yousra"
+							aria-current="true"
+							class="h-2.5 w-2.5 rounded-full bg-secondary transition-colors duration-200"
+						></button>
+						<button
+							type="button"
+							data-portfolio-dot
+							aria-label="Aller à la réalisation ODBM"
+							aria-current="false"
+							class="h-2.5 w-2.5 rounded-full bg-outline-variant transition-colors duration-200"
+						></button>
+					</div>
+					<button
+						type="button"
+						data-portfolio-next
+						aria-label="Réalisation suivante"
+						class="inline-flex h-10 w-10 items-center justify-center rounded-full text-on-surface-variant transition-colors duration-200 hover:bg-surface-container hover:text-secondary"
+					>
+						<span class="material-symbols-outlined text-2xl" aria-hidden="true">chevron_right</span>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -626,6 +739,43 @@ const faqPageSchema = {
 				icon.classList.toggle('rotate-180', shouldOpen);
 			});
 		});
+
+		const portfolioCarousel = document.getElementById('portfolio-carousel');
+		const portfolioDots = document.querySelectorAll('[data-portfolio-dot]');
+		const portfolioPrev = document.querySelector('[data-portfolio-prev]');
+		const portfolioNext = document.querySelector('[data-portfolio-next]');
+
+		if (portfolioCarousel && portfolioDots.length > 0) {
+			const slideWidth = () => portfolioCarousel.clientWidth;
+
+			const updatePortfolioDots = () => {
+				const index = Math.round(portfolioCarousel.scrollLeft / slideWidth());
+				portfolioDots.forEach((dot, i) => {
+					const isActive = i === index;
+					dot.setAttribute('aria-current', String(isActive));
+					dot.classList.toggle('bg-secondary', isActive);
+					dot.classList.toggle('bg-outline-variant', !isActive);
+				});
+			};
+
+			portfolioCarousel.addEventListener('scroll', () => {
+				requestAnimationFrame(updatePortfolioDots);
+			});
+
+			portfolioDots.forEach((dot, i) => {
+				dot.addEventListener('click', () => {
+					portfolioCarousel.scrollTo({ left: i * slideWidth(), behavior: 'smooth' });
+				});
+			});
+
+			portfolioPrev?.addEventListener('click', () => {
+				portfolioCarousel.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+			});
+
+			portfolioNext?.addEventListener('click', () => {
+				portfolioCarousel.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+			});
+		}
 	</script>
 
 	<StickyMobileCTA debug={import.meta.env.DEV} />
